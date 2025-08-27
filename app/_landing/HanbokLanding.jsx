@@ -329,8 +329,8 @@ export default function HanbokLanding() {
         <div className="max-w-6xl mx-auto px-4 py-10 text-sm text-gray-600 grid md:grid-cols-3 gap-6">
           <div>
             <div className="font-semibold text-gray-800">{config.brandName}</div>
-            <p className="mt-2">사업자등록 000-00-00000 | 통신판매업 0000-서울-0000</p>
-            <p>대표 한진례 | 고객센터 {config.phoneMain} · {config.phoneMobile} | contact@han.ga</p>
+            <p className="mt-2">사업자등록 870-20-01783 | 통신판매업 0000-서울-0000</p>
+            <p>대표 한진례 | 고객센터 {config.phoneMain} · {config.phoneMobile} | efun36@naver.com</p>
           </div>
           <div>
             <div className="font-semibold text-gray-800">고객 안내</div>
