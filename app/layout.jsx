@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import '../styles/globals.css';
 
 export const metadata = {
   title: "한스타일 '밝은' 상점",
@@ -8,7 +8,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko">
-      <body className="min-h-screen antialiased">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
