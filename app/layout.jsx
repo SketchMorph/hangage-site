@@ -1,5 +1,5 @@
 import "./globals.css"
-import Navbar from "@/components/Navbar"
+import Navbar from "@/components/ui/Navbar"
 
 export const metadata = {
   title: "한스타일 밝은",
