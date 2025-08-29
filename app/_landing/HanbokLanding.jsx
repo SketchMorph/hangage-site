@@ -109,7 +109,7 @@ export default function HanbokLanding() {
 
       {/* Hero */}
       <section className="relative">
-        <div className="absolute inset-0 bg-[url('https://picsum.photos/seed/hanbokhero/1600/900')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-[url('/main000.png')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-white/60" />
         <div className="relative max-w-6xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
           <div>
