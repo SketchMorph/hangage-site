@@ -1,4 +1,4 @@
-import { supabase } from "../../../lib/supabaseClient";
+import { supabase } from '@/lib/supabaseClient'
 
 export default async function ProductDetail({ params }) {
   const { data: product } = await supabase.from("products").select("*").eq("id", params.id).single();
