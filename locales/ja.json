@@ -1,4 +1,11 @@
 {
+  "navbar": {
+    "home": "韓服ショップ",
+    "products": "商品一覧",
+    "login": "ログイン",
+    "signup": "新規登録",
+    "admin": "商品登録"
+  },
   "products": {
     "title": "商品一覧",
     "sample1": "韓服ドレス",
