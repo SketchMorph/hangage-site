@@ -1,20 +1,11 @@
 "use client";
 import { useRouter, usePathname } from "next/navigation";
 
-const SUPPORTED_LANGS = {
-  ko: "한국어",
-  en: "English",
-  fr: "Français",
-  ja: "日本語",
-  zh: "中文"
-};
-
 export default function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
 
   const changeLang = (lang) => {
-    // 현재 경로에서 기존 언어코드 제거 후 새 언어코드 추가
     const newPath = "/" + lang + pathname.replace(/^\/[a-z]{2}/, "");
     router.push(newPath);
   };
@@ -22,14 +13,14 @@ export default function LanguageSwitcher() {
   return (
     <select
       onChange={(e) => changeLang(e.target.value)}
-      defaultValue={pathname.split("/")[1] || "en"}
+      defaultValue={pathname.split("/")[1] || "ko"}
       className="border rounded px-2 py-1 text-sm"
     >
-      {Object.entries(SUPPORTED_LANGS).map(([code, name]) => (
-        <option key={code} value={code}>
-          {name}
-        </option>
-      ))}
+      <option value="ko">한국어</option>
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+      <option value="ja">日本語</option>
+      <option value="zh">中文</option>
     </select>
   );
 }
