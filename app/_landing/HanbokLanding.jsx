@@ -129,17 +129,7 @@ export default function HanbokLanding() {
             </ul>
           </div>
           <div className="md:justify-self-end">
-            <Card className="rounded-2xl shadow-xl">
-              <CardHeader>
-                <CardTitle>오늘의 혜택</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex items-center justify-between"><span>신규 가입 웰컴 쿠폰</span><span className="font-semibold">5,000원</span></div>
-                <div className="flex items-center justify-between"><span>세트 구성 할인</span><span className="font-semibold">~15%</span></div>
-                <div className="flex items-center justify-between"><span>리뷰 적립</span><span className="font-semibold">최대 2,000P</span></div>
-                <Button className="w-full rounded-2xl mt-2 bg-blue-900 hover:bg-blue-800">쿠폰 받기</Button>
-              </CardContent>
-            </Card>
+           
           </div>
         </div>
       </section>
