@@ -38,9 +38,9 @@ const DEFAULT_CONFIG = {
     { title: "두건 및 소품", desc: "헤드웨어·파우치", img: "/hairP001.png" },
   ],
   bests: [
-    { name: "모던한복", price: "문의 가능", img: "https://picsum.photos/seed/best-cheollik/600/600" },
-    { name: "철릭원피스", price: "문의 가능", img: "https://picsum.photos/seed/best-skirt/600/600" },
-    { name: "뷔스티에", price: "문의 가능", img: "https://picsum.photos/seed/best-bustier/600/600" },
+    { name: "모던한복", price: "문의 가능", img: "/twoP001.png" },
+    { name: "철릭원피스", price: "문의 가능", img: "/oneB002.png" },
+    { name: "허리치마", price: "문의 가능", img: "/skirtP002.png" },
   ],
 };
 
