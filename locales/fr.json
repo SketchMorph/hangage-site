@@ -1,4 +1,11 @@
 {
+  "navbar": {
+    "home": "Boutique Hanbok",
+    "products": "Produits",
+    "login": "Connexion",
+    "signup": "Inscription",
+    "admin": "Ajouter un produit"
+  },
   "products": {
     "title": "Liste des produits",
     "sample1": "Robe Hanbok",
