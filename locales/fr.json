@@ -1,0 +1,20 @@
+{
+  "products": {
+    "title": "Liste des produits",
+    "sample1": "Robe Hanbok",
+    "sample2": "Veste traditionnelle"
+  },
+  "login": {
+    "title": "Connexion",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "button": "Se connecter"
+  },
+  "signup": {
+    "title": "Inscription",
+    "name": "Nom",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "button": "Créer un compte"
+  }
+}
