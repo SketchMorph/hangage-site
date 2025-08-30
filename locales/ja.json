@@ -1,0 +1,20 @@
+{
+  "products": {
+    "title": "商品一覧",
+    "sample1": "韓服ドレス",
+    "sample2": "伝統ジャケット"
+  },
+  "login": {
+    "title": "ログイン",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "button": "ログイン"
+  },
+  "signup": {
+    "title": "新規登録",
+    "name": "名前",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "button": "登録する"
+  }
+}
