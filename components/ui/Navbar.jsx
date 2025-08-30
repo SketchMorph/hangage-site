@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import LanguageSwitcher from "./LanguageSwitcher"; // 대소문자 일치 주의!
 
-// 언어 JSON 불러오기
+// 다국어 JSON import
 import enDict from "@/locales/en.json";
 import koDict from "@/locales/ko.json";
 import frDict from "@/locales/fr.json";
@@ -21,13 +21,16 @@ const dictionaries = {
 export default function Navbar() {
   const pathname = usePathname();
   const lang = pathname.split("/")[1] || "en";
-  const dict = dictionaries[lang] || dictionaries["en"]; // 언어 dict 선택
+  const dict = dictionaries[lang] || dictionaries["en"];
 
   return (
     <nav className="flex items-center justify-between p-4 bg-white shadow">
+      {/* 로고 / 홈 */}
       <Link href={`/${lang}`} className="text-2xl font-bold">
         {dict.navbar.home}
       </Link>
+
+      {/* 메뉴 */}
       <div className="flex items-center space-x-4">
         <Link href={`/${lang}/products`} className="hover:text-blue-600">
           {dict.navbar.products}
@@ -44,7 +47,9 @@ export default function Navbar() {
         >
           {dict.navbar.admin}
         </Link>
-        <LanguageSwitcher /> {/* 언어 선택 */}
+
+        {/* 언어 선택 */}
+        <LanguageSwitcher />
       </div>
     </nav>
   );
