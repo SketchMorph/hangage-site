@@ -199,7 +199,7 @@ export default function HanbokLanding() {
             </ul>
           </div>
           <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100">
-            <img ="/home01.png" alt="atelier" className="w-full h-full object-cover"/>
+            <img src="/home01.png" alt="atelier" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -293,7 +293,7 @@ export default function HanbokLanding() {
             </div>
           </div>
           <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100">
-            <img ="/Main01.png" alt="store" className="w-full h-full object-cover" />
+            <img src="/Main00.png" alt="atelier" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
