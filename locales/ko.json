@@ -1,0 +1,20 @@
+{
+  "products": {
+    "title": "상품 목록",
+    "sample1": "한복 원피스",
+    "sample2": "전통 저고리"
+  },
+  "login": {
+    "title": "로그인",
+    "email": "이메일",
+    "password": "비밀번호",
+    "button": "로그인"
+  },
+  "signup": {
+    "title": "회원가입",
+    "name": "이름",
+    "email": "이메일",
+    "password": "비밀번호",
+    "button": "가입하기"
+  }
+}

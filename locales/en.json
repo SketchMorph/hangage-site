@@ -1,0 +1,20 @@
+{
+  "products": {
+    "title": "Product List",
+    "sample1": "Hanbok Dress",
+    "sample2": "Traditional Jacket"
+  },
+  "login": {
+    "title": "Login",
+    "email": "Email",
+    "password": "Password",
+    "button": "Log In"
+  },
+  "signup": {
+    "title": "Sign Up",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "button": "Register"
+  }
+}
