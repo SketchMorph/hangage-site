@@ -1,4 +1,11 @@
 {
+  "navbar": {
+    "home": "Hanbok Shop",
+    "products": "Products",
+    "login": "Login",
+    "signup": "Sign Up",
+    "admin": "Add Product"
+  },
   "products": {
     "title": "Product List",
     "sample1": "Hanbok Dress",
