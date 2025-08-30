@@ -102,7 +102,7 @@ export default function HanbokLanding() {
             <Button variant="outline" className="rounded-2xl border-blue-900 text-blue-900 hover:bg-blue-50" onClick={() => setAdminOpen((v) => !v)}>
               <Settings className="w-4 h-4 mr-1"/> 관리자
             </Button>
-            <a href={config.smartstoreUrl} target="_blank" rel="noopener" className="inline-flex items-center justify-center rounded-2xl bg-blue-900 hover:bg-blue-800 text-white px-4 py-2">바로 쇼핑</a>
+            <a href={config.smartstoreUrl} target="_blank" rel="noopener" className="inline-flex items-center justify-center rounded-2xl bg-blue-900 hover:bg-blue-800 text-white px-4 py-2">스마트스토어</a>
           </div>
         </div>
       </header>
