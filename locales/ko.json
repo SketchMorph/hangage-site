@@ -1,4 +1,11 @@
 {
+  "navbar": {
+    "home": "생활한복 한가게",
+    "products": "상품목록",
+    "login": "로그인",
+    "signup": "회원가입",
+    "admin": "상품 등록"
+  },
   "products": {
     "title": "상품 목록",
     "sample1": "한복 원피스",
