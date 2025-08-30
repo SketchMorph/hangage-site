@@ -1,4 +1,3 @@
-// middleware.js
 import { NextResponse } from "next/server";
 
 const SUPPORTED_LANGS = ["ko", "en", "fr", "ja", "zh"];
@@ -18,10 +17,10 @@ export function middleware(req) {
   let userLang = acceptLang.split(",")[0].split("-")[0]; // 예: "fr-CA" → "fr"
 
   if (!SUPPORTED_LANGS.includes(userLang)) {
-    userLang = DEFAULT_LANG; // 지원하지 않는 언어면 영어로
+    userLang = DEFAULT_LANG; // 지원하지 않는 언어 → 영어
   }
 
-  // 리다이렉트
+  // 해당 언어 경로로 리다이렉트
   url.pathname = `/${userLang}${url.pathname}`;
   return NextResponse.redirect(url);
 }
