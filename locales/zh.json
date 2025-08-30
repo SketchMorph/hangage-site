@@ -1,4 +1,11 @@
 {
+  "navbar": {
+    "home": "韩服商店",
+    "products": "商品列表",
+    "login": "登录",
+    "signup": "注册",
+    "admin": "添加商品"
+  },
   "products": {
     "title": "商品列表",
     "sample1": "韩服连衣裙",
