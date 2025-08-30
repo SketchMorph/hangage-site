@@ -5,15 +5,19 @@ export default function LanguageSwitcher() {
   const router = useRouter();
   const pathname = usePathname();
 
+  const currentLang = pathname.split("/")[1] || "en";
+
   const changeLang = (lang) => {
-    const newPath = "/" + lang + pathname.replace(/^\/[a-z]{2}/, "");
+    const parts = pathname.split("/");
+    parts[1] = lang; // 언어 prefix 교체
+    const newPath = parts.join("/") || "/";
     router.push(newPath);
   };
 
   return (
     <select
       onChange={(e) => changeLang(e.target.value)}
-      defaultValue={pathname.split("/")[1] || "ko"}
+      value={currentLang}
       className="border rounded px-2 py-1 text-sm"
     >
       <option value="ko">한국어</option>
