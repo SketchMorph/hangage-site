@@ -1,29 +1,10 @@
 import React from "react";
 
-type ButtonVariant =
-  | "default"
-  | "blue"
-  | "green"
-  | "yellow"
-  | "red"
-  | "gray";
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant;
-  className?: string;
-  children: React.ReactNode;
-}
-
-export function Button({
-  variant = "default",
-  className = "",
-  children,
-  ...props
-}: ButtonProps) {
+export function Button({ variant = "default", className = "", children, ...props }) {
   const base =
     "inline-flex items-center justify-center rounded-2xl px-4 py-2 text-sm font-medium border shadow-sm hover:shadow transition focus:outline-none focus:ring-2 focus:ring-offset-2";
 
-  const variants: Record<ButtonVariant, string> = {
+  const variants = {
     default: "bg-white text-black border-gray-200 hover:bg-gray-50 focus:ring-gray-300",
     blue: "bg-blue-500 text-white border-blue-600 hover:bg-blue-600 focus:ring-blue-400",
     green: "bg-green-500 text-white border-green-600 hover:bg-green-600 focus:ring-green-400",
@@ -33,10 +14,7 @@ export function Button({
   };
 
   return (
-    <button
-      className={`${base} ${variants[variant]} ${className}`}
-      {...props}
-    >
+    <button className={`${base} ${variants[variant]} ${className}`} {...props}>
       {children}
     </button>
   );
