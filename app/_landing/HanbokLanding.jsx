@@ -199,7 +199,7 @@ export default function HanbokLanding() {
             </ul>
           </div>
           <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100">
-            <img src="https://picsum.photos/seed/atelier/900/600" alt="atelier" className="w-full h-full object-cover"/>
+            <img ="/home01.png" alt="atelier" className="w-full h-full object-cover"/>
           </div>
         </div>
       </section>
@@ -293,7 +293,7 @@ export default function HanbokLanding() {
             </div>
           </div>
           <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100">
-            <img src="https://picsum.photos/seed/store/900/600" alt="store" className="w-full h-full object-cover" />
+            <img ="/Main01.png" alt="store" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
@@ -319,7 +319,7 @@ export default function HanbokLanding() {
         <div className="max-w-6xl mx-auto px-4 py-10 text-sm text-gray-600 grid md:grid-cols-3 gap-6">
           <div>
             <div className="font-semibold text-gray-800">{config.brandName}</div>
-            <p className="mt-2">사업자등록 870-20-01783 | 통신판매업 0000-서울-0000</p>
+            <p className="mt-2">사업자등록 870-20-01783 </p>
             <p>대표 한진례 | 고객센터 {config.phoneMain} · {config.phoneMobile} | efun36@naver.com</p>
           </div>
           <div>
