@@ -293,7 +293,7 @@ export default function HanbokLanding() {
             </div>
           </div>
           <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100">
-            <img src="/Main00.png" alt="atelier" className="w-full h-full object-cover" />
+            <img src="/profile01.png" alt="atelier" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
