@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import LanguageSwitcher from "./LanguageSwitcher"; // 추가
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar() {
   return (
