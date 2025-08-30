@@ -3,30 +3,46 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import LanguageSwitcher from "./LanguageSwitcher"; // 대소문자 일치 주의!
 
+// 언어 JSON 불러오기
+import enDict from "@/locales/en.json";
+import koDict from "@/locales/ko.json";
+import frDict from "@/locales/fr.json";
+import jaDict from "@/locales/ja.json";
+import zhDict from "@/locales/zh.json";
+
+const dictionaries = {
+  en: enDict,
+  ko: koDict,
+  fr: frDict,
+  ja: jaDict,
+  zh: zhDict,
+};
+
 export default function Navbar() {
   const pathname = usePathname();
-  const lang = pathname.split("/")[1] || "en"; // 현재 언어 prefix 추출
+  const lang = pathname.split("/")[1] || "en";
+  const dict = dictionaries[lang] || dictionaries["en"]; // 언어 dict 선택
 
   return (
     <nav className="flex items-center justify-between p-4 bg-white shadow">
       <Link href={`/${lang}`} className="text-2xl font-bold">
-        생활한복 한가게
+        {dict.navbar.home}
       </Link>
       <div className="flex items-center space-x-4">
         <Link href={`/${lang}/products`} className="hover:text-blue-600">
-          상품목록
+          {dict.navbar.products}
         </Link>
         <Link href={`/${lang}/login`} className="hover:text-blue-600">
-          로그인
+          {dict.navbar.login}
         </Link>
         <Link href={`/${lang}/signup`} className="hover:text-blue-600">
-          회원가입
+          {dict.navbar.signup}
         </Link>
         <Link
           href={`/${lang}/admin`}
           className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
         >
-          상품 등록
+          {dict.navbar.admin}
         </Link>
         <LanguageSwitcher /> {/* 언어 선택 */}
       </div>
