@@ -27,7 +27,7 @@ const DEFAULT_CONFIG = {
   smartstoreUrl: "https://smartstore.naver.com/hangagye",
   policyText: "교환·환불 불가",
   categories: [
-    { title: "남성 생활한복", desc: "편안한 일상 저고리/바지", img: "https://picsum.photos/seed/menhanbok/600/400" },
+    { title: "남성 생활한복", desc: "편안한 일상 저고리/바지", img: "/maleG001.png" },
     { title: "여성 생활한복", desc: "모던·미니멀 실루엣", img: "/hanW001.png" },
     { title: "어린이 한복", desc: "귀여운 우리옷", img: "/childP001.png" },
     { title: "철릭원피스", desc: "간편한 원피스형 철릭", img: "/oneW001.png" },
