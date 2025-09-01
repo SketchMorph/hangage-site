@@ -12,7 +12,7 @@ export default function LookbookDetail() {
       const data = await getLookbookWithProducts(id);
       setLookbook(data);
     }
-    fetchData();
+    if (id) fetchData();
   }, [id]);
 
   if (!lookbook) return <p>Loading...</p>;
