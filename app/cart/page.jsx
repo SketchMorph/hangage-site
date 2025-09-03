@@ -46,7 +46,7 @@ export default function CartPage() {
     loadCart();
   }
 
-  // ✅ 장바구니 → 구매하기 확장
+  // ✅ Stripe 결제 연동
   async function handleCheckout() {
     const user = await supabase.auth.getUser();
     if (!user.data.user) {
@@ -73,23 +73,38 @@ export default function CartPage() {
       0
     );
 
-    const { error } = await supabase.from("orders").insert([
-      {
-        user_id: user.data.user.id,
-        items: orderItems,
-        total_price: totalPrice,
-        status: "pending",
-      },
-    ]);
+    // 1) 주문 생성 (status: pending)
+    const { data, error } = await supabase
+      .from("orders")
+      .insert([
+        {
+          user_id: user.data.user.id,
+          items: orderItems,
+          total_price: totalPrice,
+          status: "pending",
+        },
+      ])
+      .select()
+      .single();
 
     if (error) {
       console.error(error);
-      alert("주문에 실패했습니다.");
+      alert("주문 생성 실패");
+      return;
+    }
+
+    // 2) Stripe Checkout 세션 생성 요청
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: orderItems, orderId: data.id }),
+    });
+
+    const { url } = await res.json();
+    if (url) {
+      window.location.href = url; // Stripe 결제 페이지로 이동
     } else {
-      // ✅ 주문 완료 후 장바구니 비우기
-      await supabase.from("cart").delete().eq("user_id", user.data.user.id);
-      alert("주문이 완료되었습니다! (결제 대기중)");
-      router.push("/orders");
+      alert("결제 페이지 생성 실패");
     }
   }
 
