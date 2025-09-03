@@ -19,7 +19,7 @@ export default function ProductDetail() {
     if (id) fetchData();
   }, [id]);
 
-  if (!product) return <p className="p-6">Loading...</p>;
+  if (!product) return <p className="p-6">상품을 찾을 수 없습니다.</p>;
 
   // 다국어 필드 선택
   const name = product[`name_${locale}`] || product.name_ko;
