@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import HanbokLanding from "./_landing/HanbokLanding";
 
-export default function Page() {
-  redirect("/ko");
+export default function HomePage() {
+  return <HanbokLanding />;
 }
