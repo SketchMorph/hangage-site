@@ -1,28 +1,52 @@
 "use client";
 import { useState } from "react";
-import { supabase } from '@/lib/supabaseClient'
+import { useTranslation } from "@/lib/useTranslation";
 
 export default function LoginPage() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
-  const [pw, setPw] = useState("");
-  const [msg, setMsg] = useState("");
+  const [password, setPassword] = useState("");
 
-  const login = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    const { error } = await supabase.auth.signInWithPassword({ email, password: pw });
-    if (error) setMsg("로그인 실패: " + error.message);
-    else setMsg("로그인 성공!");
+    console.log("Login:", email, password);
   };
 
   return (
-    <main className="p-6 max-w-md mx-auto">
-      <h1 className="text-2xl font-bold mb-4">로그인</h1>
-      <form onSubmit={login} className="space-y-3">
-        <input type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="이메일" />
-        <input type="password" value={pw} onChange={e=>setPw(e.target.value)} placeholder="비밀번호" />
-        <button type="submit">로그인</button>
+    <div className="flex items-center justify-center min-h-screen bg-gray-50">
+      <form
+        onSubmit={handleLogin}
+        className="bg-white p-8 rounded-xl shadow-md w-96"
+      >
+        <h1 className="text-2xl font-bold mb-6">{t("login.title")}</h1>
+
+        <label className="block mb-2 text-sm">{t("login.email")}</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="border w-full mb-4 px-3 py-2 rounded"
+        />
+
+        <label className="block mb-2 text-sm">{t("login.password")}</label>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="border w-full mb-4 px-3 py-2 rounded"
+        />
+
+        <button
+          type="submit"
+          className="bg-blue-600 text-white w-full py-2 rounded-lg"
+        >
+          {t("login.submit")}
+        </button>
+
+        <p className="text-center text-sm mt-4">
+          {t("login.signup")}
+        </p>
       </form>
-      <p>{msg}</p>
-    </main>
+    </div>
   );
 }
