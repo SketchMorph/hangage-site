@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
@@ -5,12 +8,14 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 
-export default async function SuccessPage({ searchParams }) {
+export default function SuccessPage({ searchParams }) {
   const orderId = searchParams.orderId;
 
-  if (orderId) {
-    await supabase.from("orders").update({ status: "paid" }).eq("id", orderId);
-  }
+  useEffect(() => {
+    if (orderId) {
+      supabase.from("orders").update({ status: "paid" }).eq("id", orderId);
+    }
+  }, [orderId]);
 
   return (
     <div className="p-6 text-center">
@@ -19,4 +24,3 @@ export default async function SuccessPage({ searchParams }) {
     </div>
   );
 }
-
