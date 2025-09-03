@@ -33,37 +33,39 @@ export default function ProductDetail() {
   const name = product[`name_${locale}`] || product.name_ko;
   const description = product[`description_${locale}`] || product.description_ko;
 
-  // ✅ 바로 구매 → orders 테이블 저장
-  async function handleBuyNow() {
-    const user = await supabase.auth.getUser();
-    if (!user.data.user) {
-      alert("로그인 후 이용해주세요!");
-      return;
-    }
-
-    const orderItem = {
-      product_id: product.id,
-      qty: 1,
-      price: product.price,
-    };
-
-    const { error } = await supabase.from("orders").insert([
-      {
-        user_id: user.data.user.id,
-        items: [orderItem], // JSON 배열로 저장
-        total_price: product.price,
-        status: "pending",
-      },
-    ]);
-
-    if (error) {
-      console.error(error);
-      alert("주문에 실패했습니다.");
-    } else {
-      alert("주문이 완료되었습니다! (결제 대기중)");
-      router.push("/orders"); // 주문 내역 페이지로 이동 (추후 구현)
-    }
+// ✅ 바로 구매 → orders 테이블 저장
+async function handleBuyNow() {
+  const user = await supabase.auth.getUser();
+  if (!user.data.user) {
+    alert("로그인 후 이용해주세요!");
+    return;
   }
+
+  const orderItem = {
+    product_id: product.id,
+    name: name, // ✅ 다국어 이름 저장
+    image: product.images?.[0] || "/no-image.png",
+    qty: 1,
+    price: product.price,
+  };
+
+  const { error } = await supabase.from("orders").insert([
+    {
+      user_id: user.data.user.id,
+      items: [orderItem], // ✅ JSON 배열에 상세정보까지
+      total_price: product.price,
+      status: "pending",
+    },
+  ]);
+
+  if (error) {
+    console.error(error);
+    alert("주문에 실패했습니다.");
+  } else {
+    alert("주문이 완료되었습니다! (결제 대기중)");
+    router.push("/orders");
+  }
+}
 
   return (
     <div className="max-w-5xl mx-auto p-6">
