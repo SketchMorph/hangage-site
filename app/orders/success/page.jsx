@@ -1,8 +1,3 @@
-"use client";
-export const dynamic = "force-dynamic";
-
-import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 
 const supabase = createClient(
@@ -10,15 +5,13 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 
-export default function SuccessPage() {
-  const params = useSearchParams();
-  const orderId = params.get("orderId");
+export default async function SuccessPage({ searchParams }) {
+  const orderId = searchParams.orderId;
 
-  useEffect(() => {
-    if (orderId) {
-      supabase.from("orders").update({ status: "paid" }).eq("id", orderId);
-    }
-  }, [orderId]);
+  if (orderId) {
+    // ✅ 서버 컴포넌트에서 바로 주문 상태 업데이트
+    await supabase.from("orders").update({ status: "paid" }).eq("id", orderId);
+  }
 
   return (
     <div className="p-6 text-center">
