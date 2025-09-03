@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { getProductById } from "@/lib/supabaseQueries";
 import { useTranslation } from "@/lib/useTranslation";
+import AddToCartButton from "@/components/AddToCartButton"; // ✅ 장바구니 버튼 컴포넌트 추가
 
 export const dynamic = "force-dynamic"; // 빌드 에러 방지
 
@@ -56,13 +57,7 @@ export default function ProductDetail() {
 
       {/* 버튼 */}
       <div className="flex gap-4">
-        <button className="bg-blue-600 text-white px-6 py-2 rounded-lg">
-          장바구니
-        </button>
+        <AddToCartButton productId={product.id} /> {/* ✅ 교체 완료 */}
         <button className="border border-blue-600 text-blue-600 px-6 py-2 rounded-lg">
           바로 구매
-        </button>
-      </div>
-    </div>
-  );
-}
+        </b
