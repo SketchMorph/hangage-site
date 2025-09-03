@@ -1,11 +1,5 @@
-"use client";
-export const dynamic = "force-dynamic";
-
-import { useSearchParams } from "next/navigation";
-
-export default function CancelPage() {
-  const params = useSearchParams();
-  const orderId = params.get("orderId");
+export default function CancelPage({ searchParams }) {
+  const orderId = searchParams.orderId;
 
   return (
     <div className="p-6 text-center">
