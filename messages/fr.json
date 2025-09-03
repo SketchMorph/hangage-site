@@ -1,0 +1,9 @@
+{
+  "login": {
+    "title": "Connexion",
+    "email": "Email",
+    "password": "Mot de passe",
+    "submit": "Se connecter",
+    "signup": "Créer un compte"
+  }
+}
