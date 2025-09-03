@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { useTranslation } from "@/lib/useTranslation";
 
+export const dynamic = "force-dynamic"; 
+
 export default function LoginPage() {
   const { t } = useTranslation();
   const [email, setEmail] = useState("");
