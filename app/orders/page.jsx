@@ -25,11 +25,7 @@ export default function OrdersPage() {
       .eq("user_id", user.data.user.id)
       .order("created_at", { ascending: false });
 
-    if (error) {
-      console.error(error);
-    } else {
-      setOrders(data || []);
-    }
+    if (!error) setOrders(data || []);
   }
 
   return (
@@ -40,10 +36,7 @@ export default function OrdersPage() {
 
       <div className="space-y-6">
         {orders.map((order) => (
-          <div
-            key={order.id}
-            className="border rounded-lg p-4 shadow-sm bg-white"
-          >
+          <div key={order.id} className="border rounded-lg p-4 shadow-sm bg-white">
             <div className="flex justify-between items-center mb-2">
               <p className="font-semibold">
                 주문번호: <span className="text-gray-600">{order.id}</span>
@@ -67,12 +60,9 @@ export default function OrdersPage() {
               주문일시: {new Date(order.created_at).toLocaleString()}
             </p>
 
-            <div className="space-y-3">
+            <div className="space-y-2">
               {order.items.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center justify-between border-b pb-2"
-                >
+                <div key={idx} className="flex justify-between items-center border-b pb-2">
                   <div className="flex items-center gap-3">
                     <img
                       src={item.image}
@@ -81,9 +71,7 @@ export default function OrdersPage() {
                     />
                     <div>
                       <p className="font-semibold">{item.name}</p>
-                      <p className="text-sm text-gray-500">
-                        수량: {item.qty}
-                      </p>
+                      <p className="text-sm text-gray-500">수량: {item.qty}</p>
                     </div>
                   </div>
                   <span className="font-semibold">
