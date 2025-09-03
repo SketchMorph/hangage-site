@@ -9,7 +9,6 @@ export default async function SuccessPage({ searchParams }) {
   const orderId = searchParams.orderId;
 
   if (orderId) {
-    // ✅ 서버 컴포넌트에서 바로 주문 상태 업데이트
     await supabase.from("orders").update({ status: "paid" }).eq("id", orderId);
   }
 
