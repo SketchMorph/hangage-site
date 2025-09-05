@@ -2,6 +2,7 @@
   "navbar": {
     "home": "Hanbok Shop",
     "products": "Products",
+    "cart": "Cart",
     "login": "Login",
     "signup": "Sign Up",
     "admin": "Add Product"
