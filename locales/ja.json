@@ -1,10 +1,11 @@
 {
   "navbar": {
     "home": "韓服ショップ",
-    "products": "商品一覧",
+    "products": "商品",
+    "cart": "カート",
     "login": "ログイン",
     "signup": "新規登録",
-    "admin": "商品登録"
+    "admin": "商品追加"
   },
   "products": {
     "title": "商品一覧",
@@ -13,15 +14,15 @@
   },
   "login": {
     "title": "ログイン",
-    "email": "メールアドレス",
+    "email": "メール",
     "password": "パスワード",
     "button": "ログイン"
   },
   "signup": {
     "title": "新規登録",
     "name": "名前",
-    "email": "メールアドレス",
+    "email": "メール",
     "password": "パスワード",
-    "button": "登録する"
+    "button": "登録"
   }
 }
