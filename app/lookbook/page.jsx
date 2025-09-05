@@ -38,7 +38,7 @@ export default function LookbookPage() {
         {lookbooks.map((lb) => (
           <Link
             key={lb.id}
-            href={`/lookbook/${lb.id}`} // ✅ 단수 경로 유지
+            href={`/lookbook/${lb.id}`}
             className="block border rounded-xl overflow-hidden shadow hover:shadow-lg transition"
           >
             <img
