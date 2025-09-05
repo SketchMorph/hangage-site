@@ -1,7 +1,8 @@
 {
   "navbar": {
     "home": "韩服商店",
-    "products": "商品列表",
+    "products": "商品",
+    "cart": "购物车",
     "login": "登录",
     "signup": "注册",
     "admin": "添加商品"
