@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
 
-export const dynamic = "force-dynamic"; // 항상 동적 렌더링
+export const dynamic = "force-dynamic";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 
-export default function LookbooksPage() {
+export default function LookbookPage() {
   const [lookbooks, setLookbooks] = useState([]);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function LookbooksPage() {
         {lookbooks.map((lb) => (
           <Link
             key={lb.id}
-            href={`/lookbook/${lb.id}`}
+            href={`/lookbook/${lb.id}`} // ✅ 단수 경로 유지
             className="block border rounded-xl overflow-hidden shadow hover:shadow-lg transition"
           >
             <img
