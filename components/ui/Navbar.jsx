@@ -35,6 +35,9 @@ export default function Navbar() {
         <Link href={`/${lang}/products`} className="hover:text-blue-600">
           {dict.navbar.products}
         </Link>
+        <Link href={`/${lang}/cart`} className="hover:text-blue-600">
+          {dict.navbar.cart}
+        </Link>
         <Link href={`/${lang}/login`} className="hover:text-blue-600">
           {dict.navbar.login}
         </Link>
