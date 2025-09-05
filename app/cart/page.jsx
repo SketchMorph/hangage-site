@@ -1,4 +1,5 @@
 export const runtime = "nodejs"; // ✅ Stripe는 Edge 런타임에서 동작 불가, Node.js 런타임 강제
+export const dynamic = "force-dynamic";
 
 import Stripe from "stripe";
 import { NextResponse } from "next/server";
