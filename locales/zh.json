@@ -3,6 +3,7 @@
     "home": "韩服商店",
     "products": "商品",
     "cart": "购物车",
+    "orders": "订单",
     "login": "登录",
     "signup": "注册",
     "admin": "添加商品"
@@ -10,7 +11,7 @@
   "products": {
     "title": "商品列表",
     "sample1": "韩服连衣裙",
-    "sample2": "传统夹克"
+    "sample2": "传统上衣"
   },
   "login": {
     "title": "登录",
@@ -23,6 +24,58 @@
     "name": "姓名",
     "email": "邮箱",
     "password": "密码",
-    "button": "注册"
+    "button": "提交"
+  },
+  "landing": {
+    "hero": {
+      "headline": "韩服商店 Hanstyle 'Bright'",
+      "subtext": "透气面料、自然剪裁、韩国之美。从上班到周末出行，都能舒适穿着。",
+      "ctaProducts": "查看商品",
+      "ctaLookbook": "查看画册",
+      "benefit1": "韩国制造 · 天然面料",
+      "benefit2": "尺寸 / 定制选项",
+      "benefit3": "不可退换",
+      "benefit4": "满 ¥300 包邮"
+    },
+    "categories": {
+      "title": "分类",
+      "subtitle": "请选择您喜欢的风格。"
+    },
+    "best": {
+      "title": "畅销商品",
+      "subtitle": "发现最受欢迎的产品。"
+    },
+    "story": {
+      "title": "我们的故事",
+      "text": "我们研究舒适的版型和天然面料，让韩服之美融入日常生活。"
+    },
+    "size": {
+      "title": "尺寸 & 定制",
+      "guide": "尺码指南",
+      "custom": "定制订单",
+      "policy": "支付 / 配送 / 退换"
+    },
+    "reviews": {
+      "title": "客户评价"
+    },
+    "store": {
+      "title": "门店信息",
+      "address": "韩国 全州市 完山区 太平3街70号 中央商街 2层206号"
+    },
+    "newsletter": {
+      "title": "获取新品/活动通知",
+      "subtitle": "留下邮箱，接收季节性系列和活动资讯。",
+      "placeholder": "your@email.com",
+      "button": "订阅"
+    },
+    "footer": {
+      "customer": "客户服务",
+      "links": {
+        "shipping": "配送 / 退换政策",
+        "privacy": "隐私政策",
+        "terms": "使用条款"
+      },
+      "quick": "快速链接"
+    }
   }
 }
