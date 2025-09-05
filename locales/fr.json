@@ -2,6 +2,7 @@
   "navbar": {
     "home": "Boutique Hanbok",
     "products": "Produits",
+    "cart": "Panier",
     "login": "Connexion",
     "signup": "Inscription",
     "admin": "Ajouter un produit"
@@ -22,6 +23,6 @@
     "name": "Nom",
     "email": "E-mail",
     "password": "Mot de passe",
-    "button": "Créer un compte"
+    "button": "S'inscrire"
   }
 }
