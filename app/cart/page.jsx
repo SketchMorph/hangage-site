@@ -1,186 +1,58 @@
-"use client";
+export const runtime = "nodejs"; // ✅ Stripe는 Edge 런타임에서 동작 불가, Node.js 런타임 강제
 
-import { useEffect, useState } from "react";
-import { createClient } from "@supabase/supabase-js";
-import { useRouter } from "next/navigation";
+import Stripe from "stripe";
+import { NextResponse } from "next/server";
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-);
+// ✅ 환경 변수 안전 체크
+if (!process.env.STRIPE_SECRET_KEY) {
+  throw new Error("❌ STRIPE_SECRET_KEY is not defined in environment variables");
+}
+if (!process.env.NEXT_PUBLIC_SITE_URL) {
+  throw new Error("❌ NEXT_PUBLIC_SITE_URL is not defined in environment variables");
+}
 
-export default function CartPage() {
-  const [items, setItems] = useState([]);
-  const router = useRouter();
-
-  useEffect(() => {
-    loadCart();
-  }, []);
-
-  async function loadCart() {
-    const user = await supabase.auth.getUser();
-    if (!user.data.user) return;
-
-    const { data, error } = await supabase
-      .from("cart")
-      .select("id, quantity, product:product_id(id, name_ko, price, images)")
-      .eq("user_id", user.data.user.id);
-
-    if (error) console.error(error);
-    else setItems(data || []);
-  }
-
-  async function removeItem(id) {
-    const { error } = await supabase.from("cart").delete().eq("id", id);
-    if (error) console.error(error);
-    loadCart();
-  }
-
-  async function updateQuantity(id, newQty) {
-    if (newQty < 1) return;
-    const { error } = await supabase
-      .from("cart")
-      .update({ quantity: newQty })
-      .eq("id", id);
-    if (error) console.error(error);
-    loadCart();
-  }
-
-  // ✅ Stripe 결제 연동
-  async function handleCheckout() {
-    const user = await supabase.auth.getUser();
-    if (!user.data.user) {
-      alert("로그인 후 이용해주세요!");
-      return;
-    }
-
-    if (items.length === 0) {
-      alert("장바구니가 비어 있습니다.");
-      return;
-    }
-
-    // items → 주문용 데이터 변환
-    const orderItems = items.map((item) => ({
-      product_id: item.product.id,
-      name: item.product.name_ko,
-      image: item.product.images?.[0] || "/no-image.png",
-      qty: item.quantity,
-      price: item.product.price,
-    }));
-
-    const totalPrice = orderItems.reduce(
-      (sum, it) => sum + it.price * it.qty,
-      0
-    );
-
-    // 1) 주문 생성 (status: pending)
-    const { data, error } = await supabase
-      .from("orders")
-      .insert([
-        {
-          user_id: user.data.user.id,
-          items: orderItems,
-          total_price: totalPrice,
-          status: "pending",
-        },
-      ])
-      .select()
-      .single();
-
-    if (error) {
-      console.error(error);
-      alert("주문 생성 실패");
-      return;
-    }
-
-    // 2) Stripe Checkout 세션 생성 요청
-const res = await fetch("/api/checkout", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ items: orderItems, orderId: data.id }),
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+  apiVersion: "2024-06-20",
 });
 
-if (!res.ok) {
-  console.error("Checkout API error:", await res.text());
-  alert("결제 세션 생성 실패");
-  return;
-}
+export async function POST(req) {
+  try {
+    const body = await req.json();
+    const { items, orderId } = body;
 
-const { url } = await res.json();
-if (url) {
-  window.location.href = url;
-} else {
-  alert("Stripe 세션 생성 실패");
-}
+    // ✅ 입력값 검증
+    if (!items || !Array.isArray(items) || items.length === 0) {
+      return NextResponse.json({ error: "No items provided" }, { status: 400 });
+    }
+    if (!orderId) {
+      return NextResponse.json({ error: "Missing orderId" }, { status: 400 });
+    }
 
+    // ✅ Stripe Checkout 세션 생성
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
+      mode: "payment",
+      line_items: items.map((item) => ({
+        price_data: {
+          currency: "usd", // ⚠️ 필요 시 "krw" 등 변경 가능
+          product_data: {
+            name: item.name,
+            images: item.image ? [item.image] : [],
+          },
+          unit_amount: Math.round(item.price * 100), // 금액 단위: 센트
+        },
+        quantity: item.qty,
+      })),
+      success_url: `${process.env.NEXT_PUBLIC_SITE_URL}/orders/success?orderId=${orderId}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/orders/cancel?orderId=${orderId}`,
+    });
+
+    return NextResponse.json({ url: session.url });
+  } catch (err) {
+    console.error("❌ Stripe checkout error:", err);
+    return NextResponse.json(
+      { error: err.message || "Stripe checkout failed" },
+      { status: 500 }
+    );
   }
-
-  const totalPrice = items.reduce(
-    (sum, item) => sum + item.product.price * item.quantity,
-    0
-  );
-
-  return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">장바구니</h2>
-      {items.length === 0 && <p>장바구니가 비어 있습니다.</p>}
-
-      <div className="space-y-4">
-        {items.map((item) => (
-          <div
-            key={item.id}
-            className="flex items-center justify-between border p-4 rounded-lg"
-          >
-            <div className="flex items-center space-x-4">
-              <img
-                src={item.product.images?.[0] || "/no-image.png"}
-                alt={item.product.name_ko}
-                className="w-20 h-20 object-cover rounded"
-              />
-              <div>
-                <p className="font-semibold">{item.product.name_ko}</p>
-                <p>{item.product.price}원</p>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-2">
-              <button
-                className="px-2 py-1 border rounded"
-                onClick={() => updateQuantity(item.id, item.quantity - 1)}
-              >
-                -
-              </button>
-              <span>{item.quantity}</span>
-              <button
-                className="px-2 py-1 border rounded"
-                onClick={() => updateQuantity(item.id, item.quantity + 1)}
-              >
-                +
-              </button>
-              <button
-                className="ml-4 text-red-500"
-                onClick={() => removeItem(item.id)}
-              >
-                삭제
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {items.length > 0 && (
-        <div className="mt-6 text-right">
-          <p className="text-lg font-bold mb-2">
-            총 금액: {totalPrice.toLocaleString()}원
-          </p>
-          <button
-            onClick={handleCheckout}
-            className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600"
-          >
-            구매하기
-          </button>
-        </div>
-      )}
-    </div>
-  );
 }
