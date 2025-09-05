@@ -94,18 +94,25 @@ export default function CartPage() {
     }
 
     // 2) Stripe Checkout 세션 생성 요청
-    const res = await fetch("/api/checkout", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: orderItems, orderId: data.id }),
-    });
+const res = await fetch("/api/checkout", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ items: orderItems, orderId: data.id }),
+});
 
-    const { url } = await res.json();
-    if (url) {
-      window.location.href = url; // Stripe 결제 페이지로 이동
-    } else {
-      alert("결제 페이지 생성 실패");
-    }
+if (!res.ok) {
+  console.error("Checkout API error:", await res.text());
+  alert("결제 세션 생성 실패");
+  return;
+}
+
+const { url } = await res.json();
+if (url) {
+  window.location.href = url;
+} else {
+  alert("Stripe 세션 생성 실패");
+}
+
   }
 
   const totalPrice = items.reduce(
