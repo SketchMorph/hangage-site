@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import LanguageSwitcher from "./LanguageSwitcher"; // 대소문자 일치 주의!
+import LanguageSwitcher from "./LanguageSwitcher";
 
 // 다국어 JSON import
 import enDict from "@/locales/en.json";
@@ -18,9 +18,15 @@ const dictionaries = {
   zh: zhDict,
 };
 
+const SUPPORTED_LANGS = ["en", "ko", "fr", "ja", "zh"];
+
 export default function Navbar() {
   const pathname = usePathname();
-  const lang = pathname.split("/")[1] || "en";
+  let lang = pathname.split("/")[1];
+  if (!SUPPORTED_LANGS.includes(lang)) {
+    lang = "en"; // 기본 언어
+  }
+
   const dict = dictionaries[lang] || dictionaries["en"];
 
   return (
@@ -37,6 +43,9 @@ export default function Navbar() {
         </Link>
         <Link href={`/${lang}/cart`} className="hover:text-blue-600">
           {dict.navbar.cart}
+        </Link>
+        <Link href={`/${lang}/orders`} className="hover:text-blue-600">
+          {dict.navbar.orders || "Orders"}
         </Link>
         <Link href={`/${lang}/login`} className="hover:text-blue-600">
           {dict.navbar.login}
