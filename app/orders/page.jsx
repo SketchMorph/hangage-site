@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 
+export const dynamic = "force-dynamic"; // ✅ 동적 렌더링 강제
+
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -31,9 +33,7 @@ export default function OrdersPage() {
   return (
     <div className="max-w-5xl mx-auto p-6">
       <h2 className="text-2xl font-bold mb-6">주문 내역</h2>
-
       {orders.length === 0 && <p>주문 내역이 없습니다.</p>}
-
       <div className="space-y-6">
         {orders.map((order) => (
           <div key={order.id} className="border rounded-lg p-4 shadow-sm bg-white">
@@ -55,11 +55,9 @@ export default function OrdersPage() {
                 {order.status}
               </span>
             </div>
-
             <p className="text-gray-500 text-sm mb-4">
               주문일시: {new Date(order.created_at).toLocaleString()}
             </p>
-
             <div className="space-y-2">
               {order.items.map((item, idx) => (
                 <div key={idx} className="flex justify-between items-center border-b pb-2">
@@ -80,7 +78,6 @@ export default function OrdersPage() {
                 </div>
               ))}
             </div>
-
             <div className="text-right mt-4 font-bold">
               총 금액: {order.total_price.toLocaleString()} 원
             </div>
