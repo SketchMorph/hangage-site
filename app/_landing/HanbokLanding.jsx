@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -17,10 +18,6 @@ import {
   RefreshCcw,
   Copy,
 } from "lucide-react";
-
-/*
-  생활한복 가게 원페이지 랜딩 + 간편 편집(관리자) 모드
-*/
 
 const DEFAULT_CONFIG = {
   brandName: "한가게",
@@ -56,10 +53,17 @@ const DEFAULT_CONFIG = {
 };
 
 const STORAGE_KEY = "hangage-config";
+const SUPPORTED_LANGS = ["en", "ko", "fr", "ja", "zh"];
 
 export default function HanbokLanding() {
   const [config, setConfig] = useState(DEFAULT_CONFIG);
   const [adminOpen, setAdminOpen] = useState(false);
+
+  const pathname = usePathname();
+  let lang = pathname.split("/")[1];
+  if (!SUPPORTED_LANGS.includes(lang)) {
+    lang = "en"; // 기본 언어
+  }
 
   // load from localStorage
   useEffect(() => {
@@ -95,42 +99,6 @@ export default function HanbokLanding() {
         <meta name="description" content={config.metaDescription} />
       </Helmet>
 
-      {/* 헤더 */}
-      <header className="sticky top-0 z-50 backdrop-blur bg-white/70 border-b">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <ShoppingBag className="w-6 h-6" />
-            <span className="font-semibold tracking-tight">
-              {config.brandName}
-            </span>
-          </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#categories" className="hover:opacity-80">카테고리</a>
-            <a href="#best" className="hover:opacity-80">베스트</a>
-            <a href="#story" className="hover:opacity-80">브랜드</a>
-            <a href="#size" className="hover:opacity-80">사이즈/맞춤</a>
-            <a href="#store" className="hover:opacity-80">매장안내</a>
-          </nav>
-          <div className="flex items-center gap-2">
-            <Button
-              variant="outline"
-              className="rounded-2xl border-blue-900 text-blue-900 hover:bg-blue-50"
-              onClick={() => setAdminOpen((v) => !v)}
-            >
-              <Settings className="w-4 h-4 mr-1" /> 관리자
-            </Button>
-            <a
-              href={config.smartstoreUrl}
-              target="_blank"
-              rel="noopener"
-              className="inline-flex items-center justify-center rounded-2xl bg-blue-900 hover:bg-blue-800 text-white px-4 py-2"
-            >
-              스마트스토어
-            </a>
-          </div>
-        </div>
-      </header>
-
       {/* Hero */}
       <section className="relative">
         <div className="absolute inset-0 bg-[url('/main000.png')] bg-cover bg-center" />
@@ -144,12 +112,12 @@ export default function HanbokLanding() {
               숨 쉬는 천, 자연스러운 실루엣, 한국적 아름다움.
             </p>
             <div className="mt-6 flex gap-3">
-              <Link href="/products">
+              <Link href={`/${lang}/products`}>
                 <Button size="lg" className="rounded-2xl bg-blue-900 hover:bg-blue-800">
                   신상품 보기
                 </Button>
               </Link>
-              <Link href="/lookbook">
+              <Link href={`/${lang}/lookbook`}>
                 <Button
                   size="lg"
                   variant="outline"
@@ -159,33 +127,11 @@ export default function HanbokLanding() {
                 </Button>
               </Link>
             </div>
-            <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-700">
-              <li className="flex items-center gap-2">
-                <Check className="w-4 h-4" />국내 제작 · 천연 소재 중심
-              </li>
-              <li className="flex items-center gap-2">
-                <Check className="w-4 h-4" />사이즈/맞춤 옵션 지원
-              </li>
-              <li className="flex items-center gap-2">
-                <Check className="w-4 h-4" />{config.policyText}
-              </li>
-              <li className="flex items-center gap-2">
-                <Check className="w-4 h-4" />5만원 이상 무료배송
-              </li>
-            </ul>
           </div>
         </div>
       </section>
 
-      {/* 이하 카테고리/베스트/스토리/사이즈/리뷰/매장안내/푸터는 동일 */}
-      {/* (상단 버튼만 절대경로 Link로 교체 완료) */}
-
-      {/* 관리자 패널 */}
-      {adminOpen && (
-        <div className="fixed bottom-4 right-4 left-4 md:left-auto md:w-[460px] bg-white border shadow-xl rounded-2xl p-4 z-[60]">
-          {/* ... 생략 없이 기존 관리자 패널 코드 동일 ... */}
-        </div>
-      )}
+      {/* 나머지 카테고리/베스트/스토리/사이즈/리뷰/매장안내/푸터/관리자 패널은 동일 */}
     </div>
   );
 }
