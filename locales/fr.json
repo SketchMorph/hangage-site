@@ -3,6 +3,7 @@
     "home": "Boutique Hanbok",
     "products": "Produits",
     "cart": "Panier",
+    "orders": "Commandes",
     "login": "Connexion",
     "signup": "Inscription",
     "admin": "Ajouter un produit"
@@ -14,15 +15,67 @@
   },
   "login": {
     "title": "Connexion",
-    "email": "E-mail",
+    "email": "Email",
     "password": "Mot de passe",
     "button": "Se connecter"
   },
   "signup": {
     "title": "Inscription",
     "name": "Nom",
-    "email": "E-mail",
+    "email": "Email",
     "password": "Mot de passe",
     "button": "S'inscrire"
+  },
+  "landing": {
+    "hero": {
+      "headline": "Boutique Hanstyle 'Bright'",
+      "subtext": "Des tissus respirants, des silhouettes naturelles et la beauté coréenne. Du bureau aux sorties du week-end.",
+      "ctaProducts": "Voir les produits",
+      "ctaLookbook": "Voir le lookbook",
+      "benefit1": "Fabriqué en Corée · Tissus naturels",
+      "benefit2": "Tailles / Options sur mesure",
+      "benefit3": "Pas d'échange ni de remboursement",
+      "benefit4": "Livraison gratuite dès 50€"
+    },
+    "categories": {
+      "title": "Catégories",
+      "subtitle": "Choisissez votre style préféré."
+    },
+    "best": {
+      "title": "Meilleures ventes",
+      "subtitle": "Découvrez les articles les plus appréciés."
+    },
+    "story": {
+      "title": "Notre histoire",
+      "text": "Nous développons des motifs confortables et des tissus naturels pour profiter de la beauté du Hanbok au quotidien."
+    },
+    "size": {
+      "title": "Tailles & Sur mesure",
+      "guide": "Guide des tailles",
+      "custom": "Commande sur mesure",
+      "policy": "Paiement / Livraison / Échange"
+    },
+    "reviews": {
+      "title": "Avis clients"
+    },
+    "store": {
+      "title": "Informations boutique",
+      "address": "206, Centre commercial Jungang, 70 Taepyeong 3-gil, Wansan-gu, Jeonju, Corée"
+    },
+    "newsletter": {
+      "title": "Recevoir nos nouveautés",
+      "subtitle": "Laissez votre email pour recevoir nos collections saisonnières et actualités.",
+      "placeholder": "votre@email.com",
+      "button": "S'inscrire"
+    },
+    "footer": {
+      "customer": "Service client",
+      "links": {
+        "shipping": "Politique d'expédition / échange / remboursement",
+        "privacy": "Politique de confidentialité",
+        "terms": "Conditions générales"
+      },
+      "quick": "Liens rapides"
+    }
   }
 }
