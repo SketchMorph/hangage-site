@@ -3,12 +3,13 @@
     "home": "韓服ショップ",
     "products": "商品",
     "cart": "カート",
+    "orders": "注文履歴",
     "login": "ログイン",
     "signup": "新規登録",
     "admin": "商品追加"
   },
   "products": {
-    "title": "商品一覧",
+    "title": "商品リスト",
     "sample1": "韓服ドレス",
     "sample2": "伝統ジャケット"
   },
@@ -24,5 +25,57 @@
     "email": "メール",
     "password": "パスワード",
     "button": "登録"
+  },
+  "landing": {
+    "hero": {
+      "headline": "韓服ショップ Hanstyle『Bright』",
+      "subtext": "通気性のある生地、自然なシルエット、そして韓国の美しさ。通勤から週末のお出かけまで快適に。",
+      "ctaProducts": "商品を見る",
+      "ctaLookbook": "ルックブックを見る",
+      "benefit1": "韓国製 · 天然素材",
+      "benefit2": "サイズ / オーダーメイド対応",
+      "benefit3": "返品・交換不可",
+      "benefit4": "¥5000以上で送料無料"
+    },
+    "categories": {
+      "title": "カテゴリー",
+      "subtitle": "お好みのスタイルをお選びください。"
+    },
+    "best": {
+      "title": "人気商品",
+      "subtitle": "もっとも愛されるアイテムをご覧ください。"
+    },
+    "story": {
+      "title": "私たちの物語",
+      "text": "日常生活で韓服の美しさを楽しめるように、快適なパターンと天然素材を研究しています。"
+    },
+    "size": {
+      "title": "サイズ & オーダー",
+      "guide": "サイズガイド",
+      "custom": "オーダーメイド",
+      "policy": "支払い / 配送 / 交換"
+    },
+    "reviews": {
+      "title": "お客様の声"
+    },
+    "store": {
+      "title": "店舗情報",
+      "address": "韓国 全州市 完山区 太平3キル70 中央商街 2階206号"
+    },
+    "newsletter": {
+      "title": "新商品・イベント情報を受け取る",
+      "subtitle": "メールを登録すると、シーズンコレクションやイベント情報をお届けします。",
+      "placeholder": "your@email.com",
+      "button": "登録する"
+    },
+    "footer": {
+      "customer": "カスタマーサービス",
+      "links": {
+        "shipping": "配送 / 交換 / 返品ポリシー",
+        "privacy": "個人情報保護方針",
+        "terms": "利用規約"
+      },
+      "quick": "クイックリンク"
+    }
   }
 }
