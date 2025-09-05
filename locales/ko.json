@@ -1,10 +1,11 @@
 {
   "navbar": {
-    "home": "생활한복 한가게",
-    "products": "상품목록",
+    "home": "한복 상점",
+    "products": "상품",
+    "cart": "장바구니",
     "login": "로그인",
     "signup": "회원가입",
-    "admin": "상품 등록"
+    "admin": "상품 추가"
   },
   "products": {
     "title": "상품 목록",
@@ -22,6 +23,6 @@
     "name": "이름",
     "email": "이메일",
     "password": "비밀번호",
-    "button": "가입하기"
+    "button": "등록"
   }
 }
