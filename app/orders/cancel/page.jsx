@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic"; // ✅ 동적 렌더링 강제
 
 export default function CancelPage({ searchParams }) {
   const orderId = searchParams.orderId;
