@@ -3,6 +3,7 @@
     "home": "Hanbok Shop",
     "products": "Products",
     "cart": "Cart",
+    "orders": "Orders",
     "login": "Login",
     "signup": "Sign Up",
     "admin": "Add Product"
@@ -24,5 +25,57 @@
     "email": "Email",
     "password": "Password",
     "button": "Register"
+  },
+  "landing": {
+    "hero": {
+      "headline": "Our Clothes Shop, Hanstyle 'Bright' Store",
+      "subtext": "Breathable fabrics, natural silhouettes, and Korean beauty. From office to weekend outings, wear with ease.",
+      "ctaProducts": "View Products",
+      "ctaLookbook": "View Lookbook",
+      "benefit1": "Made in Korea · Natural fabrics",
+      "benefit2": "Size / Custom options",
+      "benefit3": "No exchanges or refunds",
+      "benefit4": "Free shipping over $50"
+    },
+    "categories": {
+      "title": "Categories",
+      "subtitle": "Choose your preferred style."
+    },
+    "best": {
+      "title": "Best Items",
+      "subtitle": "Discover the most loved items."
+    },
+    "story": {
+      "title": "Our Story",
+      "text": "We research comfortable patterns and natural fabrics so that Hanbok beauty can be enjoyed in daily life."
+    },
+    "size": {
+      "title": "Size & Custom",
+      "guide": "Size Guide",
+      "custom": "Custom Order",
+      "policy": "Payment / Delivery / Exchange"
+    },
+    "reviews": {
+      "title": "Customer Reviews"
+    },
+    "store": {
+      "title": "Store Info",
+      "address": "206, Jungang Shopping Center, 70 Taepyeong 3-gil, Wansan-gu, Jeonju, Korea"
+    },
+    "newsletter": {
+      "title": "Get Updates",
+      "subtitle": "Leave your email to receive seasonal collections and event news.",
+      "placeholder": "your@email.com",
+      "button": "Subscribe"
+    },
+    "footer": {
+      "customer": "Customer Service",
+      "links": {
+        "shipping": "Shipping / Exchange / Refund Policy",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service"
+      },
+      "quick": "Quick Links"
+    }
   }
 }
