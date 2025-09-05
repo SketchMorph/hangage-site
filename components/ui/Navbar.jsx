@@ -10,23 +10,15 @@ import frDict from "@/locales/fr.json";
 import jaDict from "@/locales/ja.json";
 import zhDict from "@/locales/zh.json";
 
-const dictionaries = {
-  en: enDict,
-  ko: koDict,
-  fr: frDict,
-  ja: jaDict,
-  zh: zhDict,
-};
-
+const dictionaries = { en: enDict, ko: koDict, fr: frDict, ja: jaDict, zh: zhDict };
 const SUPPORTED_LANGS = ["en", "ko", "fr", "ja", "zh"];
 
 export default function Navbar() {
   const pathname = usePathname();
   let lang = pathname.split("/")[1];
   if (!SUPPORTED_LANGS.includes(lang)) {
-    lang = "en"; // 기본 언어
+    lang = "en";
   }
-
   const dict = dictionaries[lang] || dictionaries["en"];
 
   return (
@@ -45,7 +37,7 @@ export default function Navbar() {
           {dict.navbar.cart}
         </Link>
         <Link href={`/${lang}/orders`} className="hover:text-blue-600">
-          {dict.navbar.orders || "Orders"}
+          {dict.navbar.orders}
         </Link>
         <Link href={`/${lang}/login`} className="hover:text-blue-600">
           {dict.navbar.login}
