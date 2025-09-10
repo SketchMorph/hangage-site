@@ -30,10 +30,27 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 
+// ✅ 깊은 병합 함수 (deep merge)
+function deepMerge(base, override) {
+  const result = { ...base };
+  for (const key in override) {
+    if (
+      typeof override[key] === "object" &&
+      override[key] !== null &&
+      !Array.isArray(override[key])
+    ) {
+      result[key] = deepMerge(base[key] || {}, override[key]);
+    } else {
+      result[key] = override[key];
+    }
+  }
+  return result;
+}
+
 export default function HanbokLanding({ lang = "ko" }) {
-  // ✅ 안전한 다국어 fallback 처리
+  // ✅ 안전한 다국어 fallback
   const baseDict = dictionaries["ko"].landing;
-  const dict = { ...baseDict, ...(dictionaries[lang]?.landing || {}) };
+  const dict = deepMerge(baseDict, dictionaries[lang]?.landing || {});
 
   const DEFAULT_CONFIG = {
     brandName: "한가게",
@@ -56,7 +73,7 @@ export default function HanbokLanding({ lang = "ko" }) {
   const [bests, setBests] = useState([]);
   const [adminOpen, setAdminOpen] = useState(false);
 
-  // ✅ Supabase 불러오기
+  // ✅ Supabase 데이터 불러오기
   useEffect(() => {
     async function loadData() {
       const { data: products, error } = await supabase
@@ -70,7 +87,7 @@ export default function HanbokLanding({ lang = "ko" }) {
       }
 
       if (products) {
-        // 카테고리별 그룹
+        // 카테고리 그룹화
         const grouped = {};
         products.forEach((p) => {
           if (!grouped[p.category]) {
@@ -159,6 +176,12 @@ export default function HanbokLanding({ lang = "ko" }) {
                 </Button>
               </Link>
             </div>
+            <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-gray-700">
+              <li><Check className="w-4 h-4 inline" /> {dict.hero?.benefit1}</li>
+              <li><Check className="w-4 h-4 inline" /> {dict.hero?.benefit2}</li>
+              <li><Check className="w-4 h-4 inline" /> {config.policyText}</li>
+              <li><Check className="w-4 h-4 inline" /> {dict.hero?.benefit4}</li>
+            </ul>
           </div>
         </div>
       </section>
@@ -214,7 +237,7 @@ export default function HanbokLanding({ lang = "ko" }) {
         </div>
       </section>
 
-      {/* 나머지 story, size, store, newsletter, footer 등은 기존 코드 동일 */}
+      {/* 나머지 story, size, store, newsletter, footer 등은 동일 */}
     </div>
   );
 }
