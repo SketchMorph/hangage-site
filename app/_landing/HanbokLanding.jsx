@@ -31,14 +31,16 @@ const supabase = createClient(
 );
 
 export default function HanbokLanding({ lang = "ko" }) {
-  const dict = dictionaries[lang]?.landing || dictionaries["ko"].landing;
+  // ✅ 안전한 다국어 fallback 처리
+  const baseDict = dictionaries["ko"].landing;
+  const dict = { ...baseDict, ...(dictionaries[lang]?.landing || {}) };
 
   const DEFAULT_CONFIG = {
     brandName: "한가게",
-    metaTitle: dict.hero.headline,
-    metaDescription: dict.hero.subtext,
-    heroHeadline: dict.hero.headline,
-    address: dict.store.address,
+    metaTitle: dict.hero?.headline || "한가게",
+    metaDescription: dict.hero?.subtext || "생활한복 전문점",
+    heroHeadline: dict.hero?.headline || "한가게",
+    address: dict.store?.address || "전주 매장",
     hours: "영업시간 오전9시~오후7시",
     phoneMain: "063-255-2547",
     phoneMobile: "010-7309-2547",
@@ -46,7 +48,7 @@ export default function HanbokLanding({ lang = "ko" }) {
     naverPlaceUrl: "https://naver.me/GA8LhINb",
     kakaoOpenChatUrl: "https://open.kakao.com/o/s9HWYCOh",
     smartstoreUrl: "https://smartstore.naver.com/hangagye",
-    policyText: dict.hero.benefit3,
+    policyText: dict.hero?.benefit3 || "",
   };
 
   const [config, setConfig] = useState(DEFAULT_CONFIG);
@@ -54,7 +56,7 @@ export default function HanbokLanding({ lang = "ko" }) {
   const [bests, setBests] = useState([]);
   const [adminOpen, setAdminOpen] = useState(false);
 
-  // Supabase 불러오기
+  // ✅ Supabase 불러오기
   useEffect(() => {
     async function loadData() {
       const { data: products, error } = await supabase
@@ -74,7 +76,7 @@ export default function HanbokLanding({ lang = "ko" }) {
           if (!grouped[p.category]) {
             grouped[p.category] = {
               title: p.category,
-              desc: dict.categories.subtitle,
+              desc: dict.categories?.subtitle || "",
               img: p.images?.[0] || "/no-image.png",
             };
           }
@@ -111,11 +113,11 @@ export default function HanbokLanding({ lang = "ko" }) {
             <span className="font-semibold tracking-tight">{config.brandName}</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#categories">{dict.categories.title}</a>
-            <a href="#best">{dict.best.title}</a>
-            <a href="#story">{dict.story.title}</a>
-            <a href="#size">{dict.size.title}</a>
-            <a href="#store">{dict.store.title}</a>
+            <a href="#categories">{dict.categories?.title}</a>
+            <a href="#best">{dict.best?.title}</a>
+            <a href="#story">{dict.story?.title}</a>
+            <a href="#size">{dict.size?.title}</a>
+            <a href="#store">{dict.store?.title}</a>
           </nav>
           <div className="flex items-center gap-2">
             <Button variant="outline" onClick={() => setAdminOpen((v) => !v)}>
@@ -139,12 +141,12 @@ export default function HanbokLanding({ lang = "ko" }) {
         <div className="absolute inset-0 bg-white/60" />
         <div className="relative max-w-6xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <h1 className="text-3xl md:text-5xl font-bold leading-tight">{dict.hero.headline}</h1>
-            <p className="mt-4 text-base md:text-lg text-gray-700">{dict.hero.subtext}</p>
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight">{dict.hero?.headline}</h1>
+            <p className="mt-4 text-base md:text-lg text-gray-700">{dict.hero?.subtext}</p>
             <div className="mt-6 flex gap-3">
               <Link href={`/${lang}/products`}>
                 <Button size="lg" className="rounded-2xl bg-blue-900 hover:bg-blue-800">
-                  {dict.hero.ctaProducts}
+                  {dict.hero?.ctaProducts}
                 </Button>
               </Link>
               <Link href={`/${lang}/lookbook`}>
@@ -153,7 +155,7 @@ export default function HanbokLanding({ lang = "ko" }) {
                   variant="outline"
                   className="rounded-2xl border-blue-900 text-blue-900 hover:bg-blue-50"
                 >
-                  {dict.hero.ctaLookbook}
+                  {dict.hero?.ctaLookbook}
                 </Button>
               </Link>
             </div>
@@ -163,8 +165,8 @@ export default function HanbokLanding({ lang = "ko" }) {
 
       {/* 카테고리 */}
       <section id="categories" className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-2xl md:text-3xl font-bold">{dict.categories.title}</h2>
-        <p className="text-gray-600 mt-2">{dict.categories.subtitle}</p>
+        <h2 className="text-2xl md:text-3xl font-bold">{dict.categories?.title}</h2>
+        <p className="text-gray-600 mt-2">{dict.categories?.subtitle}</p>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
           {categories.map((c, i) => (
             <Link key={i} href={`/${lang}/products?cat=${c.title}`} className="group">
@@ -183,8 +185,8 @@ export default function HanbokLanding({ lang = "ko" }) {
       {/* 베스트 상품 */}
       <section id="best" className="bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 py-16">
-          <h2 className="text-2xl md:text-3xl font-bold">{dict.best.title}</h2>
-          <p className="text-gray-600 mt-2">{dict.best.subtitle}</p>
+          <h2 className="text-2xl md:text-3xl font-bold">{dict.best?.title}</h2>
+          <p className="text-gray-600 mt-2">{dict.best?.subtitle}</p>
           <div className="grid md:grid-cols-3 gap-6 mt-8">
             {bests.map((b) => (
               <Card key={b.id} className="rounded-2xl overflow-hidden">
@@ -212,7 +214,7 @@ export default function HanbokLanding({ lang = "ko" }) {
         </div>
       </section>
 
-      {/* 나머지 story, size, store, newsletter, footer 등은 기존 코드 그대로 유지 */}
+      {/* 나머지 story, size, store, newsletter, footer 등은 기존 코드 동일 */}
     </div>
   );
 }
