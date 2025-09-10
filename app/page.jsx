@@ -1,7 +1,8 @@
 // app/page.jsx
-import { redirect } from "next/navigation";
+"use client";
+import HanbokLanding from "./_landing/HanbokLanding";
 
-export default function Home() {
-  // 기본 언어는 한국어(/ko)로 redirect
-  redirect("/ko");
+export default function HomePage() {
+  // / 에 접근하면 한국어 랜딩 바로 보여줌
+  return <HanbokLanding lang="ko" />;
 }
