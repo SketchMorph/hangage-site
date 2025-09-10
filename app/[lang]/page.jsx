@@ -6,8 +6,10 @@ const SUPPORTED_LANGS = ["ko", "en", "fr", "ja", "zh"];
 export default function LangHomePage({ params }) {
   let { lang } = params;
 
-  // 지원하지 않는 언어 → 기본 ko
-  if (!SUPPORTED_LANGS.includes(lang)) lang = "ko";
+  // 지원하지 않는 언어면 ko로 fallback
+  if (!SUPPORTED_LANGS.includes(lang)) {
+    lang = "ko";
+  }
 
   return <HanbokLanding lang={lang} />;
 }
