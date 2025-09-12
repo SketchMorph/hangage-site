@@ -1,81 +1,15 @@
 {
-  "navbar": {
-    "home": "Boutique Hanbok",
-    "products": "Produits",
-    "cart": "Panier",
-    "orders": "Commandes",
-    "login": "Connexion",
-    "signup": "Inscription",
-    "admin": "Ajouter un produit"
-  },
-  "products": {
-    "title": "Liste des produits",
-    "sample1": "Robe Hanbok",
-    "sample2": "Veste traditionnelle"
-  },
-  "login": {
-    "title": "Connexion",
-    "email": "Email",
-    "password": "Mot de passe",
-    "button": "Se connecter"
-  },
-  "signup": {
-    "title": "Inscription",
-    "name": "Nom",
-    "email": "Email",
-    "password": "Mot de passe",
-    "button": "S'inscrire"
-  },
   "landing": {
-    "hero": {
-      "headline": "Boutique Hanstyle 'Bright'",
-      "subtext": "Des tissus respirants, des silhouettes naturelles et la beauté coréenne. Du bureau aux sorties du week-end.",
-      "ctaProducts": "Voir les produits",
-      "ctaLookbook": "Voir le lookbook",
-      "benefit1": "Fabriqué en Corée · Tissus naturels",
-      "benefit2": "Tailles / Options sur mesure",
-      "benefit3": "Pas d'échange ni de remboursement",
-      "benefit4": "Livraison gratuite dès 50€"
-    },
     "categories": {
-      "title": "Catégories",
-      "subtitle": "Choisissez votre style préféré."
-    },
-    "best": {
-      "title": "Meilleures ventes",
-      "subtitle": "Découvrez les articles les plus appréciés."
-    },
-    "story": {
-      "title": "Notre histoire",
-      "text": "Nous développons des motifs confortables et des tissus naturels pour profiter de la beauté du Hanbok au quotidien."
-    },
-    "size": {
-      "title": "Tailles & Sur mesure",
-      "guide": "Guide des tailles",
-      "custom": "Commande sur mesure",
-      "policy": "Paiement / Livraison / Échange"
-    },
-    "reviews": {
-      "title": "Avis clients"
-    },
-    "store": {
-      "title": "Informations boutique",
-      "address": "206, Centre commercial Jungang, 70 Taepyeong 3-gil, Wansan-gu, Jeonju, Corée"
-    },
-    "newsletter": {
-      "title": "Recevoir nos nouveautés",
-      "subtitle": "Laissez votre email pour recevoir nos collections saisonnières et actualités.",
-      "placeholder": "votre@email.com",
-      "button": "S'inscrire"
-    },
-    "footer": {
-      "customer": "Service client",
-      "links": {
-        "shipping": "Politique d'expédition / échange / remboursement",
-        "privacy": "Politique de confidentialité",
-        "terms": "Conditions générales"
-      },
-      "quick": "Liens rapides"
+      "신상품": { "title": "Nouveautés", "desc": "Les nouveautés de l'année" },
+      "남성 생활한복": { "title": "Hanbok Homme", "desc": "Haut et pantalon décontractés" },
+      "여성 생활한복": { "title": "Hanbok Femme", "desc": "Silhouette moderne et minimaliste" },
+      "어린이 한복": { "title": "Hanbok Enfant", "desc": "Tenues quotidiennes adorables" },
+      "철릭원피스": { "title": "Robe Chulik", "desc": "Robe Hanbok simple" },
+      "뷔스티에": { "title": "Bustier", "desc": "Point de style en superposition" },
+      "허리치마": { "title": "Jupe Hanbok", "desc": "Jupe portefeuille quotidienne" },
+      "앞치마": { "title": "Tablier", "desc": "Tablier pratique du quotidien" },
+      "두건 및 악세사리": { "title": "Couvre-chef & Accessoires", "desc": "Couvre-chef · Pochettes" }
     }
   }
 }
