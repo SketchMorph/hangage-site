@@ -1,15 +1,41 @@
 {
+  "navbar": {
+    "home": "韩服商店",
+    "products": "商品",
+    "cart": "购物车",
+    "orders": "订单",
+    "login": "登录",
+    "signup": "注册",
+    "admin": "添加商品"
+  },
+  "products": {
+    "title": "商品列表",
+    "sample1": "韩服连衣裙",
+    "sample2": "上衣短衫"
+  },
+  "login": {
+    "title": "登录",
+    "email": "邮箱",
+    "password": "密码",
+    "button": "登录"
+  },
+  "signup": {
+    "title": "注册",
+    "name": "姓名",
+    "email": "邮箱",
+    "password": "密码",
+    "button": "提交"
+  },
   "landing": {
+    "hero": {
+      "headline": "韩服商店 Hanstyle 'Bright'",
+      "subtext": "透气面料、自然剪裁、韩国之美。从上班到周末出行，都能舒适穿着。",
+      "ctaProducts": "查看商品",
+      "ctaLookbook": "查看画册",
+      "benefit1": "韩国制造 · 天然面料",
+      "benefit2": "尺寸 / 定制选项",
+      "benefit3": "不可退换",
+      "benefit4": "满 ¥300 包邮"
+    },
     "categories": {
-      "신상품": { "title": "新品", "desc": "今年的新款" },
-      "남성 생활한복": { "title": "男士韩服", "desc": "休闲上衣和裤子" },
-      "여성 생활한복": { "title": "女士韩服", "desc": "现代·极简风格" },
-      "어린이 한복": { "title": "儿童韩服", "desc": "可爱的日常服饰" },
-      "철릭원피스": { "title": "直裰连衣裙", "desc": "简便的一件式韩服" },
-      "뷔스티에": { "title": "吊带背心", "desc": "叠穿造型亮点" },
-      "허리치마": { "title": "韩服裙子", "desc": "日常用裹裙" },
-      "앞치마": { "title": "围裙", "desc": "实用的日常围裙" },
-      "두건 및 악세사리": { "title": "头巾及配饰", "desc": "头饰 · 小包" }
-    }
-  }
-}
+      "신상품": { "title": "
