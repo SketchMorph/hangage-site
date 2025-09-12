@@ -1,15 +1,86 @@
 {
+  "navbar": {
+    "home": "Hanbok Shop",
+    "products": "Products",
+    "cart": "Cart",
+    "orders": "Orders",
+    "login": "Login",
+    "signup": "Sign Up",
+    "admin": "Add Product"
+  },
+  "products": {
+    "title": "Product List",
+    "sample1": "Hanbok Dress",
+    "sample2": "Jeogori Blouse"
+  },
+  "login": {
+    "title": "Login",
+    "email": "Email",
+    "password": "Password",
+    "button": "Login"
+  },
+  "signup": {
+    "title": "Sign Up",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "button": "Register"
+  },
   "landing": {
+    "hero": {
+      "headline": "Hanstyle 'Bright' Store",
+      "subtext": "Breathable fabrics, natural silhouettes, and Korean beauty. From workdays to weekends.",
+      "ctaProducts": "View Products",
+      "ctaLookbook": "View Lookbook",
+      "benefit1": "Made in Korea · Natural fabrics",
+      "benefit2": "Sizes / Custom options",
+      "benefit3": "No exchange or refund",
+      "benefit4": "Free shipping over ₩50,000"
+    },
     "categories": {
-      "신상품": { "title": "New Arrivals", "desc": "This year's latest" },
-      "남성 생활한복": { "title": "Men's Hanbok", "desc": "Casual tops & pants" },
-      "여성 생활한복": { "title": "Women's Hanbok", "desc": "Modern & minimal silhouette" },
-      "어린이 한복": { "title": "Children's Hanbok", "desc": "Adorable everyday wear" },
-      "철릭원피스": { "title": "Chulik Dress", "desc": "Easy one-piece Hanbok" },
-      "뷔스티에": { "title": "Bustier", "desc": "Layered styling point" },
-      "허리치마": { "title": "Waist Skirt", "desc": "Everyday wrap skirt" },
-      "앞치마": { "title": "Apron", "desc": "Practical daily apron" },
-      "두건 및 악세사리": { "title": "Headwear & Accessories", "desc": "Headwear · Pouches" }
+      "신상품": { "title": "New Arrivals", "desc": "Latest products of the year" },
+      "남성 생활한복": { "title": "Men's Hanbok", "desc": "Casual jeogori & pants" },
+      "여성 생활한복": { "title": "Women's Hanbok", "desc": "Modern & minimal silhouettes" },
+      "어린이 한복": { "title": "Children's Hanbok", "desc": "Cute everyday wear" },
+      "철릭원피스": { "title": "Cheollik Dress", "desc": "Easy one-piece hanbok" },
+      "뷔스티에": { "title": "Bustier", "desc": "Layered fashion" },
+      "허리치마": { "title": "Skirt", "desc": "Casual wrap skirt" },
+      "앞치마": { "title": "Apron", "desc": "Everyday apron" },
+      "두건 및 악세사리": { "title": "Accessories", "desc": "Headwear & pouches" }
+    },
+    "best": {
+      "title": "Best Sellers",
+      "subtitle": "Discover the most loved items."
+    },
+    "story": {
+      "title": "Our Story",
+      "text": "We research comfortable patterns and natural fabrics so you can enjoy the beauty of Hanbok every day."
+    },
+    "size": {
+      "title": "Sizes & Custom",
+      "guide": "Size Guide",
+      "custom": "Custom Order",
+      "policy": "Payment / Shipping / Exchange"
+    },
+    "reviews": { "title": "Customer Reviews" },
+    "store": {
+      "title": "Store Info",
+      "address": "206, Jungang Mall, 70 Taepyeong 3-gil, Wansan-gu, Jeonju, Korea"
+    },
+    "newsletter": {
+      "title": "Subscribe for Updates",
+      "subtitle": "Leave your email to receive seasonal collections and news.",
+      "placeholder": "your@email.com",
+      "button": "Subscribe"
+    },
+    "footer": {
+      "customer": "Customer Service",
+      "links": {
+        "shipping": "Shipping / Exchange / Refund Policy",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service"
+      },
+      "quick": "Quick Links"
     }
   }
 }
