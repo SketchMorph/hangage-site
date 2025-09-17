@@ -4,15 +4,6 @@ import { Helmet } from "react-helmet";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import {
-  Check,
-  Phone,
-  MapPin,
-  ShoppingBag,
-  Instagram,
-  Settings,
-} from "lucide-react";
 import { createClient } from "@supabase/supabase-js";
 
 // ✅ 다국어 JSON import
@@ -30,17 +21,17 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 
-// ✅ 메인 9개 카테고리 (대표 이미지 고정)
+// ✅ 메인 9개 카테고리 (slug + 대표 이미지 고정)
 const MAIN_CATEGORIES = [
-  { key: "신상품", img: "/danP001.png" },
-  { key: "남성 생활한복", img: "/maleB002.png" },
-  { key: "여성 생활한복", img: "/hanW001.png" },
-  { key: "어린이 한복", img: "/childP001.png" },
-  { key: "철릭원피스", img: "/oneW001.png" },
-  { key: "뷔스티에", img: "/strapB001.png" },
-  { key: "허리치마", img: "/skirtB001.png" },
-  { key: "앞치마", img: "/apronB001.png" },
-  { key: "두건 및 악세사리", img: "/hairP001.png" },
+  { slug: "new", title: "신상품", img: "/danP001.png" },
+  { slug: "men", title: "남성 생활한복", img: "/maleB002.png" },
+  { slug: "women", title: "여성 생활한복", img: "/hanW001.png" },
+  { slug: "kids", title: "어린이 한복", img: "/childP001.png" },
+  { slug: "cheolik", title: "철릭원피스", img: "/oneW001.png" },
+  { slug: "bustier", title: "뷔스티에", img: "/strapB001.png" },
+  { slug: "skirt", title: "허리치마", img: "/skirtB001.png" },
+  { slug: "apron", title: "앞치마", img: "/apronB001.png" },
+  { slug: "accessories", title: "두건 및 악세사리", img: "/hairP001.png" },
 ];
 
 export default function HanbokLanding({ lang = "ko" }) {
@@ -72,9 +63,7 @@ export default function HanbokLanding({ lang = "ko" }) {
     async function loadData() {
       const { data: products, error } = await supabase
         .from("product")
-        .select(
-          "id, name_ko, name_en, name_fr, name_ja, name_zh, price, images"
-        )
+        .select("id, name_ko, name_en, name_fr, name_ja, name_zh, price, images")
         .eq("is_active", true);
 
       if (error) {
@@ -110,8 +99,12 @@ export default function HanbokLanding({ lang = "ko" }) {
         <div className="absolute inset-0 bg-white/60" />
         <div className="relative max-w-6xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <h1 className="text-3xl md:text-5xl font-bold leading-tight">{dict.hero?.headline}</h1>
-            <p className="mt-4 text-base md:text-lg text-gray-700">{dict.hero?.subtext}</p>
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+              {dict.hero?.headline}
+            </h1>
+            <p className="mt-4 text-base md:text-lg text-gray-700">
+              {dict.hero?.subtext}
+            </p>
             <div className="mt-6 flex gap-3">
               <Link href={`/${lang}/products`}>
                 <Button size="lg" className="rounded-2xl bg-blue-900 hover:bg-blue-800">
@@ -132,19 +125,18 @@ export default function HanbokLanding({ lang = "ko" }) {
         </div>
       </section>
 
-      {/* 카테고리 (9개 고정) */}
+      {/* 카테고리 (slug 방식) */}
       <section id="categories" className="max-w-6xl mx-auto px-4 py-16">
         <h2 className="text-2xl md:text-3xl font-bold">{dict.categories?.title}</h2>
         <p className="text-gray-600 mt-2">{dict.categories?.subtitle}</p>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
           {MAIN_CATEGORIES.map((c, i) => (
-            <Link key={i} href={`/${lang}/products?cat=${c.key}`} className="group">
+            <Link key={i} href={`/${lang}/lookbook/${c.slug}`} className="group">
               <div className="aspect-[3/2] rounded-2xl overflow-hidden bg-gray-100">
-                <img src={c.img} alt={c.key} className="w-full h-full object-cover" />
+                <img src={c.img} alt={c.title} className="w-full h-full object-cover" />
               </div>
               <div className="mt-3">
-                <div className="font-semibold">{c.key}</div>
-                <div className="text-sm text-gray-600">{dict.categories?.subtitle}</div>
+                <div className="font-semibold">{c.title}</div>
               </div>
             </Link>
           ))}
@@ -169,7 +161,9 @@ export default function HanbokLanding({ lang = "ko" }) {
                 <CardContent className="p-4">
                   <div className="flex items-start justify-between gap-2">
                     <div>
-                      <div className="font-semibold">{b[`name_${lang}`] || b.name_ko}</div>
+                      <div className="font-semibold">
+                        {b[`name_${lang}`] || b.name_ko}
+                      </div>
                       <div className="text-sm text-gray-600">시즌 베스트</div>
                     </div>
                     <div className="font-semibold">
