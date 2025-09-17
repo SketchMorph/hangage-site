@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
-import { Card, CardContent } from "@/components/ui/card";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -16,80 +15,79 @@ export default function LookbookPage() {
 
   useEffect(() => {
     async function loadData() {
-      // 1. 해당 slug 룩북 불러오기
-      const { data: lb, error: lbError } = await supabase
+      const { data: lb } = await supabase
         .from("lookbook")
         .select("*")
         .eq("season", slug)
         .eq("is_active", true)
         .single();
 
-      if (lbError || !lb) {
-        console.error(lbError);
-        return;
-      }
+      if (!lb) return;
       setLookbook(lb);
 
-      // 2. 연결된 상품 불러오기
-      const { data: items, error: joinError } = await supabase
+      const { data: items } = await supabase
         .from("lookbook_products")
         .select("product(*)")
         .eq("lookbook_id", lb.id);
 
-      if (joinError) {
-        console.error(joinError);
-        return;
-      }
-
-      setProducts(items.map((i) => i.product));
+      setProducts(items?.map((i) => i.product) || []);
     }
-
     loadData();
   }, [slug]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4 py-20">
-        {/* 타이틀 */}
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 mb-4">
-          {lookbook?.[`title_${lang}`] || lookbook?.title_ko || slug}
-        </h1>
-        <p className="text-lg text-gray-600 mb-12">
-          {lookbook?.[`description_${lang}`] ||
-            lookbook?.description_ko ||
-            `계절과 조화를 이루는 ${slug} 컬렉션을 만나보세요.`}
-        </p>
+    <div className="bg-white min-h-screen">
+      {/* Hero 영역 */}
+      <section className="relative w-full h-[60vh] overflow-hidden">
+        <img
+          src={lookbook?.images?.[0] || "/placeholder-hero.jpg"}
+          alt={lookbook?.[`title_${lang}`] || lookbook?.title_ko || slug}
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+        <div className="absolute bottom-16 left-1/2 -translate-x-1/2 text-center text-white">
+          <h1 className="text-4xl md:text-5xl font-light tracking-wide">
+            {lookbook?.[`title_${lang}`] || lookbook?.title_ko}
+          </h1>
+          <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg font-light opacity-90">
+            {lookbook?.[`description_${lang}`] ||
+              lookbook?.description_ko ||
+              `계절과 조화를 이루는 ${slug} 컬렉션을 만나보세요.`}
+          </p>
+        </div>
+      </section>
 
-        {/* 연결된 상품 카드 */}
+      {/* 룩북 상품 섹션 */}
+      <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
         {products.length === 0 ? (
-          <p className="text-gray-500">아직 등록된 상품이 없습니다.</p>
+          <p className="text-gray-500 text-center">
+            아직 등록된 상품이 없습니다.
+          </p>
         ) : (
-          <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-3">
             {products.map((p) => (
-              <Card
+              <div
                 key={p.id}
-                className="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition bg-white"
+                className="group relative overflow-hidden rounded-2xl bg-gray-100 shadow-sm hover:shadow-lg transition"
               >
-                <div className="aspect-square bg-gray-100">
-                  <img
-                    src={p.images?.[0] || "/placeholder.jpg"}
-                    alt={p[`name_${lang}`] || p.name_ko}
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-                <CardContent className="p-5">
-                  <h2 className="text-lg font-semibold text-gray-900">
+                <img
+                  src={p.images?.[0] || "/placeholder.jpg"}
+                  alt={p[`name_${lang}`] || p.name_ko}
+                  className="w-full h-[420px] object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/40 to-transparent p-6">
+                  <h2 className="text-white text-lg font-medium">
                     {p[`name_${lang}`] || p.name_ko}
                   </h2>
-                  <p className="text-sm text-gray-600 mt-1">
+                  <p className="text-gray-200 text-sm mt-1">
                     {p.price ? `${p.price.toLocaleString()} 원` : "문의 가능"}
                   </p>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         )}
-      </div>
+      </section>
     </div>
   );
 }
