@@ -1,0 +1,56 @@
+{
+  "navbar": {
+    "home": "韩服商店",
+    "products": "商品",
+    "admin": "新增商品"
+  },
+  "landing": {
+    "hero": {
+      "headline": "我们的衣服，明亮的韩式风格",
+      "subtext": "会呼吸的面料，自然的剪裁，展现韩国之美。从上班到周末，舒适随行。",
+      "ctaProducts": "查看新品",
+      "ctaLookbook": "查看造型集",
+      "benefit1": "韩国制造 · 天然面料为主",
+      "benefit2": "支持定制尺寸",
+      "benefit3": "不支持退换货",
+      "benefit4": "满50,000韩元免运费"
+    },
+    "categories": {
+      "title": "分类",
+      "subtitle": "选择您喜欢的风格。"
+    },
+    "best": {
+      "title": "人气商品",
+      "subtitle": "发现最受欢迎的单品。"
+    },
+    "story": {
+      "title": "我们的故事",
+      "text": "为了让韩服能在日常生活中享受，我们研究舒适的版型和天然材质。"
+    },
+    "size": {
+      "title": "尺寸 & 定制",
+      "guide": "尺寸指南",
+      "custom": "定制服务",
+      "policy": "付款/配送/政策"
+    },
+    "store": {
+      "title": "门店信息",
+      "address": "韩国 全州市 完山区 太平3街70号 中央商街 2层206号"
+    },
+    "newsletter": {
+      "title": "订阅最新资讯",
+      "subtitle": "留下邮箱，即可收到最新系列与活动信息。",
+      "placeholder": "your@email.com",
+      "button": "订阅"
+    },
+    "footer": {
+      "customer": "客户服务",
+      "links": {
+        "shipping": "配送/退换货政策",
+        "privacy": "隐私政策",
+        "terms": "使用条款"
+      },
+      "quick": "快速链接"
+    }
+  }
+}
