@@ -1,0 +1,56 @@
+{
+  "navbar": {
+    "home": "Hanbok Store",
+    "products": "Products",
+    "admin": "Add Product"
+  },
+  "landing": {
+    "hero": {
+      "headline": "Our Clothes, Bright Hanstyle",
+      "subtext": "Breathing fabrics, natural silhouettes, and Korean beauty. From weekdays to weekends, wear comfort and elegance.",
+      "ctaProducts": "View New Arrivals",
+      "ctaLookbook": "View Lookbook",
+      "benefit1": "Made in Korea · Natural Fabrics",
+      "benefit2": "Custom Sizing Available",
+      "benefit3": "No Returns or Refunds",
+      "benefit4": "Free Shipping Over 50,000 KRW"
+    },
+    "categories": {
+      "title": "Categories",
+      "subtitle": "Choose the style you like."
+    },
+    "best": {
+      "title": "Best Items",
+      "subtitle": "Discover our most loved pieces."
+    },
+    "story": {
+      "title": "Our Story",
+      "text": "We design comfortable patterns with natural fabrics so hanbok can be enjoyed in everyday life."
+    },
+    "size": {
+      "title": "Size & Custom",
+      "guide": "Size Guide",
+      "custom": "Custom Orders",
+      "policy": "Payment/Delivery/Policy"
+    },
+    "store": {
+      "title": "Store Info",
+      "address": "2F, 206 Jungang Arcade, Taepyeong 3-gil 70, Wansan-gu, Jeonju, Korea"
+    },
+    "newsletter": {
+      "title": "Get Updates",
+      "subtitle": "Leave your email to receive news about seasonal collections and events.",
+      "placeholder": "your@email.com",
+      "button": "Subscribe"
+    },
+    "footer": {
+      "customer": "Customer Care",
+      "links": {
+        "shipping": "Shipping/Return Policy",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service"
+      },
+      "quick": "Quick Links"
+    }
+  }
+}
