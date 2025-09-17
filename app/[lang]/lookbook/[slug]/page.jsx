@@ -11,54 +11,85 @@ const supabase = createClient(
 
 export default function LookbookPage() {
   const { lang, slug } = useParams();
-  const [lookbooks, setLookbooks] = useState([]);
+  const [lookbook, setLookbook] = useState(null);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     async function loadData() {
-      const { data, error } = await supabase
+      // 1. 해당 slug 룩북 불러오기
+      const { data: lb, error: lbError } = await supabase
         .from("lookbook")
         .select("*")
-        .eq("season", slug) // ← 여기 slug 기준 (season 컬럼 사용)
-        .eq("is_active", true);
+        .eq("season", slug)
+        .eq("is_active", true)
+        .single();
 
-      if (error) {
-        console.error(error);
+      if (lbError || !lb) {
+        console.error(lbError);
         return;
       }
-      setLookbooks(data || []);
+      setLookbook(lb);
+
+      // 2. 연결된 상품 불러오기
+      const { data: items, error: joinError } = await supabase
+        .from("lookbook_products")
+        .select("product(*)")
+        .eq("lookbook_id", lb.id);
+
+      if (joinError) {
+        console.error(joinError);
+        return;
+      }
+
+      setProducts(items.map((i) => i.product));
     }
+
     loadData();
   }, [slug]);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-16">
-      <h1 className="text-3xl font-bold mb-8">{slug} 룩북</h1>
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 py-20">
+        {/* 타이틀 */}
+        <h1 className="text-4xl font-bold tracking-tight text-gray-900 mb-4">
+          {lookbook?.[`title_${lang}`] || lookbook?.title_ko || slug}
+        </h1>
+        <p className="text-lg text-gray-600 mb-12">
+          {lookbook?.[`description_${lang}`] ||
+            lookbook?.description_ko ||
+            `계절과 조화를 이루는 ${slug} 컬렉션을 만나보세요.`}
+        </p>
 
-      {lookbooks.length === 0 ? (
-        <p className="text-gray-500">아직 등록된 룩북이 없습니다.</p>
-      ) : (
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {lookbooks.map((lb) => (
-            <Card key={lb.id} className="rounded-2xl overflow-hidden">
-              <div className="aspect-[3/4] bg-gray-100">
-                <img
-                  src={lb.images?.[0] || "/placeholder.jpg"}
-                  alt={lb[`title_${lang}`] || lb.title_ko}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <CardContent className="p-4">
-                <h2 className="text-lg font-semibold">
-                  {lb[`title_${lang}`] || lb.title_ko}
-                </h2>
-                <p className="text-sm text-gray-600 mt-2">
-                  {lb[`description_${lang}`] || lb.description_ko}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      )}
+        {/* 연결된 상품 카드 */}
+        {products.length === 0 ? (
+          <p className="text-gray-500">아직 등록된 상품이 없습니다.</p>
+        ) : (
+          <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+            {products.map((p) => (
+              <Card
+                key={p.id}
+                className="rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition bg-white"
+              >
+                <div className="aspect-square bg-gray-100">
+                  <img
+                    src={p.images?.[0] || "/placeholder.jpg"}
+                    alt={p[`name_${lang}`] || p.name_ko}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <CardContent className="p-5">
+                  <h2 className="text-lg font-semibold text-gray-900">
+                    {p[`name_${lang}`] || p.name_ko}
+                  </h2>
+                  <p className="text-sm text-gray-600 mt-1">
+                    {p.price ? `${p.price.toLocaleString()} 원` : "문의 가능"}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
