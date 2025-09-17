@@ -1,0 +1,56 @@
+{
+  "navbar": {
+    "home": "Boutique Hanbok",
+    "products": "Produits",
+    "admin": "Ajouter un produit"
+  },
+  "landing": {
+    "hero": {
+      "headline": "Notre vêtement, Hanstyle Bright",
+      "subtext": "Des tissus respirants, des silhouettes naturelles et la beauté coréenne. Du quotidien au week-end, alliez confort et élégance.",
+      "ctaProducts": "Voir les nouveautés",
+      "ctaLookbook": "Voir le lookbook",
+      "benefit1": "Fabriqué en Corée · Tissus naturels",
+      "benefit2": "Tailles personnalisées disponibles",
+      "benefit3": "Pas de retours ni de remboursements",
+      "benefit4": "Livraison gratuite dès 50,000 KRW"
+    },
+    "categories": {
+      "title": "Catégories",
+      "subtitle": "Choisissez votre style."
+    },
+    "best": {
+      "title": "Meilleurs Produits",
+      "subtitle": "Découvrez nos articles les plus appréciés."
+    },
+    "story": {
+      "title": "Notre Histoire",
+      "text": "Nous concevons des motifs confortables avec des tissus naturels pour que le hanbok s’intègre dans la vie quotidienne."
+    },
+    "size": {
+      "title": "Tailles & Sur-mesure",
+      "guide": "Guide des tailles",
+      "custom": "Commande personnalisée",
+      "policy": "Paiement/Livraison/Politique"
+    },
+    "store": {
+      "title": "Informations Boutique",
+      "address": "2F, 206 Jungang Arcade, Taepyeong 3-gil 70, Wansan-gu, Jeonju, Corée"
+    },
+    "newsletter": {
+      "title": "Recevoir les nouveautés",
+      "subtitle": "Laissez votre e-mail pour recevoir les nouvelles collections et événements.",
+      "placeholder": "votre@email.com",
+      "button": "S'abonner"
+    },
+    "footer": {
+      "customer": "Service client",
+      "links": {
+        "shipping": "Politique d’expédition/retours",
+        "privacy": "Politique de confidentialité",
+        "terms": "Conditions générales"
+      },
+      "quick": "Liens rapides"
+    }
+  }
+}
