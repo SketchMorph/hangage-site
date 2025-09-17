@@ -8,6 +8,19 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 
+// ✅ Hero 이미지 매핑
+const HERO_IMAGES = {
+  new: "/lookbooks/new/hero.jpg",
+  men: "/lookbooks/men/hero.jpg",
+  women: "/lookbooks/women/hero.jpg",
+  kids: "/lookbooks/kids/hero.jpg",
+  cheolik: "/lookbooks/cheolik/hero.jpg",
+  bustier: "/lookbooks/bustier/hero.jpg",
+  skirt: "/lookbooks/skirt/hero.jpg",
+  apron: "/lookbooks/apron/hero.jpg",
+  accessories: "/lookbooks/accessories/hero.jpg"
+};
+
 export default function LookbookPage() {
   const { lang, slug } = useParams();
   const [lookbook, setLookbook] = useState(null);
@@ -22,15 +35,14 @@ export default function LookbookPage() {
         .eq("is_active", true)
         .single();
 
-      if (!lb) return;
-      setLookbook(lb);
+      if (lb) setLookbook(lb);
 
       const { data: items } = await supabase
         .from("lookbook_products")
         .select("product(*)")
-        .eq("lookbook_id", lb.id);
+        .eq("lookbook_id", lb?.id);
 
-      setProducts(items?.map((i) => i.product) || []);
+      if (items) setProducts(items.map((i) => i.product));
     }
     loadData();
   }, [slug]);
@@ -40,14 +52,14 @@ export default function LookbookPage() {
       {/* Hero 영역 */}
       <section className="relative w-full h-[60vh] overflow-hidden">
         <img
-          src={lookbook?.images?.[0] || "/placeholder-hero.jpg"}
-          alt={lookbook?.[`title_${lang}`] || lookbook?.title_ko || slug}
+          src={HERO_IMAGES[slug] || "/placeholder-hero.jpg"}
+          alt={`${slug} hero`}
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
         <div className="absolute bottom-16 left-1/2 -translate-x-1/2 text-center text-white">
           <h1 className="text-4xl md:text-5xl font-light tracking-wide">
-            {lookbook?.[`title_${lang}`] || lookbook?.title_ko}
+            {lookbook?.[`title_${lang}`] || lookbook?.title_ko || slug}
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg font-light opacity-90">
             {lookbook?.[`description_${lang}`] ||
@@ -57,12 +69,10 @@ export default function LookbookPage() {
         </div>
       </section>
 
-      {/* 룩북 상품 섹션 */}
+      {/* 상품 목록 */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
         {products.length === 0 ? (
-          <p className="text-gray-500 text-center">
-            아직 등록된 상품이 없습니다.
-          </p>
+          <p className="text-gray-500 text-center">아직 등록된 상품이 없습니다.</p>
         ) : (
           <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-3">
             {products.map((p) => (
