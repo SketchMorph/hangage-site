@@ -33,18 +33,7 @@ export default function Navbar() {
         <Link href={`/${lang}/products`} className="hover:text-blue-600">
           {dict.navbar.products}
         </Link>
-        <Link href={`/${lang}/cart`} className="hover:text-blue-600">
-          {dict.navbar.cart}
-        </Link>
-        <Link href={`/${lang}/orders`} className="hover:text-blue-600">
-          {dict.navbar.orders}
-        </Link>
-        <Link href={`/${lang}/login`} className="hover:text-blue-600">
-          {dict.navbar.login}
-        </Link>
-        <Link href={`/${lang}/signup`} className="hover:text-blue-600">
-          {dict.navbar.signup}
-        </Link>
+
         <Link
           href={`/${lang}/admin`}
           className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
