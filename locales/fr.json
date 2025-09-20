@@ -61,4 +61,22 @@
     },
     "store": {
       "title": "Infos boutique",
-      "address": "2
+      "address": "2F, 206, Jungang Sangga, Tae-pyeong 3-gil 70, Wansan-gu, Jeonju"
+    },
+    "newsletter": {
+      "title": "Recevoir les nouvelles",
+      "subtitle": "Laissez votre email pour recevoir des infos sur les collections et événements.",
+      "placeholder": "votre@email.com",
+      "button": "S'abonner"
+    },
+    "footer": {
+      "customer": "Infos client",
+      "links": {
+        "shipping": "Politique de livraison/retour",
+        "privacy": "Politique de confidentialité",
+        "terms": "Conditions d'utilisation"
+      },
+      "quick": "Liens rapides"
+    }
+  }
+}
