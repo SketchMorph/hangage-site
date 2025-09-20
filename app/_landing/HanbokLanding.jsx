@@ -14,7 +14,7 @@ import zhDict from "@/locales/zh.json";
 
 const dictionaries = { en: enDict, ko: koDict, fr: frDict, ja: jaDict, zh: zhDict };
 
-// ✅ 메인 9개 카테고리 (title은 JSON에서 불러옴)
+// ✅ 메인 9개 카테고리
 const MAIN_CATEGORIES = [
   { slug: "new", img: "/danP001.png" },
   { slug: "men", img: "/maleB002.png" },
@@ -136,49 +136,19 @@ export default function HanbokLanding({ lang = "ko" }) {
             <table className="w-full border border-gray-200 text-sm">
               <thead className="bg-gray-100">
                 <tr>
-                  <th className="border p-2">사이즈</th>
-                  <th className="border p-2">총장</th>
-                  <th className="border p-2">가슴둘레</th>
-                  <th className="border p-2">소매길이</th>
-                  <th className="border p-2">권장 키</th>
+                  {dict.size?.table?.headers.map((h, i) => (
+                    <th key={i} className="border p-2">{h}</th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="border p-2">S</td>
-                  <td className="border p-2">115</td>
-                  <td className="border p-2">88</td>
-                  <td className="border p-2">55</td>
-                  <td className="border p-2">150-160cm</td>
-                </tr>
-                <tr>
-                  <td className="border p-2">M</td>
-                  <td className="border p-2">120</td>
-                  <td className="border p-2">94</td>
-                  <td className="border p-2">56</td>
-                  <td className="border p-2">160-170cm</td>
-                </tr>
-                <tr>
-                  <td className="border p-2">L</td>
-                  <td className="border p-2">125</td>
-                  <td className="border p-2">100</td>
-                  <td className="border p-2">57</td>
-                  <td className="border p-2">165-175cm</td>
-                </tr>
-                <tr>
-                  <td className="border p-2">XL</td>
-                  <td className="border p-2">130</td>
-                  <td className="border p-2">108</td>
-                  <td className="border p-2">58</td>
-                  <td className="border p-2">170-180cm</td>
-                </tr>
-                <tr>
-                  <td className="border p-2">XXL</td>
-                  <td className="border p-2">135</td>
-                  <td className="border p-2">116</td>
-                  <td className="border p-2">59</td>
-                  <td className="border p-2">175-185cm</td>
-                </tr>
+                {dict.size?.table?.rows.map((row, rIdx) => (
+                  <tr key={rIdx}>
+                    {row.map((cell, cIdx) => (
+                      <td key={cIdx} className="border p-2">{cell}</td>
+                    ))}
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
