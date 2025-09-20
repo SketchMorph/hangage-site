@@ -17,7 +17,18 @@
     },
     "categories": {
       "title": "카테고리",
-      "subtitle": "원하시는 스타일을 골라보세요."
+      "subtitle": "원하시는 스타일을 골라보세요.",
+      "items": {
+        "new": "신상품",
+        "men": "남성 생활한복",
+        "women": "여성 생활한복",
+        "kids": "어린이 한복",
+        "cheolik": "철릭원피스",
+        "bustier": "뷔스티에",
+        "skirt": "허리치마",
+        "apron": "앞치마",
+        "accessories": "두건 및 악세사리"
+      }
     },
     "best": {
       "title": "베스트 상품",
