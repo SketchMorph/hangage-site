@@ -40,7 +40,7 @@ export default function AboutPage() {
           </div>
           <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
             <img
-              src="/about/1.jpg"
+              src="/brand1.jpg"
               alt="Philosophy"
               className="w-full h-full object-cover"
             />
@@ -59,7 +59,7 @@ export default function AboutPage() {
           </div>
           <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg md:order-1">
             <img
-              src="/about/2.jpg"
+              src="/brand2.jpg"
               alt="Craftsmanship"
               className="w-full h-full object-cover"
             />
@@ -78,7 +78,7 @@ export default function AboutPage() {
           </div>
           <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
             <img
-              src="/about/3.jpg"
+              src="/brand3.jpg"
               alt="Heritage"
               className="w-full h-full object-cover"
             />
@@ -97,7 +97,7 @@ export default function AboutPage() {
           </div>
           <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg md:order-1">
             <img
-              src="/about/4.jpg"
+              src="/brand4.jpg"
               alt="Vision"
               className="w-full h-full object-cover"
             />
