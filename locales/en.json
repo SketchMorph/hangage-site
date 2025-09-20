@@ -1,51 +1,51 @@
 {
   "navbar": {
-    "home": "한복 상점",
-    "products": "카테고리",
-    "lookbook": "룩북",
-    "about": "브랜드 소개",
-    "contact": "문의",
-    "admin": "상품 추가"
+    "home": "Hanbok Store",
+    "products": "Categories",
+    "lookbook": "Lookbook",
+    "about": "About Us",
+    "contact": "Contact",
+    "admin": "Add Product"
   },
   "landing": {
     "hero": {
-      "headline": "우리옷 상점, 한스타일 '밝은' 상점",
-      "subtext": "통기성 좋은 원단, 자연스러운 실루엣, 그리고 한국적 아름다움. 일상에서 주말 외출까지 함께하세요.",
-      "ctaProducts": "신상품 보기",
-      "ctaLookbook": "룩북 보기"
+      "headline": "Our Clothes Shop, Bright Han Style",
+      "subtext": "Breathable fabrics, natural silhouettes, and Korean beauty. From the office to weekend outings.",
+      "ctaProducts": "View New Arrivals",
+      "ctaLookbook": "View Lookbook"
     },
     "categories": {
-      "title": "카테고리",
-      "subtitle": "원하는 스타일을 선택하세요.",
+      "title": "Categories",
+      "subtitle": "Choose your preferred style.",
       "items": {
-        "new": "신상품",
-        "men": "남성 한복",
-        "women": "여성 한복",
-        "kids": "어린이 한복",
-        "cheolik": "철릭 원피스",
-        "bustier": "뷔스티에",
-        "skirt": "허리치마",
-        "apron": "앞치마",
-        "accessories": "두건 & 액세서리"
+        "new": "New Arrivals",
+        "men": "Men's Hanbok",
+        "women": "Women's Hanbok",
+        "kids": "Kids' Hanbok",
+        "cheolik": "Cheolik Dress",
+        "bustier": "Bustier",
+        "skirt": "Hanbok Skirt",
+        "apron": "Apron",
+        "accessories": "Headscarf & Accessories"
       }
     },
     "shop": {
-      "title": "쇼핑몰 바로가기",
-      "subtitle": "Cafe24와 네이버 스마트스토어에서 더 많은 상품을 만나보세요.",
-      "cafe24": "Cafe24로 이동",
-      "smartstore": "스마트스토어로 이동"
+      "title": "Shop Links",
+      "subtitle": "Find more products on Cafe24 and Naver Smartstore.",
+      "cafe24": "Go to Cafe24",
+      "smartstore": "Go to Smartstore"
     },
     "story": {
-      "title": "브랜드 이야기",
-      "text": "한복의 아름다움을 일상에 담기 위해 직접 패턴과 원단을 디자인합니다."
+      "title": "Our Story",
+      "text": "We design fabrics and patterns to bring the beauty of hanbok into everyday life."
     },
     "size": {
-      "title": "사이즈 & 맞춤",
-      "guide": "표준 사이즈표 (단위: cm, 괄호 안은 inch)",
-      "custom": "체형과 길이에 맞춘 맞춤 주문 가능",
-      "policy": "결제 · 배송 · 교환/환불 정책",
+      "title": "Size & Custom",
+      "guide": "Standard size chart (unit: cm, inches in parentheses)",
+      "custom": "Custom orders available for body and length adjustments",
+      "policy": "Payment · Shipping · Return/Exchange Policy",
       "table": {
-        "headers": ["사이즈", "총장", "가슴둘레", "소매길이", "권장 키"],
+        "headers": ["Size", "Length", "Chest", "Sleeve", "Recommended Height"],
         "rows": [
           ["S", "115 (45.3\")", "88 (34.6\")", "55 (21.6\")", "150-160cm"],
           ["M", "120 (47.2\")", "94 (37.0\")", "56 (22.0\")", "160-170cm"],
@@ -56,23 +56,23 @@
       }
     },
     "store": {
-      "title": "매장 정보",
-      "address": "전주시 완산구 태평3길 70 중앙상가 206호 2F"
+      "title": "Store Info",
+      "address": "2F, 206, Jungang Sangga, Tae-pyeong 3-gil 70, Wansan-gu, Jeonju"
     },
     "newsletter": {
-      "title": "소식 받기",
-      "subtitle": "컬렉션 및 이벤트 소식을 받아보세요.",
+      "title": "Get Updates",
+      "subtitle": "Leave your email to receive collection and event news.",
       "placeholder": "your@email.com",
-      "button": "구독하기"
+      "button": "Subscribe"
     },
     "footer": {
-      "customer": "고객 안내",
+      "customer": "Customer Info",
       "links": {
-        "shipping": "배송/반품 정책",
-        "privacy": "개인정보 처리방침",
-        "terms": "이용 약관"
+        "shipping": "Shipping/Return Policy",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Use"
       },
-      "quick": "바로가기"
+      "quick": "Quick Links"
     }
   }
 }
