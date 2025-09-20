@@ -1,22 +1,10 @@
 {
-  "navbar": {
-    "home": "Boutique Hanbok",
-    "products": "Catégories",
-    "lookbook": "Lookbook",
-    "about": "À propos",
-    "contact": "Contact",
-    "admin": "Ajouter un produit"
-  },
   "landing": {
     "hero": {
       "headline": "Notre boutique, Han Style lumineux",
       "subtext": "Tissus respirants, silhouettes naturelles et beauté coréenne. Du bureau aux sorties du week-end.",
       "ctaProducts": "Voir les nouveautés",
-      "ctaLookbook": "Voir le lookbook",
-      "benefit1": "Fabriqué en Corée · Tissus naturels",
-      "benefit2": "Tailles & options sur mesure",
-      "benefit3": "Pas de retours/remboursements",
-      "benefit4": "Livraison gratuite dès 50 000 KRW"
+      "ctaLookbook": "Voir le lookbook"
     },
     "categories": {
       "title": "Catégories",
@@ -45,19 +33,10 @@
     },
     "size": {
       "title": "Tailles & sur mesure",
-      "guide": "Tableau des tailles standard (unité : cm)",
+      "guide": "Tableau des tailles standard (unité : cm, pouces entre parenthèses)",
       "custom": "Commandes sur mesure adaptées à votre morphologie et longueur souhaitée",
       "policy": "Paiement, livraison et politique de retour/échange",
-      "table": {
-        "headers": ["Taille", "Longueur", "Poitrine", "Manche", "Taille recommandée"],
-        "rows": [
-          ["S", "115", "88", "55", "150-160cm"],
-          ["M", "120", "94", "56", "160-170cm"],
-          ["L", "125", "100", "57", "165-175cm"],
-          ["XL", "130", "108", "58", "170-180cm"],
-          ["XXL", "135", "116", "59", "175-185cm"]
-        ]
-      }
+      "tableHeaders": ["Taille", "Longueur", "Poitrine", "Manche", "Taille recommandée"]
     },
     "store": {
       "title": "Infos boutique",
@@ -68,15 +47,6 @@
       "subtitle": "Laissez votre email pour recevoir des infos sur les collections et événements.",
       "placeholder": "votre@email.com",
       "button": "S'abonner"
-    },
-    "footer": {
-      "customer": "Infos client",
-      "links": {
-        "shipping": "Politique de livraison/retour",
-        "privacy": "Politique de confidentialité",
-        "terms": "Conditions d'utilisation"
-      },
-      "quick": "Liens rapides"
     }
   }
 }
