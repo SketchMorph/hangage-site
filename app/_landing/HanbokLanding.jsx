@@ -2,7 +2,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Link from "next/link";
-import Image from "next/image";   // ✅ 이미지 최적화용 import 추가
+import Image from "next/image";   // ✅ 이미지 최적화용
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -36,7 +36,10 @@ export default function HanbokLanding({ lang = "ko" }) {
     <div className="min-h-screen bg-white text-gray-900">
       <Helmet>
         <title>{dict.hero?.headline || "한가게"}</title>
-        <meta name="description" content={dict.hero?.subtext || "생활한복 전문점"} />
+        <meta
+          name="description"
+          content={dict.hero?.subtext || "생활한복 전문점"}
+        />
       </Helmet>
 
       {/* Hero */}
@@ -64,6 +67,12 @@ export default function HanbokLanding({ lang = "ko" }) {
                 className="border-white text-white hover:bg-white/20 rounded-full px-6 py-3"
               >
                 {dict.hero?.ctaLookbook}
+              </Button>
+            </Link>
+            {/* ✅ 문의하기 버튼 → contact 섹션 이동 */}
+            <Link href={`/${lang}#contact`}>
+              <Button className="bg-green-600 hover:bg-green-500 rounded-full px-6 py-3 text-white">
+                문의하기
               </Button>
             </Link>
           </div>
@@ -117,21 +126,18 @@ export default function HanbokLanding({ lang = "ko" }) {
         </div>
       </section>
 
-      {/* ✅ Brand Story */}
+      {/* Brand Story */}
       <section className="max-w-4xl mx-auto px-6 md:px-12 py-20 text-center">
         <h2 className="text-3xl font-semibold mb-6">{dict.story?.title}</h2>
-
-        {/* 대표 이미지 1장 고정 */}
         <div className="w-full h-64 relative mb-8 rounded-2xl overflow-hidden shadow-sm">
           <Image
-            src="/story01.jpg"   // 📂 public/brand/story01.jpg
+            src="/story01.jpg"
             alt="Brand Story"
             fill
             className="object-cover object-center"
             priority
           />
         </div>
-
         <p className="text-lg text-gray-600 leading-relaxed">
           {dict.story?.text}
         </p>
@@ -167,8 +173,11 @@ export default function HanbokLanding({ lang = "ko" }) {
         </div>
       </section>
 
-      {/* Store Info */}
-      <section className="max-w-6xl mx-auto px-6 md:px-12 py-20 grid md:grid-cols-2 gap-10">
+      {/* Store Info (문의 대상 섹션) */}
+      <section
+        id="contact"
+        className="max-w-6xl mx-auto px-6 md:px-12 py-20 grid md:grid-cols-2 gap-10"
+      >
         <div>
           <h2 className="text-3xl font-semibold mb-6">{dict.store?.title}</h2>
           <p className="text-lg text-gray-600">{dict.store?.address}</p>
