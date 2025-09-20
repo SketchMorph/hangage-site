@@ -1,4 +1,12 @@
 {
+  "navbar": {
+    "home": "Hanbok Store",
+    "products": "Products",
+    "lookbook": "Lookbook",
+    "about": "About",
+    "contact": "Contact",
+    "admin": "Add Product"
+  },
   "landing": {
     "hero": {
       "headline": "Our Clothes Shop, Bright Han Style",
@@ -47,6 +55,15 @@
       "subtitle": "Leave your email to receive collection and event news.",
       "placeholder": "your@email.com",
       "button": "Subscribe"
+    },
+    "footer": {
+      "customer": "Customer Info",
+      "links": {
+        "shipping": "Shipping/Return Policy",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Use"
+      },
+      "quick": "Quick Links"
     }
   }
 }
