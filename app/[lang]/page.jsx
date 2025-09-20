@@ -1,4 +1,5 @@
 "use client";
+
 import HanbokLanding from "../_landing/HanbokLanding";
 
 const SUPPORTED_LANGS = ["ko", "en", "fr", "ja", "zh"];
@@ -11,5 +12,6 @@ export default function LangHomePage({ params }) {
     lang = "ko";
   }
 
+  // ✅ lang props 전달
   return <HanbokLanding lang={lang} />;
 }
