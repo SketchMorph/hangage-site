@@ -1,4 +1,12 @@
 {
+  "navbar": {
+    "home": "韓服ストア",
+    "products": "カテゴリ",
+    "lookbook": "ルックブック",
+    "about": "ブランド紹介",
+    "contact": "お問い合わせ",
+    "admin": "商品追加"
+  },
   "landing": {
     "hero": {
       "headline": "私たちの服屋、明るい韓スタイル",
@@ -47,6 +55,15 @@
       "subtitle": "コレクションやイベントのニュースをお届けします。",
       "placeholder": "your@email.com",
       "button": "購読する"
+    },
+    "footer": {
+      "customer": "顧客情報",
+      "links": {
+        "shipping": "配送/返品ポリシー",
+        "privacy": "プライバシーポリシー",
+        "terms": "利用規約"
+      },
+      "quick": "クイックリンク"
     }
   }
 }
