@@ -47,7 +47,17 @@
       "title": "Size & Custom",
       "guide": "Standard size chart (unit: cm)",
       "custom": "Custom tailoring available for body and length preferences",
-      "policy": "Payment, shipping, and exchange/return policy"
+      "policy": "Payment, shipping, and exchange/return policy",
+      "table": {
+        "headers": ["Size", "Length", "Chest", "Sleeve", "Recommended Height"],
+        "rows": [
+          ["S", "115", "88", "55", "150-160cm"],
+          ["M", "120", "94", "56", "160-170cm"],
+          ["L", "125", "100", "57", "165-175cm"],
+          ["XL", "130", "108", "58", "170-180cm"],
+          ["XXL", "135", "116", "59", "175-185cm"]
+        ]
+      }
     },
     "store": {
       "title": "Store Info",
