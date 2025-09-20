@@ -1,0 +1,85 @@
+{
+  "navbar": {
+    "home": {
+      "ko": "한복 상점",
+      "en": "Hanbok Store",
+      "ja": "韓服ストア",
+      "zh": "韩服商店",
+      "fr": "Boutique Hanbok"
+    },
+    "products": {
+      "ko": "카테고리",
+      "en": "Products",
+      "ja": "カテゴリ",
+      "zh": "类别",
+      "fr": "Catégories"
+    },
+    "lookbook": {
+      "ko": "룩북",
+      "en": "Lookbook",
+      "ja": "ルックブック",
+      "zh": "画册",
+      "fr": "Lookbook"
+    },
+    "about": {
+      "ko": "브랜드 소개",
+      "en": "About",
+      "ja": "ブランド紹介",
+      "zh": "品牌介绍",
+      "fr": "À propos"
+    },
+    "contact": {
+      "ko": "문의",
+      "en": "Contact",
+      "ja": "お問い合わせ",
+      "zh": "联系",
+      "fr": "Contact"
+    },
+    "admin": {
+      "ko": "상품 추가",
+      "en": "Add Product",
+      "ja": "商品追加",
+      "zh": "添加商品",
+      "fr": "Ajouter un produit"
+    }
+  },
+  "footer": {
+    "customer": {
+      "ko": "고객 안내",
+      "en": "Customer Info",
+      "ja": "顧客情報",
+      "zh": "客户信息",
+      "fr": "Infos client"
+    },
+    "links": {
+      "shipping": {
+        "ko": "배송/반품 정책",
+        "en": "Shipping/Return Policy",
+        "ja": "配送/返品ポリシー",
+        "zh": "配送/退货政策",
+        "fr": "Politique de livraison/retour"
+      },
+      "privacy": {
+        "ko": "개인정보 처리방침",
+        "en": "Privacy Policy",
+        "ja": "プライバシーポリシー",
+        "zh": "隐私政策",
+        "fr": "Politique de confidentialité"
+      },
+      "terms": {
+        "ko": "이용 약관",
+        "en": "Terms of Use",
+        "ja": "利用規約",
+        "zh": "使用条款",
+        "fr": "Conditions d'utilisation"
+      }
+    },
+    "quick": {
+      "ko": "바로가기",
+      "en": "Quick Links",
+      "ja": "クイックリンク",
+      "zh": "快速链接",
+      "fr": "Liens rapides"
+    }
+  }
+}
