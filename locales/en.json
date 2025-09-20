@@ -2,6 +2,9 @@
   "navbar": {
     "home": "Hanbok Store",
     "products": "Products",
+    "lookbook": "Lookbook",
+    "about": "About",
+    "contact": "Contact",
     "admin": "Add Product"
   },
   "landing": {
