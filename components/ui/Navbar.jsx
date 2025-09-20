@@ -17,66 +17,40 @@ export default function Navbar() {
   const pathname = usePathname();
   let lang = pathname.split("/")[1];
   if (!SUPPORTED_LANGS.includes(lang)) {
-    lang = "en";
+    lang = "ko"; // 기본 언어를 한국어로
   }
-  const dict = dictionaries[lang] || dictionaries["en"];
-
-  // 현재 페이지 체크 (활성화 스타일 적용)
-  const isActive = (href) => pathname.startsWith(href);
+  const dict = dictionaries[lang]?.navbar || dictionaries["ko"].navbar;
 
   return (
-    <nav className="flex items-center justify-between p-4 bg-white/80 backdrop-blur-sm shadow sticky top-0 z-50">
+    <nav className="flex items-center justify-between p-4 bg-white shadow">
       {/* 로고 / 홈 */}
-      <Link
-        href={`/${lang}`}
-        className="text-2xl font-bold tracking-wide hover:text-blue-600"
-      >
-        {dict.navbar.home}
+      <Link href={`/${lang}`} className="text-2xl font-bold">
+        {dict.home}
       </Link>
 
       {/* 메뉴 */}
-      <div className="flex items-center space-x-6 text-sm font-medium">
-        <Link
-          href={`/${lang}/products`}
-          className={isActive(`/${lang}/products`)
-            ? "text-blue-600 font-semibold"
-            : "text-gray-700 hover:text-blue-600"}
-        >
-          {dict.navbar.products}
+      <div className="flex items-center space-x-4">
+        <Link href={`/${lang}/products`} className="hover:text-blue-600">
+          {dict.products}
         </Link>
 
-        <Link
-          href={`/${lang}/lookbook/new`}
-          className={isActive(`/${lang}/lookbook`)
-            ? "text-blue-600 font-semibold"
-            : "text-gray-700 hover:text-blue-600"}
-        >
-          {dict.navbar.lookbook}
+        <Link href={`/${lang}/lookbook`} className="hover:text-blue-600">
+          {dict.lookbook}
         </Link>
 
-        <Link
-          href={`/${lang}/about`}
-          className={isActive(`/${lang}/about`)
-            ? "text-blue-600 font-semibold"
-            : "text-gray-700 hover:text-blue-600"}
-        >
-          {dict.navbar.about}
+        <Link href={`/${lang}/about`} className="hover:text-blue-600">
+          {dict.about}
         </Link>
 
-        <Link
-          href={`/${lang}/contact`}
-          className={isActive(`/${lang}/contact`)
-            ? "text-blue-600 font-semibold"
-            : "text-gray-700 hover:text-blue-600"}
-        >
-          {dict.navbar.contact}
+        <Link href={`/${lang}/contact`} className="hover:text-blue-600">
+          {dict.contact}
         </Link>
 
         <Link
           href={`/${lang}/admin`}
           className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
         >
-          {dict.navbar.admin}
+          {dict.admin}
         </Link>
 
         {/* 언어 선택 */}
