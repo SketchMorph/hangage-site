@@ -33,19 +33,21 @@
         "accessories": "Foulard & Accessoires"
       }
     },
-    "best": {
-      "title": "Meilleures ventes",
-      "subtitle": "Découvrez nos articles les plus appréciés."
+    "shop": {
+      "title": "Liens boutique",
+      "subtitle": "Retrouvez plus de produits sur Cafe24 et Naver Smartstore.",
+      "cafe24": "Aller sur Cafe24",
+      "smartstore": "Aller sur Smartstore"
     },
     "story": {
       "title": "Notre histoire",
-      "text": "Nous concevons des motifs et des tissus pour intégrer la beauté du hanbok dans la vie quotidienne."
+      "text": "Née à Jeonju, Han Style intègre la beauté du hanbok dans la vie quotidienne. Nous utilisons des tissus naturels et un savoir-faire artisanal pour créer des hanboks à porter chaque jour."
     },
     "size": {
       "title": "Tailles & sur mesure",
-      "guide": "Guide des tailles",
-      "custom": "Commande sur mesure",
-      "policy": "Paiement/Expédition/Retours"
+      "guide": "Tableau des tailles standard (unité : cm)",
+      "custom": "Commandes sur mesure adaptées à votre morphologie et longueur souhaitée",
+      "policy": "Paiement, livraison et politique de retour/échange"
     },
     "store": {
       "title": "Infos boutique",
