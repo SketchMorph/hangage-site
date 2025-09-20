@@ -70,7 +70,7 @@ export default function LookbookPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
         <div className="absolute bottom-16 left-1/2 -translate-x-1/2 text-center text-white">
-          <h1 className="text-4xl md:text-5xl font-light tracking-wide">
+          <h1 className="text-4xl md:text-5xl font-light tracking-wide uppercase">
             {lookbook?.[`title_${lang}`] || lookbook?.title_ko || slug}
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg font-light opacity-90">
@@ -101,9 +101,6 @@ export default function LookbookPage() {
                   <h2 className="text-white text-lg font-medium">
                     {p[`name_${lang}`] || p.name_ko}
                   </h2>
-                  <p className="text-gray-200 text-sm mt-1">
-                    {p.price ? `${p.price.toLocaleString()} 원` : "문의 가능"}
-                  </p>
                 </div>
               </div>
             ))}
