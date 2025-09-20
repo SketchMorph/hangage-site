@@ -1,22 +1,10 @@
 {
-  "navbar": {
-    "home": "Hanbok Store",
-    "products": "Products",
-    "lookbook": "Lookbook",
-    "about": "About",
-    "contact": "Contact",
-    "admin": "Add Product"
-  },
   "landing": {
     "hero": {
       "headline": "Our Clothes Shop, Bright Han Style",
       "subtext": "Breathable fabrics, natural silhouettes, and Korean beauty. From the office to weekend outings.",
       "ctaProducts": "View New Arrivals",
-      "ctaLookbook": "View Lookbook",
-      "benefit1": "Made in Korea · Natural fabrics",
-      "benefit2": "Size & Custom Options",
-      "benefit3": "No returns/refunds",
-      "benefit4": "Free shipping over 50,000 KRW"
+      "ctaLookbook": "View Lookbook"
     },
     "categories": {
       "title": "Categories",
@@ -45,19 +33,9 @@
     },
     "size": {
       "title": "Size & Custom",
-      "guide": "Standard size chart (unit: cm)",
+      "guide": "Standard size chart (unit: cm, inches in parentheses)",
       "custom": "Custom tailoring available for body and length preferences",
-      "policy": "Payment, shipping, and exchange/return policy",
-      "table": {
-        "headers": ["Size", "Length", "Chest", "Sleeve", "Recommended Height"],
-        "rows": [
-          ["S", "115", "88", "55", "150-160cm"],
-          ["M", "120", "94", "56", "160-170cm"],
-          ["L", "125", "100", "57", "165-175cm"],
-          ["XL", "130", "108", "58", "170-180cm"],
-          ["XXL", "135", "116", "59", "175-185cm"]
-        ]
-      }
+      "policy": "Payment, shipping, and exchange/return policy"
     },
     "store": {
       "title": "Store Info",
@@ -68,15 +46,6 @@
       "subtitle": "Leave your email to receive collection and event news.",
       "placeholder": "your@email.com",
       "button": "Subscribe"
-    },
-    "footer": {
-      "customer": "Customer Info",
-      "links": {
-        "shipping": "Shipping/Return Policy",
-        "privacy": "Privacy Policy",
-        "terms": "Terms of Use"
-      },
-      "quick": "Quick Links"
     }
   }
 }
