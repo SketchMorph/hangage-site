@@ -22,17 +22,17 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 );
 
-// ✅ 메인 9개 카테고리
+// ✅ 메인 9개 카테고리 (title은 JSON에서 불러옴)
 const MAIN_CATEGORIES = [
-  { slug: "new", title: "신상품", img: "/danP001.png" },
-  { slug: "men", title: "남성 생활한복", img: "/maleB002.png" },
-  { slug: "women", title: "여성 생활한복", img: "/hanW001.png" },
-  { slug: "kids", title: "어린이 한복", img: "/childP001.png" },
-  { slug: "cheolik", title: "철릭원피스", img: "/oneW001.png" },
-  { slug: "bustier", title: "뷔스티에", img: "/strapB001.png" },
-  { slug: "skirt", title: "허리치마", img: "/skirtB001.png" },
-  { slug: "apron", title: "앞치마", img: "/apronB001.png" },
-  { slug: "accessories", title: "두건 및 악세사리", img: "/hairP001.png" },
+  { slug: "new", img: "/danP001.png" },
+  { slug: "men", img: "/maleB002.png" },
+  { slug: "women", img: "/hanW001.png" },
+  { slug: "kids", img: "/childP001.png" },
+  { slug: "cheolik", img: "/oneW001.png" },
+  { slug: "bustier", img: "/strapB001.png" },
+  { slug: "skirt", img: "/skirtB001.png" },
+  { slug: "apron", img: "/apronB001.png" },
+  { slug: "accessories", img: "/hairP001.png" }
 ];
 
 export default function HanbokLanding({ lang = "ko" }) {
@@ -100,14 +100,13 @@ export default function HanbokLanding({ lang = "ko" }) {
               <div className="group overflow-hidden rounded-2xl bg-gray-100 shadow-sm hover:shadow-lg transition">
                 <img
                   src={c.img}
-                  alt={c.title}
+                  alt={dict.categories?.items?.[c.slug] || c.slug}
                   className="w-full h-60 object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="p-4 text-center">
-                 <h3 className="text-lg font-medium group-hover:text-blue-700">
-  {dict.categories?.items?.[c.slug] || c.title}
-</h3>
-
+                  <h3 className="text-lg font-medium group-hover:text-blue-700">
+                    {dict.categories?.items?.[c.slug] || c.slug}
+                  </h3>
                 </div>
               </div>
             </Link>
@@ -121,7 +120,10 @@ export default function HanbokLanding({ lang = "ko" }) {
           <h2 className="text-3xl font-semibold mb-12">{dict.best?.title}</h2>
           <div className="grid md:grid-cols-3 gap-10">
             {bests.map((b) => (
-              <div key={b.id} className="overflow-hidden rounded-2xl shadow-sm hover:shadow-lg transition bg-white">
+              <div
+                key={b.id}
+                className="overflow-hidden rounded-2xl shadow-sm hover:shadow-lg transition bg-white"
+              >
                 <img
                   src={b.images?.[0]}
                   alt={b[`name_${lang}`] || b.name_ko}
