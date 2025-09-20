@@ -18,13 +18,23 @@ const HERO_IMAGES = {
   bustier: "/lookbooks/bustier/hero.jpg",
   skirt: "/lookbooks/skirt/hero.jpg",
   apron: "/lookbooks/apron/hero.jpg",
-  accessories: "/lookbooks/accessories/hero.jpg"
+  accessories: "/lookbooks/accessories/hero.jpg",
+};
+
+// ✅ 다국어 UI 문구
+const UI_TEXTS = {
+  ko: { empty: "아직 등록된 상품이 없습니다." },
+  en: { empty: "No products have been registered yet." },
+  ja: { empty: "まだ登録された商品はありません。" },
+  zh: { empty: "尚未登记商品。" },
+  fr: { empty: "Aucun produit n’a encore été enregistré." },
 };
 
 export default function LookbookPage() {
   const { lang, slug } = useParams();
   const [lookbook, setLookbook] = useState(null);
   const [products, setProducts] = useState([]);
+  const t = UI_TEXTS[lang] || UI_TEXTS["ko"]; // 기본값 한국어
 
   useEffect(() => {
     async function loadData() {
@@ -37,12 +47,14 @@ export default function LookbookPage() {
 
       if (lb) setLookbook(lb);
 
-      const { data: items } = await supabase
-        .from("lookbook_products")
-        .select("product(*)")
-        .eq("lookbook_id", lb?.id);
+      if (lb?.id) {
+        const { data: items } = await supabase
+          .from("lookbook_products")
+          .select("product(*)")
+          .eq("lookbook_id", lb.id);
 
-      if (items) setProducts(items.map((i) => i.product));
+        if (items) setProducts(items.map((i) => i.product));
+      }
     }
     loadData();
   }, [slug]);
@@ -64,7 +76,7 @@ export default function LookbookPage() {
           <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg font-light opacity-90">
             {lookbook?.[`description_${lang}`] ||
               lookbook?.description_ko ||
-              `계절과 조화를 이루는 ${slug} 컬렉션을 만나보세요.`}
+              `Explore the ${slug} collection harmonized with the season.`}
           </p>
         </div>
       </section>
@@ -72,7 +84,7 @@ export default function LookbookPage() {
       {/* 상품 목록 */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
         {products.length === 0 ? (
-          <p className="text-gray-500 text-center">아직 등록된 상품이 없습니다.</p>
+          <p className="text-gray-500 text-center">{t.empty}</p>
         ) : (
           <div className="grid gap-12 sm:grid-cols-2 md:grid-cols-3">
             {products.map((p) => (
