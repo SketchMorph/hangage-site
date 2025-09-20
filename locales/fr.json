@@ -37,14 +37,23 @@
     },
     "story": {
       "title": "Notre histoire",
-      "text": "Née à Jeonju, Han Style intègre la beauté du hanbok dans la vie quotidienne. Nous utilisons des tissus naturels et un savoir-faire artisanal pour créer des hanboks à porter chaque jour."
+      "text": "Nous concevons tissus et motifs pour intégrer la beauté du hanbok dans la vie quotidienne."
     },
     "size": {
       "title": "Tailles & sur mesure",
-      "guide": "Tableau des tailles standard (unité : cm, pouces entre parenthèses)",
+      "guide": "Tableau des tailles standard (cm, pouces entre parenthèses)",
       "custom": "Commandes sur mesure adaptées à votre morphologie et longueur souhaitée",
-      "policy": "Paiement, livraison et politique de retour/échange",
-      "tableHeaders": ["Taille", "Longueur", "Poitrine", "Manche", "Taille recommandée"]
+      "policy": "Paiement · Livraison · Politique de retour/échange",
+      "table": {
+        "headers": ["Taille", "Longueur", "Poitrine", "Manche", "Taille recommandée"],
+        "rows": [
+          ["S", "115 (45.3\")", "88 (34.6\")", "55 (21.6\")", "150-160cm"],
+          ["M", "120 (47.2\")", "94 (37.0\")", "56 (22.0\")", "160-170cm"],
+          ["L", "125 (49.2\")", "100 (39.4\")", "57 (22.4\")", "165-175cm"],
+          ["XL", "130 (51.2\")", "108 (42.5\")", "58 (22.8\")", "170-180cm"],
+          ["XXL", "135 (53.1\")", "116 (45.7\")", "59 (23.2\")", "175-185cm"]
+        ]
+      }
     },
     "store": {
       "title": "Infos boutique",
@@ -57,9 +66,9 @@
       "button": "S'abonner"
     },
     "footer": {
-      "customer": "Infos client",
+      "customer": "Service client",
       "links": {
-        "shipping": "Politique de livraison/retour",
+        "shipping": "Politique d'expédition/retour",
         "privacy": "Politique de confidentialité",
         "terms": "Conditions d'utilisation"
       },
