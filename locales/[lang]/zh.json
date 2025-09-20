@@ -2,51 +2,62 @@
   "navbar": {
     "home": "韩服商店",
     "products": "商品",
-    "admin": "新增商品"
+    "admin": "添加商品"
   },
   "landing": {
     "hero": {
-      "headline": "我们的衣服，明亮的韩式风格",
-      "subtext": "会呼吸的面料，自然的剪裁，展现韩国之美。从上班到周末，舒适随行。",
+      "headline": "我们的服装店，明亮的韩风",
+      "subtext": "透气的面料，自然的轮廓，以及韩国的美丽。从工作日到周末。",
       "ctaProducts": "查看新品",
-      "ctaLookbook": "查看造型集",
-      "benefit1": "韩国制造 · 天然面料为主",
-      "benefit2": "支持定制尺寸",
-      "benefit3": "不支持退换货",
-      "benefit4": "满50,000韩元免运费"
+      "ctaLookbook": "查看画册",
+      "benefit1": "韩国制造 · 天然材料",
+      "benefit2": "尺码/定制选项",
+      "benefit3": "不支持退换",
+      "benefit4": "满50,000韩元包邮"
     },
     "categories": {
-      "title": "分类",
-      "subtitle": "选择您喜欢的风格。"
+      "title": "类别",
+      "subtitle": "请选择您喜欢的风格。",
+      "items": {
+        "new": "新品",
+        "men": "男士韩服",
+        "women": "女士韩服",
+        "kids": "儿童韩服",
+        "cheolik": "齐腰连衣裙",
+        "bustier": "紧身上衣",
+        "skirt": "韩服裙",
+        "apron": "围裙",
+        "accessories": "头巾及配饰"
+      }
     },
     "best": {
-      "title": "人气商品",
-      "subtitle": "发现最受欢迎的单品。"
+      "title": "畅销商品",
+      "subtitle": "发现最受喜爱的单品。"
     },
     "story": {
       "title": "我们的故事",
-      "text": "为了让韩服能在日常生活中享受，我们研究舒适的版型和天然材质。"
+      "text": "为了让韩服之美在日常生活中被享受，我们研究舒适的版型和天然面料。"
     },
     "size": {
-      "title": "尺寸 & 定制",
-      "guide": "尺寸指南",
-      "custom": "定制服务",
-      "policy": "付款/配送/政策"
+      "title": "尺码 & 定制",
+      "guide": "尺码指南",
+      "custom": "定制",
+      "policy": "付款/配送/退换"
     },
     "store": {
-      "title": "门店信息",
-      "address": "韩国 全州市 完山区 太平3街70号 中央商街 2层206号"
+      "title": "店铺信息",
+      "address": "全州市 完山区 太平3街70 中央商街2层206号 韩加店"
     },
     "newsletter": {
-      "title": "订阅最新资讯",
-      "subtitle": "留下邮箱，即可收到最新系列与活动信息。",
+      "title": "获取新品/活动通知",
+      "subtitle": "留下您的邮箱即可获取季节系列和活动消息。",
       "placeholder": "your@email.com",
       "button": "订阅"
     },
     "footer": {
       "customer": "客户服务",
       "links": {
-        "shipping": "配送/退换货政策",
+        "shipping": "配送/退换政策",
         "privacy": "隐私政策",
         "terms": "使用条款"
       },
