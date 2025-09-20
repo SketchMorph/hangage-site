@@ -2,6 +2,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Link from "next/link";
+import Image from "next/image";   // ✅ 이미지 최적화용 import 추가
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -116,12 +117,21 @@ export default function HanbokLanding({ lang = "ko" }) {
         </div>
       </section>
 
-      {/* Brand Story */}
+      {/* ✅ Brand Story */}
       <section className="max-w-4xl mx-auto px-6 md:px-12 py-20 text-center">
         <h2 className="text-3xl font-semibold mb-6">{dict.story?.title}</h2>
-        <div className="w-full h-64 bg-gray-100 rounded-2xl mb-8 flex items-center justify-center">
-          <span className="text-gray-400">[브랜드 스토리 이미지 삽입]</span>
+
+        {/* 대표 이미지 1장 고정 */}
+        <div className="w-full h-64 relative mb-8 rounded-2xl overflow-hidden shadow-sm">
+          <Image
+            src="/story01.jpg"   // 📂 public/brand/story01.jpg
+            alt="Brand Story"
+            fill
+            className="object-cover object-center"
+            priority
+          />
         </div>
+
         <p className="text-lg text-gray-600 leading-relaxed">
           {dict.story?.text}
         </p>
