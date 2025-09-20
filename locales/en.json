@@ -1,84 +1,65 @@
 {
   "navbar": {
-    "home": "Hanbok Shop",
+    "home": "Hanbok Store",
     "products": "Products",
-    "cart": "Cart",
-    "orders": "Orders",
-    "login": "Login",
-    "signup": "Sign Up",
     "admin": "Add Product"
-  },
-  "products": {
-    "title": "Product List",
-    "sample1": "Hanbok Dress",
-    "sample2": "Jeogori Blouse"
-  },
-  "login": {
-    "title": "Login",
-    "email": "Email",
-    "password": "Password",
-    "button": "Login"
-  },
-  "signup": {
-    "title": "Sign Up",
-    "name": "Name",
-    "email": "Email",
-    "password": "Password",
-    "button": "Register"
   },
   "landing": {
     "hero": {
-      "headline": "Hanstyle 'Bright' Store",
-      "subtext": "Breathable fabrics, natural silhouettes, and Korean beauty. From workdays to weekends.",
-      "ctaProducts": "View Products",
+      "headline": "Our Clothes Shop, Bright Han Style",
+      "subtext": "Breathable fabrics, natural silhouettes, and Korean beauty. From the office to weekend outings.",
+      "ctaProducts": "View New Arrivals",
       "ctaLookbook": "View Lookbook",
       "benefit1": "Made in Korea · Natural fabrics",
-      "benefit2": "Sizes / Custom options",
-      "benefit3": "No exchange or refund",
-      "benefit4": "Free shipping over ₩50,000"
+      "benefit2": "Size & Custom Options",
+      "benefit3": "No returns/refunds",
+      "benefit4": "Free shipping over 50,000 KRW"
     },
     "categories": {
-      "신상품": { "title": "New Arrivals", "desc": "Latest products of the year" },
-      "남성 생활한복": { "title": "Men's Hanbok", "desc": "Casual jeogori & pants" },
-      "여성 생활한복": { "title": "Women's Hanbok", "desc": "Modern & minimal silhouettes" },
-      "어린이 한복": { "title": "Children's Hanbok", "desc": "Cute everyday wear" },
-      "철릭원피스": { "title": "Cheollik Dress", "desc": "Easy one-piece hanbok" },
-      "뷔스티에": { "title": "Bustier", "desc": "Layered fashion" },
-      "허리치마": { "title": "Skirt", "desc": "Casual wrap skirt" },
-      "앞치마": { "title": "Apron", "desc": "Everyday apron" },
-      "두건 및 악세사리": { "title": "Accessories", "desc": "Headwear & pouches" }
+      "title": "Categories",
+      "subtitle": "Choose your preferred style.",
+      "items": {
+        "new": "New Arrivals",
+        "men": "Men's Hanbok",
+        "women": "Women's Hanbok",
+        "kids": "Kids' Hanbok",
+        "cheolik": "Cheolik Dress",
+        "bustier": "Bustier",
+        "skirt": "Skirt Hanbok",
+        "apron": "Apron",
+        "accessories": "Headscarf & Accessories"
+      }
     },
     "best": {
       "title": "Best Sellers",
-      "subtitle": "Discover the most loved items."
+      "subtitle": "Discover our most loved items."
     },
     "story": {
       "title": "Our Story",
-      "text": "We research comfortable patterns and natural fabrics so you can enjoy the beauty of Hanbok every day."
+      "text": "We design patterns and fabrics to bring hanbok's beauty into everyday life."
     },
     "size": {
-      "title": "Sizes & Custom",
+      "title": "Size & Custom",
       "guide": "Size Guide",
       "custom": "Custom Order",
-      "policy": "Payment / Shipping / Exchange"
+      "policy": "Payment/Shipping/Returns"
     },
-    "reviews": { "title": "Customer Reviews" },
     "store": {
       "title": "Store Info",
-      "address": "206, Jungang Mall, 70 Taepyeong 3-gil, Wansan-gu, Jeonju, Korea"
+      "address": "2F, 206, Jungang Sangga, Tae-pyeong 3-gil 70, Wansan-gu, Jeonju"
     },
     "newsletter": {
-      "title": "Subscribe for Updates",
-      "subtitle": "Leave your email to receive seasonal collections and news.",
+      "title": "Get Updates",
+      "subtitle": "Leave your email to receive collection and event news.",
       "placeholder": "your@email.com",
       "button": "Subscribe"
     },
     "footer": {
-      "customer": "Customer Service",
+      "customer": "Customer Info",
       "links": {
-        "shipping": "Shipping / Exchange / Refund Policy",
+        "shipping": "Shipping/Return Policy",
         "privacy": "Privacy Policy",
-        "terms": "Terms of Service"
+        "terms": "Terms of Use"
       },
       "quick": "Quick Links"
     }
