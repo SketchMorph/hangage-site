@@ -100,14 +100,14 @@ export default function HanbokLanding({ lang = "ko" }) {
           <p className="mb-10 text-gray-600">{dict.shop?.subtitle}</p>
           <div className="flex justify-center gap-6">
             <Link
-              href="https://your-cafe24-link.com"
+              href="https://alban915.cafe24.com"
               target="_blank"
               className="px-6 py-3 bg-blue-900 text-white rounded-full hover:bg-blue-800"
             >
               {dict.shop?.cafe24}
             </Link>
             <Link
-              href="https://smartstore.naver.com/yourstore"
+              href="https://smartstore.naver.com/hangagye"
               target="_blank"
               className="px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-500"
             >
