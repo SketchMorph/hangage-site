@@ -33,19 +33,21 @@
         "accessories": "头巾 & 配饰"
       }
     },
-    "best": {
-      "title": "畅销商品",
-      "subtitle": "发现最受欢迎的商品。"
+    "shop": {
+      "title": "商城链接",
+      "subtitle": "在Cafe24和Naver智能商店查看更多商品。",
+      "cafe24": "前往Cafe24",
+      "smartstore": "前往Smartstore"
     },
     "story": {
       "title": "品牌故事",
-      "text": "我们设计图案和面料，将韩服的美融入日常生活。"
+      "text": "韩风起源于全州，我们希望将韩服之美带入日常生活。选用天然面料，结合精细工艺，打造适合日常穿着的韩服。"
     },
     "size": {
       "title": "尺码 & 定制",
-      "guide": "尺码指南",
-      "custom": "定制订单",
-      "policy": "付款/配送/退换"
+      "guide": "标准尺码表 (单位: cm)",
+      "custom": "可根据体型与长度需求定制",
+      "policy": "付款、配送、退换政策"
     },
     "store": {
       "title": "店铺信息",
