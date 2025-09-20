@@ -3,7 +3,7 @@
 import React from "react";
 import { useParams } from "next/navigation";
 
-// ✅ JSON import (src/locales 기준)
+// ✅ JSON import
 import en from "@/locales/en/about.json";
 import ko from "@/locales/ko/about.json";
 import ja from "@/locales/ja/about.json";
@@ -66,7 +66,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Heritage + Vision */}
+        {/* Heritage */}
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-2xl font-semibold text-gray-900">
@@ -75,17 +75,30 @@ export default function AboutPage() {
             <p className="mt-4 text-gray-600 leading-relaxed">
               {t.heritageDesc}
             </p>
-            <h2 className="text-2xl font-semibold text-gray-900 mt-10">
+          </div>
+          <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+            <img
+              src="/about/3.jpg"
+              alt="Heritage"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        {/* Vision */}
+        <div className="grid md:grid-cols-2 gap-10 items-center md:flex-row-reverse">
+          <div className="md:order-2">
+            <h2 className="text-2xl font-semibold text-gray-900">
               {t.visionTitle}
             </h2>
             <p className="mt-4 text-gray-600 leading-relaxed">
               {t.visionDesc}
             </p>
           </div>
-          <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+          <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg md:order-1">
             <img
-              src="/about/3.jpg"
-              alt="Heritage"
+              src="/about/4.jpg"
+              alt="Vision"
               className="w-full h-full object-cover"
             />
           </div>
