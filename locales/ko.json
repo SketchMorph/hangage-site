@@ -1,4 +1,12 @@
 {
+  "navbar": {
+    "home": "한복 상점",
+    "products": "카테고리",
+    "lookbook": "룩북",
+    "about": "브랜드 소개",
+    "contact": "문의",
+    "admin": "상품 추가"
+  },
   "landing": {
     "hero": {
       "headline": "우리옷 상점, 한스타일 '밝은' 상점",
@@ -47,6 +55,15 @@
       "subtitle": "컬렉션 및 이벤트 소식을 받아보세요.",
       "placeholder": "your@email.com",
       "button": "구독하기"
+    },
+    "footer": {
+      "customer": "고객 안내",
+      "links": {
+        "shipping": "배송/반품 정책",
+        "privacy": "개인정보 처리방침",
+        "terms": "이용 약관"
+      },
+      "quick": "바로가기"
     }
   }
 }
