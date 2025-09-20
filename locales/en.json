@@ -35,7 +35,8 @@
       "title": "Size & Custom",
       "guide": "Standard size chart (unit: cm, inches in parentheses)",
       "custom": "Custom tailoring available for body and length preferences",
-      "policy": "Payment, shipping, and exchange/return policy"
+      "policy": "Payment, shipping, and exchange/return policy",
+      "tableHeaders": ["Size", "Length", "Chest", "Sleeve", "Recommended Height"]
     },
     "store": {
       "title": "Store Info",
