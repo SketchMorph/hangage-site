@@ -33,19 +33,21 @@
         "accessories": "Headscarf & Accessories"
       }
     },
-    "best": {
-      "title": "Best Sellers",
-      "subtitle": "Discover our most loved items."
+    "shop": {
+      "title": "Shop Links",
+      "subtitle": "Find more products on Cafe24 and Naver Smartstore.",
+      "cafe24": "Go to Cafe24",
+      "smartstore": "Go to Smartstore"
     },
     "story": {
       "title": "Our Story",
-      "text": "We design patterns and fabrics to bring hanbok's beauty into everyday life."
+      "text": "Born in Jeonju, Han Style brings the beauty of hanbok into everyday life. We use natural fabrics and careful craftsmanship to design hanbok that can be worn daily."
     },
     "size": {
       "title": "Size & Custom",
-      "guide": "Size Guide",
-      "custom": "Custom Order",
-      "policy": "Payment/Shipping/Returns"
+      "guide": "Standard size chart (unit: cm)",
+      "custom": "Custom tailoring available for body and length preferences",
+      "policy": "Payment, shipping, and exchange/return policy"
     },
     "store": {
       "title": "Store Info",
