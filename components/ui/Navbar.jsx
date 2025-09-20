@@ -21,17 +21,55 @@ export default function Navbar() {
   }
   const dict = dictionaries[lang] || dictionaries["en"];
 
+  // 현재 페이지 체크 (활성화 스타일 적용)
+  const isActive = (href) => pathname.startsWith(href);
+
   return (
-    <nav className="flex items-center justify-between p-4 bg-white shadow">
+    <nav className="flex items-center justify-between p-4 bg-white/80 backdrop-blur-sm shadow sticky top-0 z-50">
       {/* 로고 / 홈 */}
-      <Link href={`/${lang}`} className="text-2xl font-bold">
+      <Link
+        href={`/${lang}`}
+        className="text-2xl font-bold tracking-wide hover:text-blue-600"
+      >
         {dict.navbar.home}
       </Link>
 
       {/* 메뉴 */}
-      <div className="flex items-center space-x-4">
-        <Link href={`/${lang}/products`} className="hover:text-blue-600">
+      <div className="flex items-center space-x-6 text-sm font-medium">
+        <Link
+          href={`/${lang}/products`}
+          className={isActive(`/${lang}/products`)
+            ? "text-blue-600 font-semibold"
+            : "text-gray-700 hover:text-blue-600"}
+        >
           {dict.navbar.products}
+        </Link>
+
+        <Link
+          href={`/${lang}/lookbook/new`}
+          className={isActive(`/${lang}/lookbook`)
+            ? "text-blue-600 font-semibold"
+            : "text-gray-700 hover:text-blue-600"}
+        >
+          {dict.navbar.lookbook}
+        </Link>
+
+        <Link
+          href={`/${lang}/about`}
+          className={isActive(`/${lang}/about`)
+            ? "text-blue-600 font-semibold"
+            : "text-gray-700 hover:text-blue-600"}
+        >
+          {dict.navbar.about}
+        </Link>
+
+        <Link
+          href={`/${lang}/contact`}
+          className={isActive(`/${lang}/contact`)
+            ? "text-blue-600 font-semibold"
+            : "text-gray-700 hover:text-blue-600"}
+        >
+          {dict.navbar.contact}
         </Link>
 
         <Link
