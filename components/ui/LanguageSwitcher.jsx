@@ -1,24 +1,28 @@
 "use client";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+
+const SUPPORTED_LANGS = ["ko", "en", "fr", "ja", "zh"];
 
 export default function LanguageSwitcher() {
-  const router = useRouter();
   const pathname = usePathname();
+  const router = useRouter();
 
-  const currentLang = pathname.split("/")[1] || "en";
+  const currentLang = pathname.split("/")[1];
+  const lang = SUPPORTED_LANGS.includes(currentLang) ? currentLang : "ko";
 
-  const changeLang = (lang) => {
-    const parts = pathname.split("/");
-    parts[1] = lang; // 언어 prefix 교체
-    const newPath = parts.join("/") || "/";
+  function switchLanguage(newLang) {
+    // 현재 경로에서 첫 번째 세그먼트를 언어코드로 교체
+    const segments = pathname.split("/");
+    segments[1] = newLang;
+    const newPath = segments.join("/") || "/";
     router.push(newPath);
-  };
+  }
 
   return (
     <select
-      onChange={(e) => changeLang(e.target.value)}
-      value={currentLang}
-      className="border rounded px-2 py-1 text-sm"
+      value={lang}
+      onChange={(e) => switchLanguage(e.target.value)}
+      className="border rounded px-2 py-1"
     >
       <option value="ko">한국어</option>
       <option value="en">English</option>
