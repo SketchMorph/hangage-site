@@ -1,4 +1,12 @@
 {
+  "navbar": {
+    "home": "Boutique Hanbok",
+    "products": "Catégories",
+    "lookbook": "Lookbook",
+    "about": "À propos",
+    "contact": "Contact",
+    "admin": "Ajouter un produit"
+  },
   "landing": {
     "hero": {
       "headline": "Notre boutique, Han Style lumineux",
@@ -47,6 +55,15 @@
       "subtitle": "Laissez votre email pour recevoir des infos sur les collections et événements.",
       "placeholder": "votre@email.com",
       "button": "S'abonner"
+    },
+    "footer": {
+      "customer": "Infos client",
+      "links": {
+        "shipping": "Politique de livraison/retour",
+        "privacy": "Politique de confidentialité",
+        "terms": "Conditions d'utilisation"
+      },
+      "quick": "Liens rapides"
     }
   }
 }
