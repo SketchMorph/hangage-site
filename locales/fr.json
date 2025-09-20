@@ -1,18 +1,21 @@
 {
   "navbar": {
     "home": "Boutique Hanbok",
-    "products": "Produits",
+    "products": "Catégories",
+    "lookbook": "Lookbook",
+    "about": "À propos",
+    "contact": "Contact",
     "admin": "Ajouter un produit"
   },
   "landing": {
     "hero": {
-      "headline": "Notre boutique, style Han lumineux",
+      "headline": "Notre boutique, Han Style lumineux",
       "subtext": "Tissus respirants, silhouettes naturelles et beauté coréenne. Du bureau aux sorties du week-end.",
       "ctaProducts": "Voir les nouveautés",
       "ctaLookbook": "Voir le lookbook",
       "benefit1": "Fabriqué en Corée · Tissus naturels",
-      "benefit2": "Options de taille & sur mesure",
-      "benefit3": "Pas de retour/remboursement",
+      "benefit2": "Tailles & options sur mesure",
+      "benefit3": "Pas de retours/remboursements",
       "benefit4": "Livraison gratuite dès 50 000 KRW"
     },
     "categories": {
@@ -25,41 +28,41 @@
         "kids": "Hanbok Enfant",
         "cheolik": "Robe Cheolik",
         "bustier": "Bustier",
-        "skirt": "Hanbok Jupe",
+        "skirt": "Jupe Hanbok",
         "apron": "Tablier",
         "accessories": "Foulard & Accessoires"
       }
     },
     "best": {
       "title": "Meilleures ventes",
-      "subtitle": "Découvrez nos articles les plus populaires."
+      "subtitle": "Découvrez nos articles les plus appréciés."
     },
     "story": {
       "title": "Notre histoire",
-      "text": "Nous concevons des motifs et des tissus pour profiter de la beauté du hanbok au quotidien."
+      "text": "Nous concevons des motifs et des tissus pour intégrer la beauté du hanbok dans la vie quotidienne."
     },
     "size": {
-      "title": "Taille & Sur mesure",
+      "title": "Tailles & sur mesure",
       "guide": "Guide des tailles",
       "custom": "Commande sur mesure",
-      "policy": "Paiement/Livraison/Retour"
+      "policy": "Paiement/Expédition/Retours"
     },
     "store": {
-      "title": "Informations magasin",
+      "title": "Infos boutique",
       "address": "2F, 206, Jungang Sangga, Tae-pyeong 3-gil 70, Wansan-gu, Jeonju"
     },
     "newsletter": {
-      "title": "Recevoir les nouveautés",
-      "subtitle": "Laissez votre e-mail pour recevoir les nouvelles collections et événements.",
-      "placeholder": "your@email.com",
-      "button": "S’abonner"
+      "title": "Recevoir les nouvelles",
+      "subtitle": "Laissez votre email pour recevoir des infos sur les collections et événements.",
+      "placeholder": "votre@email.com",
+      "button": "S'abonner"
     },
     "footer": {
-      "customer": "Service client",
+      "customer": "Infos client",
       "links": {
-        "shipping": "Politique de retour",
+        "shipping": "Politique de livraison/retour",
         "privacy": "Politique de confidentialité",
-        "terms": "Conditions d’utilisation"
+        "terms": "Conditions d'utilisation"
       },
       "quick": "Liens rapides"
     }
