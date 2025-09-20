@@ -1,54 +1,65 @@
 {
   "navbar": {
-    "home": "Hanbok Store",
+    "home": "Hanbok Shop",
     "products": "Products",
     "admin": "Add Product"
   },
   "landing": {
     "hero": {
-      "headline": "Our Clothes, Bright Hanstyle",
-      "subtext": "Breathing fabrics, natural silhouettes, and Korean beauty. From weekdays to weekends, wear comfort and elegance.",
+      "headline": "Our Clothes Shop, Bright Han-style",
+      "subtext": "Breathable fabrics, natural silhouettes, and Korean beauty. From weekdays to weekends.",
       "ctaProducts": "View New Arrivals",
       "ctaLookbook": "View Lookbook",
-      "benefit1": "Made in Korea · Natural Fabrics",
-      "benefit2": "Custom Sizing Available",
-      "benefit3": "No Returns or Refunds",
-      "benefit4": "Free Shipping Over 50,000 KRW"
+      "benefit1": "Made in Korea · Natural Materials",
+      "benefit2": "Sizes & Custom Options",
+      "benefit3": "No Exchange/Refund",
+      "benefit4": "Free Shipping over 50,000 KRW"
     },
     "categories": {
       "title": "Categories",
-      "subtitle": "Choose the style you like."
+      "subtitle": "Choose your preferred style.",
+      "items": {
+        "new": "New Arrivals",
+        "men": "Men's Hanbok",
+        "women": "Women's Hanbok",
+        "kids": "Kids' Hanbok",
+        "cheolik": "Cheolik Dress",
+        "bustier": "Bustier",
+        "skirt": "Skirt Hanbok",
+        "apron": "Apron",
+        "accessories": "Headscarf & Accessories"
+      }
     },
     "best": {
-      "title": "Best Items",
-      "subtitle": "Discover our most loved pieces."
+      "title": "Best Products",
+      "subtitle": "Meet our most loved items."
     },
     "story": {
       "title": "Our Story",
-      "text": "We design comfortable patterns with natural fabrics so hanbok can be enjoyed in everyday life."
+      "text": "We study comfortable patterns and natural fabrics to enjoy the beauty of Hanbok in everyday life."
     },
     "size": {
       "title": "Size & Custom",
       "guide": "Size Guide",
-      "custom": "Custom Orders",
-      "policy": "Payment/Delivery/Policy"
+      "custom": "Custom Order",
+      "policy": "Payment/Shipping/Exchange"
     },
     "store": {
       "title": "Store Info",
-      "address": "2F, 206 Jungang Arcade, Taepyeong 3-gil 70, Wansan-gu, Jeonju, Korea"
+      "address": "2F, Jungang Arcade, 70 Taepyeong 3-gil, Wansan-gu, Jeonju"
     },
     "newsletter": {
-      "title": "Get Updates",
-      "subtitle": "Leave your email to receive news about seasonal collections and events.",
+      "title": "Get New Arrivals & Event Updates",
+      "subtitle": "Leave your email to receive seasonal collections and event news.",
       "placeholder": "your@email.com",
       "button": "Subscribe"
     },
     "footer": {
-      "customer": "Customer Care",
+      "customer": "Customer Info",
       "links": {
-        "shipping": "Shipping/Return Policy",
+        "shipping": "Shipping/Exchange/Refund Policy",
         "privacy": "Privacy Policy",
-        "terms": "Terms of Service"
+        "terms": "Terms of Use"
       },
       "quick": "Quick Links"
     }
