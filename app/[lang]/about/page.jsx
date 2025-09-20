@@ -2,6 +2,8 @@
 
 import React from "react";
 import { useParams } from "next/navigation";
+
+// ✅ JSON import (src/locales 기준)
 import en from "@/locales/en/about.json";
 import ko from "@/locales/ko/about.json";
 import ja from "@/locales/ja/about.json";
