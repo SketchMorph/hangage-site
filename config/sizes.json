@@ -1,0 +1,10 @@
+{
+  "headers": ["length", "chest", "sleeve", "height"],
+  "rows": [
+    { "size": "S", "length": 115, "chest": 88, "sleeve": 55, "height": "150-160cm" },
+    { "size": "M", "length": 120, "chest": 94, "sleeve": 56, "height": "160-170cm" },
+    { "size": "L", "length": 125, "chest": 100, "sleeve": 57, "height": "165-175cm" },
+    { "size": "XL", "length": 130, "chest": 108, "sleeve": 58, "height": "170-180cm" },
+    { "size": "XXL", "length": 135, "chest": 116, "sleeve": 59, "height": "175-185cm" }
+  ]
+}
