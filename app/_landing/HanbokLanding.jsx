@@ -1,11 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Helmet } from "react-helmet";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { createClient } from "@supabase/supabase-js";
 
 // ✅ 다국어 JSON import
 import enDict from "@/locales/en.json";
@@ -15,12 +13,6 @@ import jaDict from "@/locales/ja.json";
 import zhDict from "@/locales/zh.json";
 
 const dictionaries = { en: enDict, ko: koDict, fr: frDict, ja: jaDict, zh: zhDict };
-const STORAGE_KEY = "hangage-config";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-);
 
 // ✅ 메인 9개 카테고리 (title은 JSON에서 불러옴)
 const MAIN_CATEGORIES = [
@@ -38,20 +30,6 @@ const MAIN_CATEGORIES = [
 export default function HanbokLanding({ lang = "ko" }) {
   const baseDict = dictionaries["ko"].landing;
   const dict = { ...baseDict, ...(dictionaries[lang]?.landing || {}) };
-
-  const [bests, setBests] = useState([]);
-
-  // ✅ Supabase에서 베스트 상품 가져오기
-  useEffect(() => {
-    async function loadData() {
-      const { data } = await supabase
-        .from("product")
-        .select("id, name_ko, name_en, name_fr, name_ja, name_zh, price, images")
-        .eq("is_active", true);
-      if (data) setBests(data.slice(0, 3));
-    }
-    loadData();
-  }, [lang]);
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -114,38 +92,36 @@ export default function HanbokLanding({ lang = "ko" }) {
         </div>
       </section>
 
-      {/* Best Products */}
+      {/* Shop Links */}
       <section className="bg-gray-50 py-20">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <h2 className="text-3xl font-semibold mb-12">{dict.best?.title}</h2>
-          <div className="grid md:grid-cols-3 gap-10">
-            {bests.map((b) => (
-              <div
-                key={b.id}
-                className="overflow-hidden rounded-2xl shadow-sm hover:shadow-lg transition bg-white"
-              >
-                <img
-                  src={b.images?.[0]}
-                  alt={b[`name_${lang}`] || b.name_ko}
-                  className="w-full h-72 object-cover object-center"
-                />
-                <div className="p-5">
-                  <h3 className="font-semibold text-lg">
-                    {b[`name_${lang}`] || b.name_ko}
-                  </h3>
-                  <p className="text-sm text-gray-500">
-                    {b.price ? `${b.price.toLocaleString()} 원` : "문의 가능"}
-                  </p>
-                </div>
-              </div>
-            ))}
+        <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
+          <h2 className="text-3xl font-semibold mb-6">{dict.shop?.title}</h2>
+          <p className="mb-10 text-gray-600">{dict.shop?.subtitle}</p>
+          <div className="flex justify-center gap-6">
+            <Link
+              href="https://your-cafe24-link.com"
+              target="_blank"
+              className="px-6 py-3 bg-blue-900 text-white rounded-full hover:bg-blue-800"
+            >
+              {dict.shop?.cafe24}
+            </Link>
+            <Link
+              href="https://smartstore.naver.com/yourstore"
+              target="_blank"
+              className="px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-500"
+            >
+              {dict.shop?.smartstore}
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* About Us */}
+      {/* Brand Story */}
       <section className="max-w-4xl mx-auto px-6 md:px-12 py-20 text-center">
         <h2 className="text-3xl font-semibold mb-6">{dict.story?.title}</h2>
+        <div className="w-full h-64 bg-gray-100 rounded-2xl mb-8 flex items-center justify-center">
+          <span className="text-gray-400">[브랜드 스토리 이미지 삽입]</span>
+        </div>
         <p className="text-lg text-gray-600 leading-relaxed">
           {dict.story?.text}
         </p>
@@ -155,17 +131,59 @@ export default function HanbokLanding({ lang = "ko" }) {
       <section className="bg-gray-50 py-20">
         <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl font-semibold mb-6">{dict.size?.title}</h2>
-          <div className="grid sm:grid-cols-3 gap-6 mt-10">
-            <div className="p-6 bg-white rounded-2xl shadow-sm">
-              <h3 className="font-semibold">{dict.size?.guide}</h3>
-            </div>
-            <div className="p-6 bg-white rounded-2xl shadow-sm">
-              <h3 className="font-semibold">{dict.size?.custom}</h3>
-            </div>
-            <div className="p-6 bg-white rounded-2xl shadow-sm">
-              <h3 className="font-semibold">{dict.size?.policy}</h3>
-            </div>
+          <p className="mb-10 text-gray-600">{dict.size?.guide}</p>
+          <div className="overflow-x-auto">
+            <table className="w-full border border-gray-200 text-sm">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="border p-2">사이즈</th>
+                  <th className="border p-2">총장</th>
+                  <th className="border p-2">가슴둘레</th>
+                  <th className="border p-2">소매길이</th>
+                  <th className="border p-2">권장 키</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border p-2">S</td>
+                  <td className="border p-2">115</td>
+                  <td className="border p-2">88</td>
+                  <td className="border p-2">55</td>
+                  <td className="border p-2">150-160cm</td>
+                </tr>
+                <tr>
+                  <td className="border p-2">M</td>
+                  <td className="border p-2">120</td>
+                  <td className="border p-2">94</td>
+                  <td className="border p-2">56</td>
+                  <td className="border p-2">160-170cm</td>
+                </tr>
+                <tr>
+                  <td className="border p-2">L</td>
+                  <td className="border p-2">125</td>
+                  <td className="border p-2">100</td>
+                  <td className="border p-2">57</td>
+                  <td className="border p-2">165-175cm</td>
+                </tr>
+                <tr>
+                  <td className="border p-2">XL</td>
+                  <td className="border p-2">130</td>
+                  <td className="border p-2">108</td>
+                  <td className="border p-2">58</td>
+                  <td className="border p-2">170-180cm</td>
+                </tr>
+                <tr>
+                  <td className="border p-2">XXL</td>
+                  <td className="border p-2">135</td>
+                  <td className="border p-2">116</td>
+                  <td className="border p-2">59</td>
+                  <td className="border p-2">175-185cm</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+          <p className="mt-6 text-gray-600">{dict.size?.custom}</p>
+          <p className="mt-2 text-gray-500 text-sm">{dict.size?.policy}</p>
         </div>
       </section>
 
