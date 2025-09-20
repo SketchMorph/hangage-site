@@ -104,9 +104,10 @@ export default function HanbokLanding({ lang = "ko" }) {
                   className="w-full h-60 object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="p-4 text-center">
-                  <h3 className="text-lg font-medium group-hover:text-blue-700">
-                    {c.title}
-                  </h3>
+                 <h3 className="text-lg font-medium group-hover:text-blue-700">
+  {dict.categories?.items?.[c.slug] || c.title}
+</h3>
+
                 </div>
               </div>
             </Link>
