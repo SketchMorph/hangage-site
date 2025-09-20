@@ -6,18 +6,29 @@
   },
   "landing": {
     "hero": {
-      "headline": "Notre vêtement, Hanstyle Bright",
-      "subtext": "Des tissus respirants, des silhouettes naturelles et la beauté coréenne. Du quotidien au week-end, alliez confort et élégance.",
+      "headline": "Notre boutique, un style coréen lumineux",
+      "subtext": "Des tissus respirants, des silhouettes naturelles et la beauté coréenne. Du quotidien au week-end.",
       "ctaProducts": "Voir les nouveautés",
       "ctaLookbook": "Voir le lookbook",
-      "benefit1": "Fabriqué en Corée · Tissus naturels",
-      "benefit2": "Tailles personnalisées disponibles",
-      "benefit3": "Pas de retours ni de remboursements",
-      "benefit4": "Livraison gratuite dès 50,000 KRW"
+      "benefit1": "Fabriqué en Corée · Matériaux naturels",
+      "benefit2": "Tailles & Options sur mesure",
+      "benefit3": "Aucun échange ni remboursement",
+      "benefit4": "Livraison gratuite à partir de 50,000 KRW"
     },
     "categories": {
       "title": "Catégories",
-      "subtitle": "Choisissez votre style."
+      "subtitle": "Choisissez votre style préféré.",
+      "items": {
+        "new": "Nouveautés",
+        "men": "Hanbok Homme",
+        "women": "Hanbok Femme",
+        "kids": "Hanbok Enfant",
+        "cheolik": "Robe Cheolik",
+        "bustier": "Bustier",
+        "skirt": "Hanbok Jupe",
+        "apron": "Tablier",
+        "accessories": "Foulard & Accessoires"
+      }
     },
     "best": {
       "title": "Meilleurs Produits",
@@ -25,30 +36,30 @@
     },
     "story": {
       "title": "Notre Histoire",
-      "text": "Nous concevons des motifs confortables avec des tissus naturels pour que le hanbok s’intègre dans la vie quotidienne."
+      "text": "Nous étudions des modèles confortables et des tissus naturels pour profiter de la beauté du hanbok au quotidien."
     },
     "size": {
       "title": "Tailles & Sur-mesure",
       "guide": "Guide des tailles",
       "custom": "Commande personnalisée",
-      "policy": "Paiement/Livraison/Politique"
+      "policy": "Paiement/Expédition/Échange"
     },
     "store": {
-      "title": "Informations Boutique",
-      "address": "2F, 206 Jungang Arcade, Taepyeong 3-gil 70, Wansan-gu, Jeonju, Corée"
+      "title": "Informations sur la boutique",
+      "address": "2e étage, Jungang Arcade, 70 Taepyeong 3-gil, Wansan-gu, Jeonju"
     },
     "newsletter": {
-      "title": "Recevoir les nouveautés",
-      "subtitle": "Laissez votre e-mail pour recevoir les nouvelles collections et événements.",
-      "placeholder": "votre@email.com",
-      "button": "S'abonner"
+      "title": "Recevez nos nouveautés & événements",
+      "subtitle": "Laissez votre e-mail pour recevoir les collections saisonnières et les actualités.",
+      "placeholder": "your@email.com",
+      "button": "S’abonner"
     },
     "footer": {
-      "customer": "Service client",
+      "customer": "Service Client",
       "links": {
-        "shipping": "Politique d’expédition/retours",
+        "shipping": "Politique d’expédition/échange/remboursement",
         "privacy": "Politique de confidentialité",
-        "terms": "Conditions générales"
+        "terms": "Conditions d’utilisation"
       },
       "quick": "Liens rapides"
     }
