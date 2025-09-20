@@ -17,7 +17,7 @@ export default function Navbar() {
   const pathname = usePathname();
   let lang = pathname.split("/")[1];
   if (!SUPPORTED_LANGS.includes(lang)) {
-    lang = "ko"; // 기본 언어를 한국어로
+    lang = "ko"; // 기본 언어는 한국어
   }
   const dict = dictionaries[lang]?.navbar || dictionaries["ko"].navbar;
 
