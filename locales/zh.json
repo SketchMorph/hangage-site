@@ -1,4 +1,12 @@
 {
+  "navbar": {
+    "home": "韩服商店",
+    "products": "类别",
+    "lookbook": "画册",
+    "about": "品牌介绍",
+    "contact": "联系",
+    "admin": "添加商品"
+  },
   "landing": {
     "hero": {
       "headline": "我们的服装店，明亮的韩风",
@@ -47,6 +55,15 @@
       "subtitle": "留下邮箱以接收系列与活动新闻。",
       "placeholder": "your@email.com",
       "button": "订阅"
+    },
+    "footer": {
+      "customer": "客户信息",
+      "links": {
+        "shipping": "配送/退货政策",
+        "privacy": "隐私政策",
+        "terms": "使用条款"
+      },
+      "quick": "快速链接"
     }
   }
 }
