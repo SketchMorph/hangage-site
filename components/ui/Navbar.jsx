@@ -30,20 +30,15 @@ export default function Navbar() {
 
       {/* 메뉴 */}
       <div className="flex items-center space-x-4">
-        <Link href={`/${lang}/products`} className="hover:text-blue-600">
-          {dict.products}
-        </Link>
+        {/* 브랜드 스토리 (페이지 내 스크롤 이동) */}
+        <a href="#story" className="hover:text-blue-600">
+          {dict.story}
+        </a>
 
-        <Link href={`/${lang}/lookbook`} className="hover:text-blue-600">
-          {dict.lookbook}
-        </Link>
-
-        <Link href={`/${lang}/about`} className="hover:text-blue-600">
-          {dict.about}
-        </Link>
-
-        {/* ❌ 문의(contact) 삭제됨 */}
-        {/* ❌ 상품추가/관리(admin) 삭제됨 */}
+        {/* 문의 (매장 정보 섹션으로 스크롤 이동) */}
+        <a href="#contact" className="hover:text-blue-600">
+          {dict.contact}
+        </a>
 
         {/* 언어 선택 */}
         <LanguageSwitcher />
