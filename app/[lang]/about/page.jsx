@@ -16,54 +16,46 @@ export default function AboutPage() {
   const { lang } = useParams();
   const t = dictionaries[lang] || dictionaries["ko"];
 
+  // 각 단락별 대응 이미지
+  const images = ["/brand1.jpg", "/brand2.jpg", "/brand3.jpg", "/brand4.jpg"];
+
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-gradient-to-b from-sky-50 via-white to-sky-100">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center text-center px-6 py-20 bg-gradient-to-b from-gray-50 to-white">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
+      <section className="relative flex flex-col items-center justify-center text-center px-6 py-24">
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-800">
           {t.title}
         </h1>
       </section>
 
       {/* Brand Story */}
-      <section className="max-w-4xl mx-auto px-6 py-16">
-        <p className="text-lg text-gray-700 leading-relaxed whitespace-pre-line">
-          {t.story}
-        </p>
-      </section>
+      <section className="max-w-6xl mx-auto px-6 py-20 space-y-24">
+        {t.story.map((paragraph, idx) => (
+          <div
+            key={idx}
+            className={`grid md:grid-cols-2 gap-10 items-center ${
+              idx % 2 === 1 ? "md:flex-row-reverse" : ""
+            }`}
+          >
+            {/* Text */}
+            <div>
+              <p className="text-xl text-gray-700 leading-relaxed tracking-wide">
+                {paragraph}
+              </p>
+            </div>
 
-      {/* Image Grid */}
-      <section className="max-w-6xl mx-auto px-6 pb-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-            <img
-              src="/brand1.jpg"
-              alt="Brand Story Image 1"
-              className="w-full h-full object-cover"
-            />
+            {/* Image */}
+            {images[idx] && (
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-105">
+                <img
+                  src={images[idx]}
+                  alt={`Brand Story ${idx + 1}`}
+                  className="w-full h-full object-cover brightness-105 contrast-95"
+                />
+              </div>
+            )}
           </div>
-          <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-            <img
-              src="/brand2.jpg"
-              alt="Brand Story Image 2"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-            <img
-              src="/brand3.jpg"
-              alt="Brand Story Image 3"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-            <img
-              src="/brand4.jpg"
-              alt="Brand Story Image 4"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
+        ))}
       </section>
     </main>
   );
