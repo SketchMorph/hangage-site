@@ -16,46 +16,56 @@ export default function AboutPage() {
   const { lang } = useParams();
   const t = dictionaries[lang] || dictionaries["ko"];
 
-  // 사용할 이미지 배열
   const images = ["/brand1.jpg", "/brand2.jpg", "/brand3.jpg", "/brand4.jpg"];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-sky-50 via-white to-sky-100">
-      {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center text-center px-6 py-24">
-        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-800">
+    <main className="min-h-screen bg-white">
+      {/* Hero */}
+      <section className="relative flex flex-col items-center justify-center text-center px-6 py-32 bg-gradient-to-b from-sky-100 via-white to-sky-50">
+        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-800 drop-shadow-sm">
           {t.title}
         </h1>
       </section>
 
-      {/* Brand Story */}
-      <section className="max-w-6xl mx-auto px-6 py-20 space-y-24">
+      {/* Brand Story with bold layout */}
+      <section className="max-w-7xl mx-auto px-6 py-24 space-y-40">
         {t.story.map((paragraph, idx) => {
-          const image = images[idx % images.length]; // 자동 매칭 (순환)
+          const image = images[idx % images.length];
+          const reversed = idx % 2 === 1;
+
           return (
             <div
               key={idx}
-              className={`grid md:grid-cols-2 gap-10 items-center ${
-                idx % 2 === 1 ? "md:flex-row-reverse" : ""
+              className={`relative grid md:grid-cols-12 gap-10 items-center ${
+                reversed ? "md:flex-row-reverse" : ""
               }`}
             >
-              {/* 텍스트 */}
-              <div>
-                <p className="text-xl text-gray-700 leading-relaxed tracking-wide">
-                  {paragraph}
-                </p>
+              {/* Image (넓게 배치) */}
+              <div
+                className={`col-span-7 ${
+                  reversed ? "md:col-start-6" : ""
+                } relative overflow-hidden rounded-3xl shadow-2xl`}
+              >
+                <img
+                  src={image}
+                  alt={`Brand Story ${idx + 1}`}
+                  className="w-full h-[500px] object-cover transform hover:scale-105 transition duration-700"
+                />
               </div>
 
-              {/* 이미지 (있을 경우만 출력) */}
-              {image && (
-                <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-105">
-                  <img
-                    src={image}
-                    alt={`Brand Story ${idx + 1}`}
-                    className="w-full h-full object-cover brightness-105 contrast-95"
-                  />
+              {/* Text with accent bar */}
+              <div
+                className={`col-span-5 ${
+                  reversed ? "md:col-start-1" : ""
+                } flex flex-col justify-center`}
+              >
+                <div className="flex items-start">
+                  <div className="w-1 h-24 bg-gradient-to-b from-sky-400 to-indigo-600 rounded-full mr-6"></div>
+                  <p className="text-2xl text-gray-800 leading-relaxed tracking-wide">
+                    {paragraph}
+                  </p>
                 </div>
-              )}
+              </div>
             </div>
           );
         })}
