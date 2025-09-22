@@ -293,5 +293,3 @@ export default function HanbokLanding({ lang = "ko" }) {
     </div>
   );
 }
-
--
