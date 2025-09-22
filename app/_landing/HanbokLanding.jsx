@@ -13,17 +13,28 @@ import frDict from "@/locales/fr.json";
 import jaDict from "@/locales/ja.json";
 import zhDict from "@/locales/zh.json";
 
+// ✅ 브랜드 스토리 JSON import
+import enAbout from "@/locales/en/about.json";
+import koAbout from "@/locales/ko/about.json";
+import frAbout from "@/locales/fr/about.json";
+import jaAbout from "@/locales/ja/about.json";
+import zhAbout from "@/locales/zh/about.json";
+
 const dictionaries = { en: enDict, ko: koDict, fr: frDict, ja: jaDict, zh: zhDict };
+const aboutDict = { en: enAbout, ko: koAbout, fr: frAbout, ja: jaAbout, zh: zhAbout };
 
 export default function HanbokLanding({ lang = "ko" }) {
   const baseDict = dictionaries["ko"].landing;
   const dict = { ...baseDict, ...(dictionaries[lang]?.landing || {}) };
 
+  const about = aboutDict[lang] || aboutDict["ko"];
+  const images = ["/brand1.jpg", "/brand2.jpg", "/brand3.jpg", "/brand4.jpg"];
+
   // ✅ 룩북 15개 카드 (이미지는 /public/lookbooks/look1.jpg ~ look15.jpg 로 준비)
   const LOOKBOOK_ITEMS = Array.from({ length: 15 }, (_, i) => ({
     id: i + 1,
     img: `/lookbooks/look${i + 1}.jpg`,
-    title: `Look ${i + 1}`
+    title: `Look ${i + 1}`,
   }));
 
   return (
@@ -50,14 +61,11 @@ export default function HanbokLanding({ lang = "ko" }) {
           </h1>
           <p className="mt-4 text-lg opacity-90">{dict.hero?.subtext}</p>
           <div className="mt-8 flex justify-center gap-4">
-            {/* 상품 버튼 (원하면 제거 가능) */}
             <Link href={`/${lang}/products`}>
               <Button className="bg-blue-900 hover:bg-blue-800 rounded-full px-6 py-3 text-white">
                 {dict.hero?.ctaProducts}
               </Button>
             </Link>
-            {/* 룩북 버튼 제거 */}
-            {/* 문의하기 버튼 */}
             <a href="#contact">
               <Button className="bg-green-600 hover:bg-green-500 rounded-full px-6 py-3 text-white">
                 {dict.hero?.ctaContact}
@@ -86,30 +94,85 @@ export default function HanbokLanding({ lang = "ko" }) {
         </div>
       </section>
 
-      {/* Brand Story */}
-      <section className="max-w-4xl mx-auto px-6 md:px-12 py-20 text-center">
-        <h2 className="text-3xl font-semibold mb-6">{dict.story?.title}</h2>
-        <div className="w-full h-64 relative mb-8 rounded-2xl overflow-hidden shadow-sm">
-          <Image
-            src="/story01.jpg"
-            alt="Brand Story"
-            fill
-            className="object-cover object-center"
-            priority
-          />
-        </div>
-        <p className="text-lg text-gray-600 leading-relaxed">
-          {dict.story?.text}
-        </p>
+      {/* Brand Story (강화된 버전, Follow Us 위로 이동) */}
+      <section className="max-w-6xl mx-auto px-6 py-24 space-y-32">
+        <h2 className="font-serif text-4xl md:text-5xl text-center font-semibold text-gray-900 mb-12">
+          {about.title}
+        </h2>
+
+        {about.story.map((paragraph, idx) => {
+          const image = images[idx % images.length];
+
+          if (idx === 0) {
+            return (
+              <blockquote
+                key={idx}
+                className="font-serif italic text-2xl md:text-3xl text-sky-600 text-center py-12"
+              >
+                “{paragraph}”
+              </blockquote>
+            );
+          }
+
+          if (idx === 1) {
+            return (
+              <div
+                key={idx}
+                className="w-full aspect-[21/9] rounded-3xl overflow-hidden shadow-xl"
+              >
+                <img
+                  src={image}
+                  alt={`Brand Story ${idx + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            );
+          }
+
+          if (idx === 2) {
+            return (
+              <section
+                key={idx}
+                className="bg-sky-50 py-20 px-6 text-center rounded-2xl shadow-inner"
+              >
+                <p className="font-sans text-xl md:text-2xl leading-relaxed text-gray-800 max-w-3xl mx-auto">
+                  {paragraph}
+                </p>
+              </section>
+            );
+          }
+
+          return (
+            <div
+              key={idx}
+              className={`grid md:grid-cols-2 gap-10 items-center ${
+                idx % 2 === 0 ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              <div>
+                <p className="font-sans text-lg md:text-xl font-light leading-relaxed">
+                  {paragraph}
+                </p>
+              </div>
+              {image && (
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                  <img
+                    src={image}
+                    alt={`Brand Story ${idx + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+              )}
+            </div>
+          );
+        })}
       </section>
 
       {/* Follow Us */}
       <section className="bg-gray-50 py-20">
         <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl font-semibold mb-6">Follow Us</h2>
-          <p className="mb-10 text-gray-600">
-            {dict.follow?.subtitle}
-          </p>
+          <p className="mb-10 text-gray-600">{dict.follow?.subtitle}</p>
           <div className="flex justify-center gap-6">
             <a
               href="https://blog.naver.com/hangagye"
