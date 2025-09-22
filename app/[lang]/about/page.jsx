@@ -16,7 +16,7 @@ export default function AboutPage() {
   const { lang } = useParams();
   const t = dictionaries[lang] || dictionaries["ko"];
 
-  // 각 단락별 대응 이미지
+  // 사용할 이미지 배열
   const images = ["/brand1.jpg", "/brand2.jpg", "/brand3.jpg", "/brand4.jpg"];
 
   return (
@@ -30,32 +30,35 @@ export default function AboutPage() {
 
       {/* Brand Story */}
       <section className="max-w-6xl mx-auto px-6 py-20 space-y-24">
-        {t.story.map((paragraph, idx) => (
-          <div
-            key={idx}
-            className={`grid md:grid-cols-2 gap-10 items-center ${
-              idx % 2 === 1 ? "md:flex-row-reverse" : ""
-            }`}
-          >
-            {/* Text */}
-            <div>
-              <p className="text-xl text-gray-700 leading-relaxed tracking-wide">
-                {paragraph}
-              </p>
-            </div>
-
-            {/* Image */}
-            {images[idx] && (
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-105">
-                <img
-                  src={images[idx]}
-                  alt={`Brand Story ${idx + 1}`}
-                  className="w-full h-full object-cover brightness-105 contrast-95"
-                />
+        {t.story.map((paragraph, idx) => {
+          const image = images[idx % images.length]; // 자동 매칭 (순환)
+          return (
+            <div
+              key={idx}
+              className={`grid md:grid-cols-2 gap-10 items-center ${
+                idx % 2 === 1 ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              {/* 텍스트 */}
+              <div>
+                <p className="text-xl text-gray-700 leading-relaxed tracking-wide">
+                  {paragraph}
+                </p>
               </div>
-            )}
-          </div>
-        ))}
+
+              {/* 이미지 (있을 경우만 출력) */}
+              {image && (
+                <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl transition-transform duration-700 hover:scale-105">
+                  <img
+                    src={image}
+                    alt={`Brand Story ${idx + 1}`}
+                    className="w-full h-full object-cover brightness-105 contrast-95"
+                  />
+                </div>
+              )}
+            </div>
+          );
+        })}
       </section>
     </main>
   );
