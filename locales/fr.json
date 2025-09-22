@@ -1,78 +1,42 @@
 {
   "navbar": {
-    "home": "Boutique Hanbok",
-    "products": "Catégories",
-    "lookbook": "Lookbook",
-    "about": "À propos",
-    "contact": "Contact",
-    "admin": "Ajouter un produit"
+    "home": "Accueil",
+    "story": "Histoire de la marque",
+    "contact": "Contact"
   },
-  "landing": {
-    "hero": {
-      "headline": "Notre boutique, Han Style lumineux",
-      "subtext": "Tissus respirants, silhouettes naturelles et beauté coréenne. Du bureau aux sorties du week-end.",
-      "ctaProducts": "Voir les nouveautés",
-      "ctaLookbook": "Voir le lookbook"
+  "hero": {
+    "headline": "Hanbok du quotidien",
+    "subtext": "Hangage allie l’élégance de la tradition et la sensibilité moderne",
+    "ctaProducts": "Voir les produits",
+    "ctaContact": "Nous contacter"
+  },
+  "lookbook": {
+    "title": "Lookbook"
+  },
+  "story": {
+    "title": "Histoire de la marque",
+    "text": "Hangage est une marque de hanbok moderne qui harmonise la beauté de la tradition avec un design contemporain. Nous croyons que le hanbok n’est pas seulement pour les grandes occasions, mais peut être porté au quotidien."
+  },
+  "follow": {
+    "subtitle": "Suivez les actualités et inspirations de Hangage sur nos réseaux sociaux."
+  },
+  "store": {
+    "title": "Informations sur la boutique",
+    "address": "123-45, Wansan-gu, Jeonju, Jeollabuk-do"
+  },
+  "newsletter": {
+    "title": "Abonnez-vous à notre newsletter",
+    "subtitle": "Recevez en avant-première nos nouveautés et offres exclusives.",
+    "placeholder": "Entrez votre email",
+    "button": "S’abonner"
+  },
+  "footer": {
+    "customer": "Service client",
+    "links": {
+      "shipping": "Informations de livraison",
+      "privacy": "Politique de confidentialité",
+      "terms": "Conditions d’utilisation"
     },
-    "categories": {
-      "title": "Catégories",
-      "subtitle": "Choisissez votre style préféré.",
-      "items": {
-        "new": "Nouveautés",
-        "men": "Hanbok Homme",
-        "women": "Hanbok Femme",
-        "kids": "Hanbok Enfant",
-        "cheolik": "Robe Cheolik",
-        "bustier": "Bustier",
-        "skirt": "Jupe Hanbok",
-        "apron": "Tablier",
-        "accessories": "Foulard & Accessoires"
-      }
-    },
-    "shop": {
-      "title": "Liens boutique",
-      "subtitle": "Retrouvez plus de produits sur Cafe24 et Naver Smartstore.",
-      "cafe24": "Aller sur Cafe24",
-      "smartstore": "Aller sur Smartstore"
-    },
-    "story": {
-      "title": "Notre histoire",
-      "text": "Nous concevons tissus et motifs pour intégrer la beauté du hanbok dans la vie quotidienne."
-    },
-    "size": {
-      "title": "Tailles & sur mesure",
-      "guide": "Tableau des tailles standard (cm, pouces entre parenthèses)",
-      "custom": "Commandes sur mesure adaptées à votre morphologie et longueur souhaitée",
-      "policy": "Paiement · Livraison · Politique de retour/échange",
-      "table": {
-        "headers": ["Taille", "Longueur", "Poitrine", "Manche", "Taille recommandée"],
-        "rows": [
-          ["S", "115 (45.3\")", "88 (34.6\")", "55 (21.6\")", "150-160cm"],
-          ["M", "120 (47.2\")", "94 (37.0\")", "56 (22.0\")", "160-170cm"],
-          ["L", "125 (49.2\")", "100 (39.4\")", "57 (22.4\")", "165-175cm"],
-          ["XL", "130 (51.2\")", "108 (42.5\")", "58 (22.8\")", "170-180cm"],
-          ["XXL", "135 (53.1\")", "116 (45.7\")", "59 (23.2\")", "175-185cm"]
-        ]
-      }
-    },
-    "store": {
-      "title": "Infos boutique",
-      "address": "2F, 206, Jungang Sangga, Tae-pyeong 3-gil 70, Wansan-gu, Jeonju"
-    },
-    "newsletter": {
-      "title": "Recevoir les nouvelles",
-      "subtitle": "Laissez votre email pour recevoir des infos sur les collections et événements.",
-      "placeholder": "votre@email.com",
-      "button": "S'abonner"
-    },
-    "footer": {
-      "customer": "Service client",
-      "links": {
-        "shipping": "Politique d'expédition/retour",
-        "privacy": "Politique de confidentialité",
-        "terms": "Conditions d'utilisation"
-      },
-      "quick": "Liens rapides"
-    }
+    "quick": "Liens rapides"
   }
 }
