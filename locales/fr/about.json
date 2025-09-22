@@ -1,4 +1,9 @@
 {
   "title": "Histoire de la marque",
-  "story": "Les vêtements portent en eux les personnes.\nCe que nous créons dépasse le simple fait d’être porté : ils deviennent, pour celui qui les porte comme pour celui qui les contemple, le début d’une révélation de son identité.\nCe début est la plus belle manière de s’exprimer, et lorsque ces couleurs se rejoignent, elles forment une culture partagée entre individus et communautés.\nHanGage ne suit ni la mode rapide ni l’uniformité dictée par le capital, mais crée des vêtements qui reflètent les couleurs et les histoires propres à chaque pays et à chaque individu."
+  "story": [
+    "Les vêtements portent en eux les personnes.",
+    "Ce que nous créons dépasse le simple fait d’être porté : ils deviennent, pour celui qui les porte comme pour celui qui les contemple, le début d’une révélation de son identité.",
+    "Ce début est la plus belle manière de s’exprimer, et lorsque ces couleurs se rejoignent, elles forment une culture partagée entre individus et communautés.",
+    "HanGage ne suit ni la mode rapide ni l’uniformité dictée par le capital, mais crée des vêtements qui reflètent les couleurs et les histoires propres à chaque pays et à chaque individu."
+  ]
 }
