@@ -16,47 +16,47 @@ export default function AboutPage() {
   const { lang } = useParams();
   const t = dictionaries[lang] || dictionaries["ko"];
 
-  // 사용할 이미지 배열 (시네마틱 와이드컷)
   const images = ["/brand1.jpg", "/brand2.jpg", "/brand3.jpg", "/brand4.jpg"];
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-gradient-to-b from-white via-sky-50 to-white text-gray-800">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center text-center px-6 py-32">
-        <h1 className="font-serif text-5xl md:text-7xl font-extrabold leading-tight tracking-tight text-gray-100 drop-shadow-lg">
+      <section className="relative flex flex-col items-center justify-center text-center px-6 py-24">
+        <h1 className="font-serif text-4xl md:text-6xl font-semibold leading-snug tracking-tight text-gray-800">
           {t.title}
         </h1>
       </section>
 
-      {/* Cinematic Brand Story */}
-      <section className="space-y-32">
+      {/* Brand Story */}
+      <section className="max-w-6xl mx-auto px-6 py-16 space-y-32">
         {t.story.map((paragraph, idx) => {
           const image = images[idx % images.length];
           const reversed = idx % 2 === 1;
 
           return (
-            <div key={idx} className="relative w-full">
-              {/* Background Cinematic Image */}
-              <div className="relative w-full aspect-[21/9] overflow-hidden">
-                <img
-                  src={image}
-                  alt={`Brand Story ${idx + 1}`}
-                  className="w-full h-full object-cover transform hover:scale-105 transition duration-1000 brightness-90"
-                />
-
-                {/* Overlay Text */}
-                <div
-                  className={`absolute inset-0 flex items-center ${
-                    reversed ? "justify-end pr-16" : "justify-start pl-16"
-                  }`}
-                >
-                  <div className="max-w-2xl bg-black/40 p-8 rounded-xl shadow-lg">
-                    <p className="font-sans text-lg md:text-2xl font-light leading-relaxed text-gray-100">
-                      {paragraph}
-                    </p>
-                  </div>
-                </div>
+            <div
+              key={idx}
+              className={`grid md:grid-cols-2 gap-10 items-center ${
+                reversed ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              {/* 텍스트 */}
+              <div>
+                <p className="font-sans text-lg md:text-xl font-light leading-relaxed">
+                  {paragraph}
+                </p>
               </div>
+
+              {/* 이미지 */}
+              {image && (
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                  <img
+                    src={image}
+                    alt={`Brand Story ${idx + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+              )}
             </div>
           );
         })}
