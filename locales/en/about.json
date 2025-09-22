@@ -1,4 +1,9 @@
 {
   "title": "Brand Story",
-  "story": "Clothes carry the spirit of people.\nWhat we create goes beyond simply being worn; it becomes, for both the wearer and the viewer, a beginning to reveal one’s identity.\nThat beginning is the most beautiful way to express oneself, and when these colors come together, they ultimately form a culture shared by individuals and communities alike.\nHanGage does not follow fast fashion or capital-driven sameness, but creates garments that reflect the unique colors and stories of each nation and each individual."
+  "story": [
+    "Clothes carry the spirit of people.",
+    "What we create goes beyond simply being worn; it becomes, for both the wearer and the viewer, a beginning to reveal one’s identity.",
+    "That beginning is the most beautiful way to express oneself, and when these colors come together, they ultimately form a culture shared by individuals and communities alike.",
+    "HanGage does not follow fast fashion or capital-driven sameness, but creates garments that reflect the unique colors and stories of each nation and each individual."
+  ]
 }
