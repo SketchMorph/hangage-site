@@ -16,54 +16,45 @@ export default function AboutPage() {
   const { lang } = useParams();
   const t = dictionaries[lang] || dictionaries["ko"];
 
+  // 사용할 이미지 배열 (시네마틱 와이드컷)
   const images = ["/brand1.jpg", "/brand2.jpg", "/brand3.jpg", "/brand4.jpg"];
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="relative flex flex-col items-center justify-center text-center px-6 py-32 bg-gradient-to-b from-sky-100 via-white to-sky-50">
-        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-800 drop-shadow-sm">
+    <main className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <section className="relative flex flex-col items-center justify-center text-center px-6 py-32">
+        <h1 className="font-serif text-5xl md:text-7xl font-extrabold leading-tight tracking-tight text-gray-100 drop-shadow-lg">
           {t.title}
         </h1>
       </section>
 
-      {/* Brand Story with bold layout */}
-      <section className="max-w-7xl mx-auto px-6 py-24 space-y-40">
+      {/* Cinematic Brand Story */}
+      <section className="space-y-32">
         {t.story.map((paragraph, idx) => {
           const image = images[idx % images.length];
           const reversed = idx % 2 === 1;
 
           return (
-            <div
-              key={idx}
-              className={`relative grid md:grid-cols-12 gap-10 items-center ${
-                reversed ? "md:flex-row-reverse" : ""
-              }`}
-            >
-              {/* Image (넓게 배치) */}
-              <div
-                className={`col-span-7 ${
-                  reversed ? "md:col-start-6" : ""
-                } relative overflow-hidden rounded-3xl shadow-2xl`}
-              >
+            <div key={idx} className="relative w-full">
+              {/* Background Cinematic Image */}
+              <div className="relative w-full aspect-[21/9] overflow-hidden">
                 <img
                   src={image}
                   alt={`Brand Story ${idx + 1}`}
-                  className="w-full h-[500px] object-cover transform hover:scale-105 transition duration-700"
+                  className="w-full h-full object-cover transform hover:scale-105 transition duration-1000 brightness-90"
                 />
-              </div>
 
-              {/* Text with accent bar */}
-              <div
-                className={`col-span-5 ${
-                  reversed ? "md:col-start-1" : ""
-                } flex flex-col justify-center`}
-              >
-                <div className="flex items-start">
-                  <div className="w-1 h-24 bg-gradient-to-b from-sky-400 to-indigo-600 rounded-full mr-6"></div>
-                  <p className="text-2xl text-gray-800 leading-relaxed tracking-wide">
-                    {paragraph}
-                  </p>
+                {/* Overlay Text */}
+                <div
+                  className={`absolute inset-0 flex items-center ${
+                    reversed ? "justify-end pr-16" : "justify-start pl-16"
+                  }`}
+                >
+                  <div className="max-w-2xl bg-black/40 p-8 rounded-xl shadow-lg">
+                    <p className="font-sans text-lg md:text-2xl font-light leading-relaxed text-gray-100">
+                      {paragraph}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
