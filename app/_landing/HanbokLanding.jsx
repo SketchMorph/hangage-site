@@ -2,7 +2,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Link from "next/link";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -13,28 +12,17 @@ import frDict from "@/locales/fr.json";
 import jaDict from "@/locales/ja.json";
 import zhDict from "@/locales/zh.json";
 
-// ✅ 브랜드 스토리 JSON import
-import enAbout from "@/locales/en/about.json";
-import koAbout from "@/locales/ko/about.json";
-import frAbout from "@/locales/fr/about.json";
-import jaAbout from "@/locales/ja/about.json";
-import zhAbout from "@/locales/zh/about.json";
-
 const dictionaries = { en: enDict, ko: koDict, fr: frDict, ja: jaDict, zh: zhDict };
-const aboutDict = { en: enAbout, ko: koAbout, fr: frAbout, ja: jaAbout, zh: zhAbout };
 
 export default function HanbokLanding({ lang = "ko" }) {
-  const baseDict = dictionaries["ko"].landing;
-  const dict = { ...baseDict, ...(dictionaries[lang]?.landing || {}) };
+  const baseDict = dictionaries["ko"];
+  const dict = { ...baseDict, ...(dictionaries[lang] || {}) };
 
-  const about = aboutDict[lang] || aboutDict["ko"];
-  const images = ["/brand1.jpg", "/brand2.jpg", "/brand3.jpg", "/brand4.jpg"];
-
-  // ✅ 룩북 15개 카드 (이미지는 /public/lookbooks/look1.jpg ~ look15.jpg 로 준비)
+  // ✅ 룩북 15개 카드
   const LOOKBOOK_ITEMS = Array.from({ length: 15 }, (_, i) => ({
     id: i + 1,
     img: `/lookbooks/look${i + 1}.jpg`,
-    title: `Look ${i + 1}`,
+    title: `Look ${i + 1}`
   }));
 
   return (
@@ -60,14 +48,39 @@ export default function HanbokLanding({ lang = "ko" }) {
             {dict.hero?.headline}
           </h1>
           <p className="mt-4 text-lg opacity-90">{dict.hero?.subtext}</p>
-          <div className="mt-8 flex justify-center gap-4">
+          <div className="mt-8 flex justify-center gap-4 flex-wrap">
+            {/* 상품 보기 */}
             <Link href={`/${lang}/products`}>
               <Button className="bg-blue-900 hover:bg-blue-800 rounded-full px-6 py-3 text-white">
                 {dict.hero?.ctaProducts}
               </Button>
             </Link>
-            <a href="#contact">
+
+            {/* 스마트스토어 */}
+            <a
+              href="https://smartstore.naver.com/hangagye"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="bg-green-600 hover:bg-green-500 rounded-full px-6 py-3 text-white">
+                {dict.hero?.ctaSmartstore}
+              </Button>
+            </a>
+
+            {/* 자사몰 */}
+            <a
+              href="https://alban915.cafe24.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="bg-purple-700 hover:bg-purple-600 rounded-full px-6 py-3 text-white">
+                {dict.hero?.ctaCafe24}
+              </Button>
+            </a>
+
+            {/* 문의하기 */}
+            <a href="#contact">
+              <Button className="bg-yellow-600 hover:bg-yellow-500 rounded-full px-6 py-3 text-white">
                 {dict.hero?.ctaContact}
               </Button>
             </a>
@@ -94,13 +107,14 @@ export default function HanbokLanding({ lang = "ko" }) {
         </div>
       </section>
 
-      {/* Brand Story (강화된 버전, Follow Us 위로 이동) */}
+      {/* Brand Story */}
       <section className="max-w-6xl mx-auto px-6 py-24 space-y-32">
         <h2 className="font-serif text-4xl md:text-5xl text-center font-semibold text-gray-900 mb-12">
-          {about.title}
+          {dict.story?.title}
         </h2>
 
-        {about.story.map((paragraph, idx) => {
+        {dict.story?.story?.map((paragraph, idx) => {
+          const images = ["/brand1.jpg", "/brand2.jpg", "/brand3.jpg", "/brand4.jpg"];
           const image = images[idx % images.length];
 
           if (idx === 0) {
@@ -173,9 +187,9 @@ export default function HanbokLanding({ lang = "ko" }) {
         <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl font-semibold mb-6">Follow Us</h2>
           <p className="mb-10 text-gray-600">{dict.follow?.subtitle}</p>
-          <div className="flex justify-center gap-6">
+          <div className="flex justify-center gap-6 flex-wrap">
             <a
-              href="https://blog.naver.com/hangagye"
+              href={dict.follow?.blog}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700"
@@ -183,20 +197,12 @@ export default function HanbokLanding({ lang = "ko" }) {
               Blog
             </a>
             <a
-              href="https://www.instagram.com/hangagye_official"
+              href={dict.follow?.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-pink-500 text-white rounded-full hover:bg-pink-600"
             >
               Instagram
-            </a>
-            <a
-              href="https://www.facebook.com/hangagye"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700"
-            >
-              Facebook
             </a>
           </div>
         </div>
@@ -212,8 +218,9 @@ export default function HanbokLanding({ lang = "ko" }) {
           <p className="text-lg text-gray-600 whitespace-pre-line">
             {dict.store?.address}
           </p>
-          <p className="mt-2 text-gray-600">📧 contact@hangage.com</p>
-          <p className="mt-1 text-gray-600">📱 010-1234-5678</p>
+          <p className="mt-2 text-gray-600">📧 {dict.store?.email}</p>
+          <p className="mt-1 text-gray-600">📱 {dict.store?.phone}</p>
+          <p className="mt-1 text-gray-600">☎ {dict.store?.storePhone}</p>
         </div>
         <div className="rounded-2xl overflow-hidden shadow-sm">
           <iframe
@@ -258,7 +265,7 @@ export default function HanbokLanding({ lang = "ko" }) {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="https://www.instagram.com/hangagye_official"
+                  href={dict.follow?.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white"
@@ -268,22 +275,12 @@ export default function HanbokLanding({ lang = "ko" }) {
               </li>
               <li>
                 <a
-                  href="https://blog.naver.com/hangagye"
+                  href={dict.follow?.blog}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white"
                 >
                   Blog
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.facebook.com/hangagye"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white"
-                >
-                  Facebook
                 </a>
               </li>
             </ul>
@@ -296,3 +293,5 @@ export default function HanbokLanding({ lang = "ko" }) {
     </div>
   );
 }
+
+-
