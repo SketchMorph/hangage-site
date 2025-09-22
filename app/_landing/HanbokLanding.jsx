@@ -143,33 +143,31 @@ export default function HanbokLanding({ lang = "ko" }) {
         </p>
       </section>
 
-      {/* Size Guide */}
+      {/* SNS Links */}
       <section className="bg-gray-50 py-20">
         <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
-          <h2 className="text-3xl font-semibold mb-6">{dict.size?.title}</h2>
-          <p className="mb-10 text-gray-600">{dict.size?.guide}</p>
-          <div className="overflow-x-auto">
-            <table className="w-full border border-gray-200 text-sm">
-              <thead className="bg-gray-100">
-                <tr>
-                  {dict.size?.table?.headers.map((h, i) => (
-                    <th key={i} className="border p-2">{h}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {dict.size?.table?.rows.map((row, rIdx) => (
-                  <tr key={rIdx}>
-                    {row.map((cell, cIdx) => (
-                      <td key={cIdx} className="border p-2">{cell}</td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <h2 className="text-3xl font-semibold mb-6">Follow Us</h2>
+          <p className="mb-10 text-gray-600">
+            한가게의 새로운 소식과 스타일을 SNS에서 만나보세요.
+          </p>
+          <div className="flex justify-center gap-6">
+            <a
+              href="https://blog.naver.com/hangagye"   // ✅ 블로그 주소
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700"
+            >
+              Blog
+            </a>
+            <a
+              href="https://www.instagram.com/hangagye_official"   // ✅ 인스타그램 주소
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-pink-500 text-white rounded-full hover:bg-pink-600"
+            >
+              Instagram
+            </a>
           </div>
-          <p className="mt-6 text-gray-600">{dict.size?.custom}</p>
-          <p className="mt-2 text-gray-500 text-sm">{dict.size?.policy}</p>
         </div>
       </section>
 
@@ -228,32 +226,6 @@ export default function HanbokLanding({ lang = "ko" }) {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="https://www.instagram.com/yourbrand"
+                  href="https://www.instagram.com/hangagye_official"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white"
-                >
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://smartstore.naver.com/yourstore"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white"
-                >
-                  Naver Smartstore
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="text-center text-sm text-gray-500 mt-10">
-          © {new Date().getFullYear()} Hangage. All rights reserved.
-        </div>
-      </footer>
-    </div>
-  );
-}
+                  rel="noopener norefe
