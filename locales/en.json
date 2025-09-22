@@ -1,13 +1,10 @@
 {
-  "navbar": {
-    "home": "Home",
-    "story": "Brand Story",
-    "contact": "Contact"
-  },
   "hero": {
-    "headline": "Everyday Wear, Modern Hanbok",
-    "subtext": "Hangage combines the beauty of tradition with modern sensibility",
+    "headline": "Our Everyday Wear, Modern Hanbok",
+    "subtext": "Hangage blends the beauty of tradition with a modern touch",
     "ctaProducts": "View Products",
+    "ctaSmartstore": "Smartstore",
+    "ctaCafe24": "Official Shop",
     "ctaContact": "Contact Us"
   },
   "lookbook": {
@@ -15,28 +12,33 @@
   },
   "story": {
     "title": "Brand Story",
-    "text": "Hangage is a lifestyle hanbok brand that harmonizes the beauty of tradition with contemporary design. We believe hanbok is not just for special occasions but also for everyday life."
+    "story": [
+      "Clothes carry the essence of people.",
+      "Our garments go beyond being worn — they become the beginning of expressing identity for both the wearer and the viewer.",
+      "This beginning is the most beautiful way to express oneself, and when colors gather, they create a culture shared by individuals and communities.",
+      "Hangage does not follow fast fashion or mass-produced trends. Instead, we craft clothing that embraces the unique colors and stories of each nation and individual."
+    ]
   },
   "follow": {
-    "subtitle": "Discover Hangage’s latest updates and style inspirations on SNS."
+    "subtitle": "Discover Hangage’s latest news and styles on our social channels.",
+    "instagram": "https://www.instagram.com/hangagye/",
+    "blog": "https://m.blog.naver.com/efun36/"
   },
   "store": {
     "title": "Store Information",
-    "address": "123-45, Wansan-gu, Jeonju-si, Jeollabuk-do"
+    "address": "2F, 206-207, Jungang Arcade, 70 Taepyeong 3-gil, Wansan-gu, Jeonju-si, Jeollabuk-do, Korea",
+    "email": "contact@hangage.com",
+    "phone": "+82-10-7309-2547",
+    "storePhone": "+82-63-123-4567"
   },
   "newsletter": {
-    "title": "Subscribe to Our Newsletter",
-    "subtitle": "Get the latest updates and exclusive offers first.",
-    "placeholder": "Enter your email",
+    "title": "Subscribe to Newsletter",
+    "subtitle": "Be the first to receive new arrivals and special offers.",
+    "placeholder": "Enter your email address",
     "button": "Subscribe"
   },
   "footer": {
     "customer": "Customer Service",
-    "links": {
-      "shipping": "Shipping Info",
-      "privacy": "Privacy Policy",
-      "terms": "Terms of Service"
-    },
     "quick": "Quick Links"
   }
 }
