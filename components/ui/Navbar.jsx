@@ -42,16 +42,8 @@ export default function Navbar() {
           {dict.about}
         </Link>
 
-        <Link href={`/${lang}/contact`} className="hover:text-blue-600">
-          {dict.contact}
-        </Link>
-
-        <Link
-          href={`/${lang}/admin`}
-          className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
-        >
-          {dict.admin}
-        </Link>
+        {/* ❌ 문의(contact) 삭제됨 */}
+        {/* ❌ 상품추가/관리(admin) 삭제됨 */}
 
         {/* 언어 선택 */}
         <LanguageSwitcher />
