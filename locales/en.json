@@ -1,78 +1,42 @@
 {
   "navbar": {
-    "home": "Hanbok Store",
-    "products": "Categories",
-    "lookbook": "Lookbook",
-    "about": "About Us",
-    "contact": "Contact",
-    "admin": "Add Product"
+    "home": "Home",
+    "story": "Brand Story",
+    "contact": "Contact"
   },
-  "landing": {
-    "hero": {
-      "headline": "Our Clothes Shop, Bright Han Style",
-      "subtext": "Breathable fabrics, natural silhouettes, and Korean beauty. From the office to weekend outings.",
-      "ctaProducts": "View New Arrivals",
-      "ctaLookbook": "View Lookbook"
+  "hero": {
+    "headline": "Everyday Wear, Modern Hanbok",
+    "subtext": "Hangage combines the beauty of tradition with modern sensibility",
+    "ctaProducts": "View Products",
+    "ctaContact": "Contact Us"
+  },
+  "lookbook": {
+    "title": "Lookbook"
+  },
+  "story": {
+    "title": "Brand Story",
+    "text": "Hangage is a lifestyle hanbok brand that harmonizes the beauty of tradition with contemporary design. We believe hanbok is not just for special occasions but also for everyday life."
+  },
+  "follow": {
+    "subtitle": "Discover Hangage’s latest updates and style inspirations on SNS."
+  },
+  "store": {
+    "title": "Store Information",
+    "address": "123-45, Wansan-gu, Jeonju-si, Jeollabuk-do"
+  },
+  "newsletter": {
+    "title": "Subscribe to Our Newsletter",
+    "subtitle": "Get the latest updates and exclusive offers first.",
+    "placeholder": "Enter your email",
+    "button": "Subscribe"
+  },
+  "footer": {
+    "customer": "Customer Service",
+    "links": {
+      "shipping": "Shipping Info",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
     },
-    "categories": {
-      "title": "Categories",
-      "subtitle": "Choose your preferred style.",
-      "items": {
-        "new": "New Arrivals",
-        "men": "Men's Hanbok",
-        "women": "Women's Hanbok",
-        "kids": "Kids' Hanbok",
-        "cheolik": "Cheolik Dress",
-        "bustier": "Bustier",
-        "skirt": "Hanbok Skirt",
-        "apron": "Apron",
-        "accessories": "Headscarf & Accessories"
-      }
-    },
-    "shop": {
-      "title": "Shop Links",
-      "subtitle": "Find more products on Shop and Naver Smartstore.",
-      "cafe24": "Go to Shop",
-      "smartstore": "Go to Smartstore"
-    },
-    "story": {
-      "title": "Our Story",
-      "text": "We design fabrics and patterns to bring the beauty of hanbok into everyday life."
-    },
-    "size": {
-      "title": "Size & Custom",
-      "guide": "Standard size chart (unit: cm, inches in parentheses)",
-      "custom": "Custom orders available for body and length adjustments",
-      "policy": "Payment · Shipping · Return/Exchange Policy",
-      "table": {
-        "headers": ["Size", "Length", "Chest", "Sleeve", "Recommended Height"],
-        "rows": [
-          ["S", "115 (45.3\")", "88 (34.6\")", "55 (21.6\")", "150-160cm"],
-          ["M", "120 (47.2\")", "94 (37.0\")", "56 (22.0\")", "160-170cm"],
-          ["L", "125 (49.2\")", "100 (39.4\")", "57 (22.4\")", "165-175cm"],
-          ["XL", "130 (51.2\")", "108 (42.5\")", "58 (22.8\")", "170-180cm"],
-          ["XXL", "135 (53.1\")", "116 (45.7\")", "59 (23.2\")", "175-185cm"]
-        ]
-      }
-    },
-    "store": {
-      "title": "Store Info",
-      "address": "2F, 206, Jungang Sangga, Tae-pyeong 3-gil 70, Wansan-gu, Jeonju"
-    },
-    "newsletter": {
-      "title": "Get Updates",
-      "subtitle": "Leave your email to receive collection and event news.",
-      "placeholder": "your@email.com",
-      "button": "Subscribe"
-    },
-    "footer": {
-      "customer": "Customer Info",
-      "links": {
-        "shipping": "Shipping/Return Policy",
-        "privacy": "Privacy Policy",
-        "terms": "Terms of Use"
-      },
-      "quick": "Quick Links"
-    }
+    "quick": "Quick Links"
   }
 }
