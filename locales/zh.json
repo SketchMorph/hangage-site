@@ -1,42 +1,44 @@
 {
-  "navbar": {
-    "home": "首页",
-    "story": "品牌故事",
-    "contact": "联系我们"
-  },
   "hero": {
-    "headline": "每日可穿的韩服，生活韩服",
-    "subtext": "韩加阁融合了传统之美与现代感性",
+    "headline": "每天穿的衣服，生活韩服",
+    "subtext": "韩加阁融合了传统之美与现代感",
     "ctaProducts": "查看商品",
+    "ctaSmartstore": "Smartstore",
+    "ctaCafe24": "官方商城",
     "ctaContact": "联系我们"
   },
   "lookbook": {
-    "title": "画册"
+    "title": "造型集"
   },
   "story": {
     "title": "品牌故事",
-    "text": "韩加阁是一个将传统之美与现代设计完美结合的生活韩服品牌。我们相信韩服不仅适用于特殊日子，也能成为日常生活的一部分。"
+    "story": [
+      "衣服承载着人的气息。",
+      "我们制作的衣服不仅仅是穿着，它是穿着者与观赏者共同展现自我认同的开始。",
+      "这种开始，是最美的自我表达方式，当这些色彩汇聚，便成为个人与群体共同享有的文化。",
+      "韩加阁不是快时尚，也不是资本驱动的千篇一律，而是承载各国与个人独特色彩与故事的服饰。"
+    ]
   },
   "follow": {
-    "subtitle": "在SNS上关注韩加阁的最新消息与风格灵感。"
+    "subtitle": "在社交平台上关注韩加阁，获取最新消息与风格。",
+    "instagram": "https://www.instagram.com/hangagye/",
+    "blog": "https://m.blog.naver.com/efun36/"
   },
   "store": {
     "title": "门店信息",
-    "address": "全罗北道 全州市 完山区 ○○洞 123-45"
+    "address": "韩国 全罗北道 全州市 完山区 太平3街70 中央商街 2层 206, 207号",
+    "email": "contact@hangage.com",
+    "phone": "+82-10-7309-2547",
+    "storePhone": "+82-63-123-4567"
   },
   "newsletter": {
-    "title": "订阅我们的新闻简报",
-    "subtitle": "第一时间获取最新资讯和专属优惠。",
+    "title": "订阅新闻邮件",
+    "subtitle": "第一时间获取新品和特别优惠。",
     "placeholder": "输入邮箱地址",
     "button": "订阅"
   },
   "footer": {
     "customer": "客户服务",
-    "links": {
-      "shipping": "配送信息",
-      "privacy": "隐私政策",
-      "terms": "使用条款"
-    },
     "quick": "快速链接"
   }
 }
