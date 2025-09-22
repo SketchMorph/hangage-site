@@ -1,42 +1,44 @@
 {
-  "navbar": {
-    "home": "Accueil",
-    "story": "Histoire de la marque",
-    "contact": "Contact"
-  },
   "hero": {
-    "headline": "Hanbok du quotidien",
-    "subtext": "Hangage allie l’élégance de la tradition et la sensibilité moderne",
-    "ctaProducts": "Voir les produits",
-    "ctaContact": "Nous contacter"
+    "headline": "Notre vêtement du quotidien, le hanbok moderne",
+    "subtext": "Hangage allie la beauté de la tradition à une sensibilité moderne",
+    "ctaProducts": "Voir Produits",
+    "ctaSmartstore": "Smartstore",
+    "ctaCafe24": "Boutique Officielle",
+    "ctaContact": "Nous Contacter"
   },
   "lookbook": {
     "title": "Lookbook"
   },
   "story": {
-    "title": "Histoire de la marque",
-    "text": "Hangage est une marque de hanbok moderne qui harmonise la beauté de la tradition avec un design contemporain. Nous croyons que le hanbok n’est pas seulement pour les grandes occasions, mais peut être porté au quotidien."
+    "title": "Histoire de la Marque",
+    "story": [
+      "Les vêtements portent en eux l’essence des personnes.",
+      "Nos créations vont au-delà du simple vêtement : elles deviennent le point de départ de l’expression de l’identité, pour celui qui les porte comme pour celui qui les regarde.",
+      "Ce début est la plus belle façon de s’exprimer, et lorsque les couleurs se rassemblent, elles créent une culture partagée par l’individu et la communauté.",
+      "Hangage ne suit pas la mode rapide ni les tendances uniformisées. Nous créons des vêtements qui portent les couleurs et les histoires uniques de chaque pays et de chaque individu."
+    ]
   },
   "follow": {
-    "subtitle": "Suivez les actualités et inspirations de Hangage sur nos réseaux sociaux."
+    "subtitle": "Découvrez les nouveautés et styles de Hangage sur nos réseaux sociaux.",
+    "instagram": "https://www.instagram.com/hangagye/",
+    "blog": "https://m.blog.naver.com/efun36/"
   },
   "store": {
-    "title": "Informations sur la boutique",
-    "address": "123-45, Wansan-gu, Jeonju, Jeollabuk-do"
+    "title": "Informations sur le magasin",
+    "address": "2F, 206-207, Arcade Centrale, 70 Taepyeong 3-gil, Wansan-gu, Jeonju-si, Jeollabuk-do, Corée",
+    "email": "contact@hangage.com",
+    "phone": "+82-10-7309-2547",
+    "storePhone": "+82-63-123-4567"
   },
   "newsletter": {
-    "title": "Abonnez-vous à notre newsletter",
-    "subtitle": "Recevez en avant-première nos nouveautés et offres exclusives.",
-    "placeholder": "Entrez votre email",
+    "title": "S’abonner à la Newsletter",
+    "subtitle": "Recevez en avant-première nos nouveautés et offres spéciales.",
+    "placeholder": "Entrez votre adresse email",
     "button": "S’abonner"
   },
   "footer": {
-    "customer": "Service client",
-    "links": {
-      "shipping": "Informations de livraison",
-      "privacy": "Politique de confidentialité",
-      "terms": "Conditions d’utilisation"
-    },
-    "quick": "Liens rapides"
+    "customer": "Service Client",
+    "quick": "Liens Rapides"
   }
 }
